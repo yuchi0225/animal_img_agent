@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NO.001 站高高小哨兵！狐獴｜動物圖鑑海報</title>
+  <style>
+    /* 預載圓潤清晰繁體字體，本機亦相容微軟正黑體 / 蘋方 */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap');
+
+    :root {
+      --bg-paper: #FAF7EE;
+      --bg-card: #FFFDF8;
+      --bg-white: #FFFFFF;
+      --ink: #232323;
+      --ink-sub: #554F47;
+      --matcha: #5D8A58;
+      --sprout: #E3EEDC;
+      --caramel: #A6754B;
+      --peach: #F28C6A;
+      --lemon: #F6D66D;
+      --sky: #7EB8DA;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background-color: #E7E2D4;
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 固定單頁 A4 直式畫布 */
+    .poster {
+      width: 794px;
+      height: 1123px;
+      background-color: var(--bg-paper);
+      background-image:
+        radial-gradient(rgba(35, 35, 35, 0.08) 1px, transparent 1px);
+      background-size: 16px 16px;
+      padding: 24px 26px;
+      border: 2px solid var(--ink);
+      box-shadow: 8px 8px 0 rgba(35, 35, 35, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* === 固定左上角主標題區 === */
+    .header-area {
+      display: grid;
+      grid-template-columns: 1fr 220px;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .title-block {
+      background-color: var(--bg-card);
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      padding: 12px 16px 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border: 1.5px solid var(--ink);
+      line-height: 1.3;
+    }
+
+    .tag-no {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+    }
+
+    .tag-cat {
+      background-color: var(--sprout);
+      color: var(--ink);
+    }
+
+    .tag-mood {
+      background-color: var(--peach);
+      color: var(--ink);
+    }
+
+    .main-title {
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+
+    .main-title .highlight-name {
+      display: inline-block;
+      background-color: var(--lemon);
+      padding: 0 6px;
+      border-bottom: 3px solid var(--ink);
+    }
+
+    .subtitle {
+      margin-top: 4px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--ink-sub);
+      letter-spacing: 0.03em;
+    }
+
+    .lead-box {
+      background-color: var(--sprout);
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--matcha);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .tape {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1.5deg);
+      width: 64px;
+      height: 14px;
+      background-color: var(--lemon);
+      border: 1.5px solid var(--ink);
+    }
+
+    .lead-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--matcha);
+      letter-spacing: 0.08em;
+      margin-bottom: 3px;
+    }
+
+    .lead-text {
+      font-size: 11.8px;
+      line-height: 1.48;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* === 中段第一排：主視覺解剖圖 + 基本小檔案 === */
+    .row-top {
+      display: grid;
+      grid-template-columns: 446px 1fr;
+      gap: 12px;
+      height: 448px;
+    }
+
+    .panel {
+      background-color: var(--bg-card);
+      border: 2px solid var(--ink);
+      box-shadow: 4px 4px 0 var(--ink);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      border-bottom: 2px solid var(--ink);
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .ph-green { background-color: var(--matcha); color: #FFFFFF; }
+    .ph-sky { background-color: var(--sky); color: var(--ink); }
+    .ph-caramel { background-color: var(--caramel); color: #FFFFFF; }
+    .ph-peach { background-color: var(--peach); color: var(--ink); }
+
+    .panel-en {
+      font-size: 10px;
+      font-weight: 700;
+      opacity: 0.9;
+      letter-spacing: 0.08em;
+    }
+
+    /* 主視覺畫框 */
+    .hero-stage {
+      position: relative;
+      flex: 1;
+      background-color: var(--bg-white);
+      background-image:
+        linear-gradient(to right, rgba(166, 117, 75, 0.07) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(166, 117, 75, 0.07) 1px, transparent 1px);
+      background-size: 20px 20px;
+      overflow: hidden;
+    }
+
+    .hero-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* 覆蓋在主圖四周的直角標註卡片 */
+    .callout {
+      position: absolute;
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--ink);
+      padding: 5px 7px;
+      box-shadow: 2px 2px 0 var(--ink);
+      max-width: 162px;
+    }
+
+    .callout-title {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 1px 5px;
+      margin-bottom: 2px;
+      border: 1px solid var(--ink);
+    }
+
+    .callout-desc {
+      font-size: 10.5px;
+      line-height: 1.35;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    .c-glasses { top: 10px; left: 10px; max-width: 158px; }
+    .c-glasses .callout-title { background-color: var(--lemon); }
+
+    .c-belly { top: 10px; right: 10px; max-width: 158px; }
+    .c-belly .callout-title { background-color: var(--peach); }
+
+    .c-claws { bottom: 10px; left: 10px; max-width: 168px; }
+    .c-claws .callout-title { background-color: var(--sky); }
+
+    .c-tail { bottom: 10px; right: 10px; max-width: 168px; }
+    .c-tail .callout-title { background-color: var(--sprout); }
+
+    /* 右側基本小檔案 */
+    .profile-body {
+      padding: 10px 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 7px;
+    }
+
+    .fact-item {
+      border: 1.5px solid var(--ink);
+      background-color: var(--bg-white);
+      padding: 6px 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .fact-badge {
+      flex-shrink: 0;
+      width: 44px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 3px 2px;
+      border: 1.5px solid var(--ink);
+      background-color: var(--sprout);
+    }
+
+    .fact-badge.b-sky { background-color: var(--sky); }
+    .fact-badge.b-lemon { background-color: var(--lemon); }
+    .fact-badge.b-peach { background-color: var(--peach); }
+
+    .fact-text {
+      font-size: 11.4px;
+      line-height: 1.42;
+      color: var(--ink);
+    }
+
+    .fact-text strong {
+      font-weight: 900;
+      background: linear-gradient(transparent 62%, var(--lemon) 62%);
+    }
+
+    /* 體重萌比對小紙條 */
+    .scale-strip {
+      border: 1.5px dashed var(--caramel);
+      background-color: var(--bg-paper);
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scale-strip p {
+      font-size: 11px;
+      line-height: 1.38;
+      color: var(--ink-sub);
+      font-weight: 700;
+    }
+
+    /* === 中段第二排：大家庭 ＆ 美食家 === */
+    .row-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .module-content {
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+    }
+
+    /* 大家庭地底插畫條 */
+    .burrow-box {
+      border: 1.5px solid var(--ink);
+      background-color: var(--bg-white);
+      height: 118px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .info-card {
+      border-left: 5px solid var(--matcha);
+      border-top: 1.5px solid var(--ink);
+      border-right: 1.5px solid var(--ink);
+      border-bottom: 1.5px solid var(--ink);
+      background-color: var(--bg-white);
+      padding: 6px 9px;
+    }
+
+    .info-card.c-caramel { border-left-color: var(--caramel); }
+    .info-card.c-peach { border-left-color: var(--peach); }
+    .info-card.c-sky { border-left-color: var(--sky); }
+
+    .info-card-title {
+      font-size: 12.2px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mini-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: var(--ink);
+    }
+
+    .info-card p {
+      font-size: 11.2px;
+      line-height: 1.44;
+      color: var(--ink-sub);
+    }
+
+    /* 右下美食與抗毒插畫條 */
+    .diet-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      height: 108px;
+    }
+
+    .diet-mini-panel {
+      border: 1.5px solid var(--ink);
+      background-color: var(--bg-white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+      position: relative;
+    }
+
+    .diet-mini-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 1px 5px;
+      border: 1px solid var(--ink);
+      background-color: var(--sprout);
+    }
+
+    .diet-mini-tag.warn {
+      background-color: var(--peach);
+    }
+
+    /* 丁滿黃色便利貼 */
+    .timon-note {
+      background-color: var(--lemon);
+      border: 1.5px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--ink);
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .timon-badge {
+      flex-shrink: 0;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 3px 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .timon-note p {
+      font-size: 11.2px;
+      line-height: 1.38;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* === 固定底部收尾欄 === */
+    .footer-secret {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+      border: 2px solid var(--ink);
+      padding: 9px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .secret-pill {
+      flex-shrink: 0;
+      background-color: var(--lemon);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border: 1.5px solid var(--bg-paper);
+      letter-spacing: 0.06em;
+    }
+
+    .secret-text {
+      font-size: 12px;
+      line-height: 1.42;
+      font-weight: 500;
+    }
+
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+        min-height: auto;
+      }
+      .poster {
+        box-shadow: none;
+        border: none;
+        width: 210mm;
+        height: 297mm;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <!-- 1. 固定左上角主標題區 -->
+    <header class="header-area">
+      <section class="title-block">
+        <div>
+          <div class="tag-row">
+            <span class="tag tag-no">NO.001</span>
+            <span class="tag tag-cat">動物圖鑑</span>
+            <span class="tag tag-mood">非洲沙漠小哨兵</span>
+          </div>
+          <h1 class="main-title">站高高小哨兵！<span class="highlight-name">狐獴</span></h1>
+        </div>
+        <p class="subtitle">Meerkat ｜ Suricata suricatta（又稱細尾獴）</p>
+      </section>
+
+      <aside class="lead-box">
+        <div class="tape" aria-hidden="true"></div>
+        <span class="lead-label">HELLO! 認識新朋友</span>
+        <p class="lead-text">你看過兩隻腳站得直挺挺、一臉認真東張西望的小傢伙嗎？牠們就是自帶太陽眼鏡的超萌沙漠守望員！</p>
+      </aside>
+    </header>
+
+    <!-- 2. 上半部：主視覺可愛特徵插畫 + 狐獴小檔案 -->
+    <section class="row-top">
+      <!-- 左：全身可愛小機關主視覺 -->
+      <article class="panel">
+        <div class="panel-header ph-green">
+          <span>全身都是可愛小機關！</span>
+          <span class="panel-en">BODY FEATURES</span>
+        </div>
+
+        <div class="hero-stage">
+          <!-- 日系手繪感矢量插畫：大狐獴與小狐獴站立在沙漠木頭上 -->
+          <svg class="hero-svg" viewBox="0 0 442 406" xmlns="http://www.w3.org/2000/svg">
+            <!-- 暖陽與天空裝飾 -->
+            <circle cx="222" cy="48" r="24" fill="#F6D66D" stroke="#232323" stroke-width="2" />
+            <g stroke="#F28C6A" stroke-width="2.2" stroke-linecap="round">
+              <line x1="222" y1="15" x2="222" y2="8" />
+              <line x1="246" y1="25" x2="252" y2="19" />
+              <line x1="254" y1="48" x2="262" y2="48" />
+              <line x1="198" y1="25" x2="192" y2="19" />
+              <line x1="190" y1="48" x2="182" y2="48" />
+            </g>
+
+            <!-- 遠處沙丘與小仙人掌 -->
+            <path d="M0 278 Q110 248 225 274 T442 262 L442 406 L0 406 Z" fill="#E3EEDC" stroke="#232323" stroke-width="1.8" />
+            <path d="M0 306 Q160 292 295 312 T442 302 L442 406 L0 406 Z" fill="#F3E5CA" stroke="#232323" stroke-width="1.8" />
+
+            <!-- 左遠景小植物 -->
+            <g transform="translate(52, 232)">
+              <rect x="0" y="14" width="12" height="32" fill="#5D8A58" stroke="#232323" stroke-width="1.8" />
+              <rect x="-10" y="22" width="10" height="8" fill="#5D8A58" stroke="#232323" stroke-width="1.8" />
+              <rect x="12" y="18" width="10" height="8" fill="#5D8A58" stroke="#232323" stroke-width="1.8" />
+            </g>
+
+            <!-- 橫臥沙漠枯木底座 -->
+            <path d="M68 310 L368 310 L380 336 L56 336 Z" fill="#A6754B" stroke="#232323" stroke-width="2.2" />
+            <path d="M84 319 Q180 315 250 321 M268 320 Q318 317 355 323 M108 329 Q195 326 290 330" fill="none" stroke="#232323" stroke-width="1.4" stroke-linecap="round" />
+
+            <!-- ===== 主角：大狐獴（站得直挺挺） ===== -->
+            <g id="big-meerkat" transform="translate(0, -34)">
+              <!-- 撐地平衡的細長尾巴（黑色尾尖） -->
+              <path d="M230 302 Q278 334 316 346 Q326 350 321 356 Q304 358 272 344 Q242 330 222 318 Z" fill="#D9BE94" stroke="#232323" stroke-width="2.2" />
+              <path d="M294 336 Q314 345 321 349 Q324 354 318 356 Q302 356 287 349 Z" fill="#232323" />
+
+              <!-- 身體主輪廓 -->
+              <path d="M174 170 Q156 226 154 292 Q153 338 176 344 L232 344 Q248 338 242 288 Q236 226 222 170 Z" fill="#DFC7A0" stroke="#232323" stroke-width="2.3" />
+
+              <!-- 背側與體側小條紋 -->
+              <path d="M161 232 Q173 230 183 234 M158 250 Q171 248 182 252 M157 268 Q170 266 181 270 M221 230 Q230 228 236 232 M224 249 Q232 247 238 251" fill="none" stroke="#8C623E" stroke-width="2.4" stroke-linecap="round" />
+
+              <!-- 太陽能深色小肚肚（毛較少露出深色皮膚） -->
+              <ellipse cx="199" cy="264" rx="22" ry="44" fill="#6D584B" stroke="#232323" stroke-width="1.5" stroke-dasharray="3 2" />
+              <ellipse cx="199" cy="252" rx="14" ry="26" fill="#544238" opacity="0.55" />
+
+              <!-- 可愛雙腳 -->
+              <path d="M168 338 L156 346 L186 346 L188 338 Z" fill="#C9A87C" stroke="#232323" stroke-width="2" />
+              <path d="M214 338 L212 346 L242 346 L232 338 Z" fill="#C9A87C" stroke="#232323" stroke-width="2" />
+
+              <!-- 垂在胸前的兩隻手 + 2cm 彎曲挖洞爪子 -->
+              <path d="M172 194 Q165 228 174 252 Q181 256 186 248 Q186 222 184 196" fill="#D5B88E" stroke="#232323" stroke-width="2" />
+              <path d="M172 252 L170 262 M177 253 L176 264 M182 251 L183 262" stroke="#232323" stroke-width="2" stroke-linecap="round" />
+
+              <path d="M224 194 Q230 228 220 252 Q213 256 208 248 Q208 222 212 196" fill="#D5B88E" stroke="#232323" stroke-width="2" />
+              <path d="M211 251 L210 262 M216 253 L217 264 M221 252 L223 261" stroke="#232323" stroke-width="2" stroke-linecap="round" />
+
+              <!-- 圓潤大頭 + 小黑耳朵 -->
+              <ellipse cx="163" cy="138" rx="8" ry="10" fill="#232323" />
+              <ellipse cx="235" cy="138" rx="8" ry="10" fill="#232323" />
+              <ellipse cx="199" cy="144" rx="37" ry="32" fill="#EAD6B3" stroke="#232323" stroke-width="2.3" />
+
+              <!-- 天然太陽眼鏡（黑眼圈斑紋） -->
+              <ellipse cx="182" cy="140" rx="11.5" ry="9.5" fill="#232323" />
+              <ellipse cx="216" cy="140" rx="11.5" ry="9.5" fill="#232323" />
+              <!-- 閃亮大眼睛 -->
+              <circle cx="183" cy="139" r="3.4" fill="#FFFFFF" />
+              <circle cx="215" cy="139" r="3.4" fill="#FFFFFF" />
+              <circle cx="184" cy="140" r="1.4" fill="#232323" />
+              <circle cx="216" cy="140" r="1.4" fill="#232323" />
+              <!-- 小粉腮紅 -->
+              <ellipse cx="171" cy="152" rx="5" ry="3" fill="#F28C6A" opacity="0.6" />
+              <ellipse cx="227" cy="152" rx="5" ry="3" fill="#F28C6A" opacity="0.6" />
+              <!-- 尖尖小鼻與微笑 -->
+              <polygon points="195,147 203,147 199,153" fill="#232323" />
+              <path d="M194 156 Q199 161 204 156" fill="none" stroke="#232323" stroke-width="1.8" stroke-linecap="round" />
+            </g>
+
+            <!-- ===== 可愛小狐獴寶寶（在旁邊一起學站站） ===== -->
+            <g id="baby-meerkat" transform="translate(262, 184) scale(0.75)">
+              <path d="M56 164 Q82 172 95 174" fill="none" stroke="#232323" stroke-width="5" stroke-linecap="round" />
+              <path d="M22 68 Q12 118 14 166 L64 166 Q66 118 56 68 Z" fill="#EAD6B3" stroke="#232323" stroke-width="2.5" />
+              <ellipse cx="39" cy="126" rx="14" ry="22" fill="#8C7362" opacity="0.45" />
+              <ellipse cx="14" cy="44" rx="7" ry="9" fill="#232323" />
+              <ellipse cx="64" cy="44" rx="7" ry="9" fill="#232323" />
+              <ellipse cx="39" cy="48" rx="28" ry="25" fill="#F2E3C6" stroke="#232323" stroke-width="2.5" />
+              <ellipse cx="26" cy="45" rx="9" ry="8" fill="#232323" />
+              <ellipse cx="52" cy="45" rx="9" ry="8" fill="#232323" />
+              <circle cx="27" cy="44" r="3" fill="#FFFFFF" />
+              <circle cx="51" cy="44" r="3" fill="#FFFFFF" />
+              <polygon points="36,51 42,51 39,56" fill="#232323" />
+              <path d="M35 58 Q39 62 43 58" fill="none" stroke="#232323" stroke-width="1.8" stroke-linecap="round" />
+              <!-- 小手手 -->
+              <path d="M22 86 Q20 112 27 126 M56 86 Q58 112 51 126" fill="none" stroke="#232323" stroke-width="2.4" stroke-linecap="round" />
+            </g>
+
+            <!-- 標註指引線（與四個四角貼紙連接） -->
+            <g stroke="#232323" stroke-width="1.6" stroke-dasharray="3 2" fill="none">
+              <!-- 天然太陽眼鏡 -> 眼圈 -->
+              <polyline points="145,56 175,104" />
+              <circle cx="175" cy="104" r="3.5" fill="#F6D66D" stroke="#232323" stroke-width="1.5" stroke-dasharray="none" />
+
+              <!-- 太陽能小肚肚 -> 腹部 -->
+              <polyline points="286,58 250,214 214,222" />
+              <circle cx="214" cy="222" r="3.5" fill="#F28C6A" stroke="#232323" stroke-width="1.5" stroke-dasharray="none" />
+
+              <!-- 挖洞小怪手 -> 前爪 -->
+              <polyline points="118,342 173,226" />
+              <circle cx="173" cy="226" r="3.5" fill="#7EB8DA" stroke="#232323" stroke-width="1.5" stroke-dasharray="none" />
+
+              <!-- 平衡用第三隻腳 -> 尾巴 -->
+              <polyline points="325,342 308,314" />
+              <circle cx="308" cy="314" r="3.5" fill="#E3EEDC" stroke="#232323" stroke-width="1.5" stroke-dasharray="none" />
+            </g>
+          </svg>
+
+          <!-- 四個直角特徵小貼紙 -->
+          <div class="callout c-glasses">
+            <span class="callout-title">1. 天然太陽眼鏡</span>
+            <p class="callout-desc">黑黑眼圈擋住沙漠強光，抬頭找老鷹也不會刺眼！</p>
+          </div>
+
+          <div class="callout c-belly">
+            <span class="callout-title">2. 太陽能小肚肚</span>
+            <p class="callout-desc">肚子毛少露深色皮膚，早起站著曬太陽迅速充電暖身！</p>
+          </div>
+
+          <div class="callout c-claws">
+            <span class="callout-title">3. 挖洞小怪手</span>
+            <p class="callout-desc">約 2 公分長彎曲強爪，挖隧道、抓蟲蟲超拿手！</p>
+          </div>
+
+          <div class="callout c-tail">
+            <span class="callout-title">4. 平衡第三隻腳</span>
+            <p class="callout-desc">黑尖細長尾撐住身體，直立站崗穩穩不晃動！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：狐獴小檔案 -->
+      <article class="panel">
+        <div class="panel-header ph-sky">
+          <span>狐獴小檔案</span>
+          <span class="panel-en">PROFILE</span>
+        </div>
+
+        <div class="profile-body">
+          <div class="fact-item">
+            <span class="fact-badge">分類</span>
+            <p class="fact-text"><strong>食肉目・獴科・細尾獴屬</strong><br />雖然名字有個「狐」，其實跟狐狸和貓咪都沒有親戚關係喔！</p>
+          </div>
+
+          <div class="fact-item">
+            <span class="fact-badge b-lemon">老家</span>
+            <p class="fact-text"><strong>非洲南部沙漠＆乾旱區</strong><br />主要住在喀拉哈里沙漠一帶，超習慣乾爽又有太陽的生活。</p>
+          </div>
+
+          <div class="fact-item">
+            <span class="fact-badge b-peach">體型</span>
+            <p class="fact-text"><strong>頭軀幹 25～35 cm｜尾 17.5～25 cm</strong><br />平均體重約 <strong>720～731 克</strong>，身材嬌小輕巧又靈活！</p>
+          </div>
+
+          <div class="fact-item">
+            <span class="fact-badge b-sky">作息</span>
+            <p class="fact-text"><strong>標準晝行性乖寶寶</strong><br />日出而作、日落而息，太陽下山就乖乖回地洞睡覺。</p>
+          </div>
+
+          <!-- 可愛比擬貼紙 -->
+          <div class="scale-strip">
+            <svg width="38" height="44" viewBox="0 0 38 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="12" y="2" width="14" height="6" fill="#7EB8DA" stroke="#232323" stroke-width="1.6" />
+              <rect x="7" y="8" width="24" height="33" fill="#FFFDF8" stroke="#232323" stroke-width="1.8" />
+              <rect x="7" y="18" width="24" height="12" fill="#E3EEDC" stroke="#232323" stroke-width="1.4" />
+              <text x="19" y="27" text-anchor="middle" font-size="8" font-weight="900" fill="#232323">720g</text>
+            </svg>
+            <p>抱起來的重量，大約就跟<strong>一瓶大罐礦泉水</strong>差不多重喔！</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 下半部：超級團結的大家庭 ＋ 沙漠美食家 & 隱藏秘密 -->
+    <section class="row-bottom">
+      <!-- 左：大家庭 -->
+      <article class="panel">
+        <div class="panel-header ph-caramel">
+          <span>超級團結的大家庭</span>
+          <span class="panel-en">FAMILY &amp; TEAMWORK</span>
+        </div>
+
+        <div class="module-content">
+          <!-- 可愛地底豪宅與哨兵小圖解 SVG -->
+          <div class="burrow-box">
+            <svg viewBox="0 0 340 114" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <!-- 地表天空與地面 -->
+              <rect x="0" y="0" width="340" height="52" fill="#E3EEDC" />
+              <rect x="0" y="52" width="340" height="62" fill="#C99E6E" />
+              <line x1="0" y1="52" x2="340" y2="52" stroke="#232323" stroke-width="2" />
+
+              <!-- 地上放風哨兵 -->
+              <g transform="translate(52, 8)">
+                <rect x="4" y="26" width="14" height="18" fill="#DFC7A0" stroke="#232323" stroke-width="1.6" />
+                <circle cx="11" cy="20" r="8" fill="#EAD6B3" stroke="#232323" stroke-width="1.6" />
+                <circle cx="9" cy="19" r="2.2" fill="#232323" />
+                <circle cx="14" cy="19" r="2.2" fill="#232323" />
+              </g>
+              <!-- 警報對話泡泡 -->
+              <rect x="82" y="8" width="128" height="30" fill="#F6D66D" stroke="#232323" stroke-width="1.6" />
+              <text x="146" y="21" text-anchor="middle" font-size="9.5" font-weight="900" fill="#232323">空中／地面有不同警報聲！</text>
+              <text x="146" y="33" text-anchor="middle" font-size="8.5" font-weight="700" fill="#554F47">哨兵一叫，大家秒衝回洞！</text>
+
+              <!-- 空中老鷹小剪影 -->
+              <path d="M262 18 Q272 10 280 18 Q288 10 298 18" fill="none" stroke="#232323" stroke-width="2" stroke-linecap="round" />
+              <text x="280" y="34" text-anchor="middle" font-size="9" font-weight="900" fill="#F28C6A">警戒！</text>
+
+              <!-- 地底多入口網狀洞穴 -->
+              <path d="M36 52 L36 88 L296 88 L296 52 M162 52 L162 88" fill="none" stroke="#FAF7EE" stroke-width="22" stroke-linecap="square" />
+              <path d="M25 52 L25 99 L307 99 L307 52 M47 52 L47 77 L151 77 L151 52 M173 52 L173 77 L285 77 L285 52" fill="none" stroke="#232323" stroke-width="1.6" />
+
+              <!-- 洞裡互相關愛的兩隻小狐獴 -->
+              <circle cx="92" cy="88" r="7" fill="#EAD6B3" stroke="#232323" stroke-width="1.5" />
+              <circle cx="110" cy="88" r="7" fill="#D5B88E" stroke="#232323" stroke-width="1.5" />
+              <text x="101" y="75" text-anchor="middle" font-size="9" font-weight="900" fill="#F28C6A">♥ 理毛中</text>
+
+              <!-- 洞裡照顧寶寶 -->
+              <circle cx="222" cy="88" r="7.5" fill="#EAD6B3" stroke="#232323" stroke-width="1.5" />
+              <circle cx="238" cy="90" r="5" fill="#F2E3C6" stroke="#232323" stroke-width="1.5" />
+              <text x="230" y="75" text-anchor="middle" font-size="9" font-weight="900" fill="#5D8A58">全族當保母</text>
+            </svg>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="mini-dot"></span>地底大豪宅（幾隻～超過 40 隻）</div>
+              <p>超級愛熱鬧的群居動物！平常還會互相理毛增進感情；住在地底有多個出入口的網狀大洞穴，夜晚或遇險就躲進去。</p>
+            </div>
+
+            <div class="info-card c-caramel">
+              <div class="info-card-title"><span class="mini-dot"></span>輪流站崗好默契</div>
+              <p>大家低頭覓食時，總會有成員爬上高處當「哨兵」。面對空中飛來或地上跑來的天敵，還會發出不同的專屬警報聲！</p>
+            </div>
+
+            <div class="info-card c-sky">
+              <div class="info-card-title"><span class="mini-dot"></span>全族一起當保母</div>
+              <p>由最高階級的「當家母首領」與配偶主導繁殖；寶寶出生後，整個家族的成員都會輪流幫忙照顧、守護牠長大。</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：沙漠美食家 ＆ 隱藏小秘密 -->
+      <article class="panel">
+        <div class="panel-header ph-peach">
+          <span>沙漠美食家 ＆ 隱藏小秘密</span>
+          <span class="panel-en">DIET &amp; TRIVIA</span>
+        </div>
+
+        <div class="module-content">
+          <!-- 可愛食物與抗毒對比 SVG -->
+          <div class="diet-strip">
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag">抗毒 OK!</span>
+              <svg viewBox="0 0 130 82" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- 可愛小蟲與小蠍子 -->
+                <g transform="translate(18, 30)">
+                  <ellipse cx="18" cy="20" rx="14" ry="10" fill="#5D8A58" stroke="#232323" stroke-width="1.8" />
+                  <line x1="18" y1="10" x2="18" y2="30" stroke="#232323" stroke-width="1.5" />
+                  <path d="M8 14 L2 10 M8 26 L2 30 M28 14 L34 10 M28 26 L34 30" stroke="#232323" stroke-width="1.6" stroke-linecap="round" />
+                </g>
+                <g transform="translate(68, 22)">
+                  <!-- 可愛Q版蠍子 -->
+                  <ellipse cx="18" cy="34" rx="11" ry="8" fill="#F28C6A" stroke="#232323" stroke-width="1.8" />
+                  <path d="M27 32 Q40 26 38 12 Q36 5 28 8" fill="none" stroke="#232323" stroke-width="3" stroke-linecap="round" />
+                  <circle cx="27" cy="9" r="3" fill="#F6D66D" stroke="#232323" stroke-width="1.3" />
+                  <path d="M8 31 Q2 23 8 18 M12 28 Q8 20 14 17" fill="none" stroke="#232323" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <text x="65" y="76" text-anchor="middle" font-size="9.5" font-weight="900" fill="#232323">昆蟲・毒蠍都能吃！</text>
+              </svg>
+            </div>
+
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag warn">要閃遠!</span>
+              <svg viewBox="0 0 130 82" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- 可愛但劇毒的眼鏡蛇示意 -->
+                <path d="M36 56 Q65 66 94 56" fill="none" stroke="#232323" stroke-width="4" stroke-linecap="round" />
+                <path d="M58 56 Q56 32 65 24 Q74 32 72 56" fill="#A6754B" stroke="#232323" stroke-width="1.8" />
+                <ellipse cx="65" cy="24" rx="13" ry="11" fill="#F28C6A" stroke="#232323" stroke-width="1.8" />
+                <circle cx="60" cy="22" r="2" fill="#232323" />
+                <circle cx="70" cy="22" r="2" fill="#232323" />
+                <path d="M65 30 L65 38 M65 38 L62 41 M65 38 L68 41" stroke="#232323" stroke-width="1.4" />
+                <text x="65" y="76" text-anchor="middle" font-size="9.5" font-weight="900" fill="#232323">眼鏡蛇等劇毒蛇會中招</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="mini-dot"></span>不挑食小獵手</div>
+              <p>最愛吃昆蟲，也會吃蜘蛛、蜥蜴、蛇、鳥蛋、小型哺乳動物、植物與蕈類；靠著靈敏嗅覺把地底美味通通挖出來。</p>
+            </div>
+
+            <div class="info-card c-peach">
+              <div class="info-card-title"><span class="mini-dot"></span>自帶抗毒體質</div>
+              <p>對許多毒液有免疫力，連帶毒刺的蠍子都能安心吃下肚！（但遇上眼鏡蛇或鼓腹噝蝰這類劇毒蛇還是得小心閃避喔。）</p>
+            </div>
+
+            <!-- 大明星丁滿便利貼 -->
+            <div class="timon-note">
+              <span class="timon-badge">大明星本尊</span>
+              <p>迪士尼《獅子王》裡活潑搞笑的「<strong>丁滿</strong>」，原型就是可愛的狐獴喔！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. 固定底部收尾欄 -->
+    <footer class="footer-secret">
+      <span class="secret-pill">觀察小秘密</span>
+      <p class="secret-text">下次在動物園看到狐獴排排站曬太陽，記得仔細找找牠們的黑眼圈和撐地的細長尾巴——那正是牠們替全家族努力放風的超萌日常！</p>
+    </footer>
+
+  </main>
+</body>
+</html>

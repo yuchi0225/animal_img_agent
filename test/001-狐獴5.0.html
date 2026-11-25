@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NO.001 站高高小哨兵 ◆ 狐獴｜動物圖鑑海報</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap');
+
+    :root {
+      --bg-paper: #FAF7EE;
+      --bg-card: #FFFDF8;
+      --bg-glass: rgba(255, 253, 248, 0.94);
+      --ink: #232323;
+      --ink-sub: #554F47;
+      --line: #362E27;
+      --line-soft: rgba(54, 46, 39, 0.24);
+      --matcha: #5D8A58;
+      --sprout: #E3EEDC;
+      --caramel: #A6754B;
+      --peach: #F28C6A;
+      --lemon: #F6D66D;
+      --sky: #7EB8DA;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background-color: #DCD6C6;
+      font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 固定單頁 A4 直式畫布 */
+    .poster {
+      width: 794px;
+      height: 1123px;
+      background-color: var(--bg-paper);
+      background-image:
+        linear-gradient(180deg, rgba(126, 184, 218, 0.1) 0%, rgba(250, 247, 238, 0) 30%, rgba(246, 214, 109, 0.08) 100%);
+      padding: 20px 24px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 0 12px 32px rgba(35, 35, 35, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid var(--line-soft);
+      pointer-events: none;
+    }
+
+    /* === 固定左上角主標題區 === */
+    .header-area {
+      display: grid;
+      grid-template-columns: 1fr 246px;
+      gap: 12px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-block {
+      background: linear-gradient(135deg, #FFFDF8 0%, #F5F8FA 100%);
+      border: 1.5px solid var(--line);
+      border-left: 6px solid var(--matcha);
+      padding: 11px 16px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      line-height: 1.3;
+    }
+
+    .tag-no { background-color: var(--ink); color: var(--bg-paper); }
+    .tag-cat { background-color: var(--sprout); color: var(--ink); }
+    .tag-mood { background-color: #EBF5FB; color: #2D6282; border-color: #5495BA; }
+
+    .main-title {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 31px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .diamond-join {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 11px;
+      transform: rotate(45deg);
+      margin: 0 3px;
+      border: 1px solid var(--lemon);
+      flex-shrink: 0;
+    }
+
+    .diamond-join span {
+      transform: rotate(-45deg);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .title-accent {
+      color: #FFFFFF;
+      background-color: var(--matcha);
+      padding: 1px 10px 2px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--lemon);
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-sub);
+      letter-spacing: 0.04em;
+    }
+
+    .lead-box {
+      background: linear-gradient(160deg, #E3EEDC 0%, #FFFDF8 100%);
+      border: 1.5px solid var(--line);
+      border-top: 4px solid var(--peach);
+      padding: 10px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .lead-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--caramel);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .lead-text {
+      font-size: 11.4px;
+      line-height: 1.5;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* === 中段第一排：高畫質寫真主視覺 + 角色檔案 === */
+    .row-top {
+      display: grid;
+      grid-template-columns: 356px 1fr;
+      gap: 12px;
+      height: 462px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      border-bottom: 1.5px solid var(--line);
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .ph-green { background: linear-gradient(90deg, #5D8A58 0%, #719D6B 100%); color: #FFFFFF; }
+    .ph-sky { background: linear-gradient(90deg, #7EB8DA 0%, #A4CEE8 100%); color: var(--ink); }
+    .ph-caramel { background: linear-gradient(90deg, #A6754B 0%, #BF8E63 100%); color: #FFFFFF; }
+    .ph-peach { background: linear-gradient(90deg, #F28C6A 0%, #F7AC8E 100%); color: var(--ink); }
+
+    .panel-en {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+    }
+
+    .hero-stage {
+      position: relative;
+      flex: 1;
+      background-color: #EDE6D4;
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+      filter: saturate(1.06) contrast(1.03) sepia(0.05) brightness(1.02);
+    }
+
+    .hero-pointer-overlay {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .callout {
+      position: absolute;
+      background-color: var(--bg-glass);
+      border: 1.2px solid var(--line);
+      padding: 4px 7px;
+      box-shadow: 0 3px 8px rgba(35, 35, 35, 0.16);
+    }
+
+    .callout-title {
+      display: inline-block;
+      font-size: 10.6px;
+      font-weight: 900;
+      padding: 1px 5px;
+      margin-bottom: 2px;
+      color: var(--ink);
+      border-left: 3px solid var(--ink);
+    }
+
+    .callout-desc {
+      font-size: 9.8px;
+      line-height: 1.32;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    .c-glasses { top: 8px; left: 8px; max-width: 118px; }
+    .c-glasses .callout-title { background-color: var(--lemon); }
+
+    .c-belly { top: 8px; right: 8px; max-width: 142px; }
+    .c-belly .callout-title { background-color: rgba(242, 140, 106, 0.38); border-left-color: var(--peach); }
+
+    .c-tail { top: 94px; right: 8px; max-width: 138px; }
+    .c-tail .callout-title { background-color: var(--sprout); border-left-color: var(--matcha); }
+
+    .c-claws { bottom: 8px; left: 8px; max-width: 146px; }
+    .c-claws .callout-title { background-color: rgba(126, 184, 218, 0.42); border-left-color: var(--sky); }
+
+    /* 右側角色檔案卡 */
+    .profile-body {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 6px;
+      background-color: var(--bg-card);
+    }
+
+    .fact-item {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 7px 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+    }
+
+    .fact-item.fi-lemon { border-left-color: var(--lemon); }
+    .fact-item.fi-peach { border-left-color: var(--peach); }
+    .fact-item.fi-sky { border-left-color: var(--sky); }
+
+    .fact-badge {
+      flex-shrink: 0;
+      width: 44px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 2px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+    }
+
+    .fact-badge.b-sky { background-color: rgba(126, 184, 218, 0.35); }
+    .fact-badge.b-lemon { background-color: rgba(246, 214, 109, 0.6); }
+    .fact-badge.b-peach { background-color: rgba(242, 140, 106, 0.38); }
+
+    .fact-text {
+      font-size: 11.4px;
+      line-height: 1.45;
+      color: var(--ink);
+    }
+
+    .fact-text strong {
+      font-weight: 700;
+      color: #1A1714;
+      background: linear-gradient(transparent 66%, rgba(246, 214, 109, 0.72) 66%);
+    }
+
+    .scale-strip {
+      border: 1px solid var(--caramel);
+      background: linear-gradient(90deg, #FAF4E6 0%, #FFFDF8 100%);
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .scale-strip p {
+      font-size: 11.2px;
+      line-height: 1.42;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    /* === 中段第二排：雙欄圖鑑模組 === */
+    .row-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .module-content {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .burrow-box {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      height: 118px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .info-card {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6px 9px;
+    }
+
+    .info-card.c-caramel { border-left-color: var(--caramel); }
+    .info-card.c-peach { border-left-color: var(--peach); }
+    .info-card.c-sky { border-left-color: var(--sky); }
+
+    .info-card-title {
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+    }
+
+    .diamond-bullet {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--caramel);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .info-card p {
+      font-size: 11px;
+      line-height: 1.42;
+      color: var(--ink-sub);
+    }
+
+    .diet-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      height: 108px;
+    }
+
+    .diet-mini-panel {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diet-mini-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 9.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+      z-index: 2;
+    }
+
+    .diet-mini-tag.warn { background-color: rgba(242, 140, 106, 0.48); }
+
+    .timon-note {
+      background: linear-gradient(90deg, #FBF0C4 0%, #FFF8DE 100%);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--lemon);
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .timon-badge {
+      flex-shrink: 0;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 3px 7px;
+      letter-spacing: 0.06em;
+    }
+
+    .timon-note p {
+      font-size: 11.2px;
+      line-height: 1.4;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* === 固定底部收尾欄 === */
+    .footer-secret {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+      border: 1px solid var(--ink);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .secret-pill {
+      flex-shrink: 0;
+      background-color: var(--lemon);
+      color: var(--ink);
+      font-size: 11.5px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border: 1px solid var(--bg-paper);
+      letter-spacing: 0.08em;
+    }
+
+    .secret-text {
+      font-size: 11.6px;
+      line-height: 1.42;
+      font-weight: 400;
+    }
+
+    @media print {
+      body { background: none; padding: 0; min-height: auto; }
+      .poster { box-shadow: none; border: none; width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <!-- 1. 固定左上角主標題區 -->
+    <header class="header-area">
+      <section class="title-block">
+        <div>
+          <div class="tag-row">
+            <span class="tag tag-no">NO.001</span>
+            <span class="tag tag-cat">動物圖鑑</span>
+            <span class="tag tag-mood">非洲沙漠小哨兵</span>
+          </div>
+          <h1 class="main-title">
+            <span>站高高小哨兵</span>
+            <span class="diamond-join"><span>◆</span></span>
+            <span class="title-accent">狐獴</span>
+          </h1>
+        </div>
+        <p class="subtitle">Meerkat — Suricata suricatta（又稱細尾獴）</p>
+      </section>
+
+      <aside class="lead-box">
+        <span class="lead-label">◆ INTRO / 認識新朋友</span>
+        <p class="lead-text">你看過兩隻腳站得直挺挺、一臉認真東張西望的小傢伙嗎？牠們就是自帶太陽眼鏡的超萌沙漠守望員！</p>
+      </aside>
+    </header>
+
+    <!-- 2. 上半部：精修寫真主視覺 + 基本小檔案 -->
+    <section class="row-top">
+      <article class="panel">
+        <div class="panel-header ph-green">
+          <span>全身都是可愛小機關！</span>
+          <span class="panel-en">FEATURE GUIDE</span>
+        </div>
+
+        <div class="hero-stage">
+          <!-- 精修裁切後的高解析度雙狐獴寫真圖 -->
+          <img class="hero-photo" src="assets/001-狐獴-photo.jpg" alt="站立的成年狐獴與小狐獴寶寶" />
+
+          <!-- 精準指向真實狐獴身體器官的細緻標註線 -->
+          <svg class="hero-pointer-overlay" viewBox="0 0 353 426" xmlns="http://www.w3.org/2000/svg">
+            <g stroke="#FFFDF8" stroke-width="2.6" fill="none" opacity="0.85">
+              <polyline points="116,58 141,66" />
+              <polyline points="232,64 204,152 148,224" />
+              <polyline points="338,152 338,380 322,392" />
+              <polyline points="110,368 141,286" />
+            </g>
+            <g stroke="#232323" stroke-width="1.3" fill="none">
+              <!-- 1. 天然太陽眼鏡 -> 黑眼圈 -->
+              <polyline points="116,58 141,66" />
+              <rect x="138" y="63" width="6" height="6" transform="rotate(45 141 66)" fill="#F6D66D" stroke="#232323" stroke-width="1.1" />
+
+              <!-- 2. 太陽能小肚肚 -> 腹部受光面 -->
+              <polyline points="232,64 204,152 148,224" />
+              <rect x="145" y="221" width="6" height="6" transform="rotate(45 148 224)" fill="#F28C6A" stroke="#232323" stroke-width="1.1" />
+
+              <!-- 4. 平衡第三隻腳 -> 右下黑尖長尾 -->
+              <polyline points="338,152 338,380 322,392" />
+              <rect x="319" y="389" width="6" height="6" transform="rotate(45 322 392)" fill="#E3EEDC" stroke="#232323" stroke-width="1.1" />
+
+              <!-- 3. 挖洞小怪手 -> 胸前彎曲爪子 -->
+              <polyline points="110,368 141,286" />
+              <rect x="138" y="283" width="6" height="6" transform="rotate(45 141 286)" fill="#7EB8DA" stroke="#232323" stroke-width="1.1" />
+            </g>
+          </svg>
+
+          <!-- 四個角落圖鑑標註卡（精準避開雙狐獴主體） -->
+          <div class="callout c-glasses">
+            <span class="callout-title">1. 天然太陽眼鏡</span>
+            <p class="callout-desc">黑眼圈擋住強光，抬頭找老鷹不刺眼！</p>
+          </div>
+
+          <div class="callout c-belly">
+            <span class="callout-title">2. 太陽能小肚肚</span>
+            <p class="callout-desc">肚子毛少露深色皮膚，站著曬太陽快速暖身！</p>
+          </div>
+
+          <div class="callout c-tail">
+            <span class="callout-title">4. 平衡第三隻腳</span>
+            <p class="callout-desc">黑尖細長尾撐住身體，站崗穩穩不晃動！</p>
+          </div>
+
+          <div class="callout c-claws">
+            <span class="callout-title">3. 挖洞小怪手</span>
+            <p class="callout-desc">約 2 cm 彎曲強爪，挖隧道抓蟲超拿手！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：狐獴小檔案 -->
+      <article class="panel">
+        <div class="panel-header ph-sky">
+          <span>狐獴小檔案</span>
+          <span class="panel-en">DATA FILE</span>
+        </div>
+
+        <div class="profile-body">
+          <div class="fact-item">
+            <span class="fact-badge">分類</span>
+            <p class="fact-text"><strong>食肉目・獴科・細尾獴屬</strong><br />雖然名字有個「狐」，其實跟狐狸和貓咪都沒有親戚關係喔！</p>
+          </div>
+
+          <div class="fact-item fi-lemon">
+            <span class="fact-badge b-lemon">老家</span>
+            <p class="fact-text"><strong>非洲南部沙漠＆乾旱區</strong><br />主要住在喀拉哈里沙漠一帶，超習慣乾爽又有太陽的生活。</p>
+          </div>
+
+          <div class="fact-item fi-peach">
+            <span class="fact-badge b-peach">體型</span>
+            <p class="fact-text"><strong>頭軀幹 25～35 cm｜尾 17.5～25 cm</strong><br />平均體重約 <strong>720～731 克</strong>，身材嬌小輕巧又靈活！</p>
+          </div>
+
+          <div class="fact-item fi-sky">
+            <span class="fact-badge b-sky">作息</span>
+            <p class="fact-text"><strong>標準晝行性乖寶寶</strong><br />日出而作、日落而息，太陽下山就乖乖回地洞睡覺。</p>
+          </div>
+
+          <div class="scale-strip">
+            <svg width="36" height="42" viewBox="0 0 38 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="12" y="2" width="14" height="6" fill="#7EB8DA" stroke="#362E27" stroke-width="1.2" />
+              <rect x="7" y="8" width="24" height="33" fill="#FFFDF8" stroke="#362E27" stroke-width="1.3" />
+              <rect x="7" y="18" width="24" height="12" fill="#E3EEDC" stroke="#362E27" stroke-width="1" />
+              <text x="19" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#232323">720g</text>
+            </svg>
+            <p>抱起來的重量，大約就跟<strong>一瓶大罐礦泉水</strong>差不多重喔！</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 下半部：雙欄圖鑑模組 -->
+    <section class="row-bottom">
+      <!-- 左：大家庭 -->
+      <article class="panel">
+        <div class="panel-header ph-caramel">
+          <span>超級團結的大家庭</span>
+          <span class="panel-en">FAMILY &amp; BOND</span>
+        </div>
+
+        <div class="module-content">
+          <div class="burrow-box">
+            <svg viewBox="0 0 340 116" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="miniSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#7EB8DA" />
+                  <stop offset="100%" stop-color="#E8F4FA" />
+                </linearGradient>
+                <linearGradient id="miniEarth" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#C89869" />
+                  <stop offset="100%" stop-color="#8C603B" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="340" height="52" fill="url(#miniSky)" />
+              <rect x="0" y="52" width="340" height="64" fill="url(#miniEarth)" />
+              <line x1="0" y1="52" x2="340" y2="52" stroke="#362E27" stroke-width="1.4" />
+
+              <!-- 地上放風哨兵 -->
+              <g transform="translate(44, 10)">
+                <path d="M8 24 Q6 36 8 42 L18 42 Q20 36 18 24 Z" fill="#DFBC8B" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="6" cy="18" rx="3" ry="3.8" fill="#241B16" />
+                <ellipse cx="20" cy="18" rx="3" ry="3.8" fill="#241B16" />
+                <ellipse cx="13" cy="18" rx="8.5" ry="7.8" fill="#F2DEC0" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="10" cy="17.5" rx="3" ry="2.5" fill="#241B16" />
+                <ellipse cx="16.5" cy="17.5" rx="3" ry="2.5" fill="#241B16" />
+                <circle cx="9.8" cy="17" r="1.1" fill="#FFFFFF" />
+                <circle cx="16.2" cy="17" r="1.1" fill="#FFFFFF" />
+                <polygon points="12.5,20 15.5,20 14,22" fill="#241B16" />
+              </g>
+
+              <polygon points="80,8 228,8 228,38 96,38 86,44 88,38 80,38" fill="rgba(255,253,248,0.95)" stroke="#362E27" stroke-width="1.1" />
+              <text x="154" y="21" text-anchor="middle" font-size="9.5" font-weight="700" fill="#232323">空中／地面有不同警報聲！</text>
+              <text x="154" y="33" text-anchor="middle" font-size="8.4" font-weight="500" fill="#554F47">哨兵一叫，大家秒衝回洞！</text>
+
+              <!-- 空中老鷹遠影 -->
+              <path d="M262 19 Q272 11 280 19 Q288 11 298 19" fill="none" stroke="#362E27" stroke-width="1.6" stroke-linecap="round" />
+              <text x="280" y="35" text-anchor="middle" font-size="9" font-weight="700" fill="#B84B2A">警戒天敵</text>
+
+              <!-- 地底多入口暖色大豪宅 -->
+              <path d="M36 52 L36 89 L298 89 L298 52 M162 52 L162 89" fill="none" stroke="#FAF7EE" stroke-width="23" stroke-linecap="square" />
+              <path d="M24 52 L24 101 L310 101 L310 52 M48 52 L48 77 L150 77 L150 52 M174 52 L174 77 L286 77 L286 52" fill="none" stroke="#362E27" stroke-width="1.2" />
+
+              <!-- 洞內互動 -->
+              <g transform="translate(80, 78)">
+                <ellipse cx="10" cy="11" rx="8" ry="7" fill="#F2DEC0" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="4" cy="9" rx="2" ry="2.5" fill="#241B16" />
+                <path d="M7 10 Q9 8 11 10 M12 10 Q14 8 16 10" fill="none" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="29" cy="11" rx="8" ry="7" fill="#DFBC8B" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="35" cy="9" rx="2" ry="2.5" fill="#241B16" />
+                <path d="M24 10 Q26 8 28 10 M29 10 Q31 8 33 10" fill="none" stroke="#362E27" stroke-width="1.1" />
+                <text x="20" y="-3" text-anchor="middle" font-size="8.8" font-weight="700" fill="#D46542">♥ 互相理毛中</text>
+              </g>
+
+              <g transform="translate(210, 78)">
+                <ellipse cx="12" cy="10" rx="8.5" ry="7.5" fill="#F2DEC0" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="5" cy="8" rx="2" ry="2.5" fill="#241B16" />
+                <circle cx="9.5" cy="9.5" r="1.4" fill="#241B16" />
+                <circle cx="15" cy="9.5" r="1.4" fill="#241B16" />
+                <ellipse cx="30" cy="12" rx="6" ry="5" fill="#FFF2DA" stroke="#362E27" stroke-width="1.1" />
+                <path d="M27 12 Q29.5 14 32 12" fill="none" stroke="#362E27" stroke-width="1.1" />
+                <text x="21" y="-3" text-anchor="middle" font-size="8.8" font-weight="700" fill="#467042">全族當保母 ◆</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>地底大豪宅（幾隻～超過 40 隻）</div>
+              <p>超級愛熱鬧的群居動物！平常還會互相理毛增進感情；住在地底有多個出入口的網狀大洞穴，夜晚或遇險就躲進去。</p>
+            </div>
+
+            <div class="info-card c-caramel">
+              <div class="info-card-title"><span class="diamond-bullet"></span>輪流站崗好默契</div>
+              <p>大家低頭覓食時，總會有成員爬上高處當「哨兵」。面對空中飛來或地上跑來的天敵，還會發出不同的專屬警報聲！</p>
+            </div>
+
+            <div class="info-card c-sky">
+              <div class="info-card-title"><span class="diamond-bullet"></span>全族一起當保母</div>
+              <p>由最高階級的「當家母首領」與配偶主導繁殖；寶寶出生後，整個家族的成員都會輪流幫忙照顧、守護牠長大。</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：沙漠美食家 ＆ 隱藏小秘密 -->
+      <article class="panel">
+        <div class="panel-header ph-peach">
+          <span>沙漠美食家 ＆ 隱藏小秘密</span>
+          <span class="panel-en">DIET &amp; TRIVIA</span>
+        </div>
+
+        <div class="module-content">
+          <div class="diet-strip">
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag">抗毒 OK</span>
+              <svg viewBox="0 0 136 86" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="86" fill="#FAFDF6" />
+                <polygon points="90,15 113,23 109,47 90,57 71,47 67,23" fill="#E3EEDC" stroke="#5D8A58" stroke-width="1.1" />
+                <g transform="translate(18, 29)">
+                  <ellipse cx="18" cy="20" rx="13" ry="10" fill="#5D8A58" stroke="#362E27" stroke-width="1.2" />
+                  <ellipse cx="15" cy="17" rx="5" ry="2.5" fill="#89B983" opacity="0.7" />
+                  <path d="M8 14 L2 10 M8 26 L2 30 M28 14 L34 10 M28 26 L34 30" stroke="#362E27" stroke-width="1.3" stroke-linecap="round" />
+                </g>
+                <g transform="translate(69, 21)">
+                  <ellipse cx="18" cy="34" rx="11" ry="8" fill="#F28C6A" stroke="#362E27" stroke-width="1.2" />
+                  <path d="M27 32 Q40 26 38 12 Q36 5 28 8" fill="none" stroke="#362E27" stroke-width="2.2" stroke-linecap="round" />
+                  <circle cx="27" cy="9" r="3" fill="#F6D66D" stroke="#362E27" stroke-width="1.1" />
+                  <path d="M8 31 Q2 23 8 18 M12 28 Q8 20 14 17" fill="none" stroke="#362E27" stroke-width="1.3" stroke-linecap="round" />
+                </g>
+                <text x="68" y="79" text-anchor="middle" font-size="9.4" font-weight="700" fill="#232323">昆蟲・毒蠍都能吃！</text>
+              </svg>
+            </div>
+
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag warn">要閃遠</span>
+              <svg viewBox="0 0 136 86" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="86" fill="#FFF9F6" />
+                <path d="M36 56 Q68 65 100 56" fill="none" stroke="#362E27" stroke-width="3" stroke-linecap="round" />
+                <path d="M60 56 Q58 32 68 23 Q78 32 76 56" fill="#A6754B" stroke="#362E27" stroke-width="1.2" />
+                <ellipse cx="68" cy="23" rx="13" ry="10.5" fill="#F28C6A" stroke="#362E27" stroke-width="1.2" />
+                <polygon points="59,20 65,23 60,25" fill="#232323" />
+                <polygon points="77,20 71,23 76,25" fill="#232323" />
+                <path d="M68 29 L68 38 M68 38 L65 41 M68 38 L71 41" stroke="#362E27" stroke-width="1.2" />
+                <text x="68" y="79" text-anchor="middle" font-size="9.4" font-weight="700" fill="#232323">眼鏡蛇等劇毒蛇會中招</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>不挑食小獵手</div>
+              <p>最愛吃昆蟲，也會吃蜘蛛、蜥蜴、蛇、鳥蛋、小型哺乳動物、植物與蕈類；靠著靈敏嗅覺把地底美味通通挖出來。</p>
+            </div>
+
+            <div class="info-card c-peach">
+              <div class="info-card-title"><span class="diamond-bullet"></span>自帶抗毒體質</div>
+              <p>對許多毒液有免疫力，連帶毒刺的蠍子都能安心吃下肚！（但遇上眼鏡蛇或鼓腹噝蝰這類劇毒蛇還是得小心閃避喔。）</p>
+            </div>
+
+            <div class="timon-note">
+              <span class="timon-badge">大明星本尊</span>
+              <p>迪士尼《獅子王》裡活潑搞笑的「<strong>丁滿</strong>」，原型就是可愛的狐獴喔！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. 固定底部收尾欄 -->
+    <footer class="footer-secret">
+      <span class="secret-pill">觀察小秘密</span>
+      <p class="secret-text">下次在動物園看到狐獴排排站曬太陽，記得仔細找找牠們的黑眼圈和撐地的細長尾巴——那正是牠們替全家族努力放風的超萌日常！</p>
+    </footer>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NO.001 站高高小哨兵 ◆ 狐獴｜動物圖鑑海報</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Noto+Serif+TC:wght@700;900&display=swap');
+
+    :root {
+      --bg-paper: #FAF7EE;
+      --bg-card: #FFFDF8;
+      --bg-glass: rgba(255, 253, 248, 0.94);
+      --ink: #232323;
+      --ink-sub: #554F47;
+      --line: #362E27;
+      --line-soft: rgba(54, 46, 39, 0.24);
+      --matcha: #5D8A58;
+      --sprout: #E3EEDC;
+      --caramel: #A6754B;
+      --peach: #F28C6A;
+      --lemon: #F6D66D;
+      --sky: #7EB8DA;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background-color: #DCD6C6;
+      font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 固定單頁 A4 直式畫布 */
+    .poster {
+      width: 794px;
+      height: 1123px;
+      background-color: var(--bg-paper);
+      background-image:
+        linear-gradient(180deg, rgba(126, 184, 218, 0.12) 0%, rgba(250, 247, 238, 0) 30%, rgba(246, 214, 109, 0.08) 100%);
+      padding: 20px 24px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 0 12px 32px rgba(35, 35, 35, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid var(--line-soft);
+      pointer-events: none;
+    }
+
+    /* === 固定左上角主標題區 === */
+    .header-area {
+      display: grid;
+      grid-template-columns: 1fr 246px;
+      gap: 12px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-block {
+      background: linear-gradient(135deg, #FFFDF8 0%, #F5F8FA 100%);
+      border: 1.5px solid var(--line);
+      border-left: 6px solid var(--matcha);
+      padding: 11px 16px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      line-height: 1.3;
+    }
+
+    .tag-no { background-color: var(--ink); color: var(--bg-paper); }
+    .tag-cat { background-color: var(--sprout); color: var(--ink); }
+    .tag-mood { background-color: #EBF5FB; color: #2D6282; border-color: #5495BA; }
+
+    .main-title {
+      font-family: 'Noto Sans TC', sans-serif;
+      font-size: 31px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.03em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .diamond-join {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 11px;
+      transform: rotate(45deg);
+      margin: 0 3px;
+      border: 1px solid var(--lemon);
+      flex-shrink: 0;
+    }
+
+    .diamond-join span {
+      transform: rotate(-45deg);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .title-accent {
+      color: #FFFFFF;
+      background-color: var(--matcha);
+      padding: 1px 10px 2px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--lemon);
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-sub);
+      letter-spacing: 0.04em;
+    }
+
+    .lead-box {
+      background: linear-gradient(160deg, #E3EEDC 0%, #FFFDF8 100%);
+      border: 1.5px solid var(--line);
+      border-top: 4px solid var(--peach);
+      padding: 10px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .lead-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--caramel);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .lead-text {
+      font-size: 11.4px;
+      line-height: 1.5;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* === 中段第一排：高精細主視覺 + 角色檔案 === */
+    .row-top {
+      display: grid;
+      grid-template-columns: 452px 1fr;
+      gap: 12px;
+      height: 456px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      border-bottom: 1.5px solid var(--line);
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+    }
+
+    .ph-green { background: linear-gradient(90deg, #5D8A58 0%, #719D6B 100%); color: #FFFFFF; }
+    .ph-sky { background: linear-gradient(90deg, #7EB8DA 0%, #A4CEE8 100%); color: var(--ink); }
+    .ph-caramel { background: linear-gradient(90deg, #A6754B 0%, #BF8E63 100%); color: #FFFFFF; }
+    .ph-peach { background: linear-gradient(90deg, #F28C6A 0%, #F7AC8E 100%); color: var(--ink); }
+
+    .panel-en {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+    }
+
+    .hero-stage {
+      position: relative;
+      flex: 1;
+      background-color: #7EB8DA;
+      overflow: hidden;
+    }
+
+    .hero-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .callout {
+      position: absolute;
+      background-color: var(--bg-glass);
+      border: 1.2px solid var(--line);
+      padding: 5px 8px;
+      box-shadow: 0 3px 8px rgba(35, 35, 35, 0.14);
+    }
+
+    .callout-title {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 1px 6px;
+      margin-bottom: 2px;
+      color: var(--ink);
+      border-left: 3px solid var(--ink);
+    }
+
+    .callout-desc {
+      font-size: 10.2px;
+      line-height: 1.35;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    .c-glasses { top: 10px; left: 10px; max-width: 162px; }
+    .c-glasses .callout-title { background-color: var(--lemon); }
+
+    .c-belly { top: 10px; right: 10px; max-width: 162px; }
+    .c-belly .callout-title { background-color: rgba(242, 140, 106, 0.38); border-left-color: var(--peach); }
+
+    .c-claws { bottom: 10px; left: 10px; max-width: 168px; }
+    .c-claws .callout-title { background-color: rgba(126, 184, 218, 0.42); border-left-color: var(--sky); }
+
+    .c-tail { bottom: 10px; right: 10px; max-width: 168px; }
+    .c-tail .callout-title { background-color: var(--sprout); border-left-color: var(--matcha); }
+
+    /* 右側角色檔案卡 */
+    .profile-body {
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 6px;
+      background-color: var(--bg-card);
+    }
+
+    .fact-item {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6.5px 9px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .fact-item.fi-lemon { border-left-color: var(--lemon); }
+    .fact-item.fi-peach { border-left-color: var(--peach); }
+    .fact-item.fi-sky { border-left-color: var(--sky); }
+
+    .fact-badge {
+      flex-shrink: 0;
+      width: 42px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 2px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+    }
+
+    .fact-badge.b-sky { background-color: rgba(126, 184, 218, 0.35); }
+    .fact-badge.b-lemon { background-color: rgba(246, 214, 109, 0.6); }
+    .fact-badge.b-peach { background-color: rgba(242, 140, 106, 0.38); }
+
+    .fact-text {
+      font-size: 11.3px;
+      line-height: 1.43;
+      color: var(--ink);
+    }
+
+    .fact-text strong {
+      font-weight: 700;
+      color: #1A1714;
+      background: linear-gradient(transparent 66%, rgba(246, 214, 109, 0.72) 66%);
+    }
+
+    .scale-strip {
+      border: 1px solid var(--caramel);
+      background: linear-gradient(90deg, #FAF4E6 0%, #FFFDF8 100%);
+      padding: 6px 9px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .scale-strip p {
+      font-size: 11px;
+      line-height: 1.4;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    /* === 中段第二排：雙欄圖鑑模組 === */
+    .row-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .module-content {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .burrow-box {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      height: 120px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .info-card {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6px 9px;
+    }
+
+    .info-card.c-caramel { border-left-color: var(--caramel); }
+    .info-card.c-peach { border-left-color: var(--peach); }
+    .info-card.c-sky { border-left-color: var(--sky); }
+
+    .info-card-title {
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+    }
+
+    .diamond-bullet {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--caramel);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .info-card p {
+      font-size: 11px;
+      line-height: 1.43;
+      color: var(--ink-sub);
+    }
+
+    .diet-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      height: 110px;
+    }
+
+    .diet-mini-panel {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diet-mini-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 9.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+      z-index: 2;
+    }
+
+    .diet-mini-tag.warn { background-color: rgba(242, 140, 106, 0.48); }
+
+    .timon-note {
+      background: linear-gradient(90deg, #FBF0C4 0%, #FFF8DE 100%);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--lemon);
+      padding: 7px 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .timon-badge {
+      flex-shrink: 0;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 3px 7px;
+      letter-spacing: 0.06em;
+    }
+
+    .timon-note p {
+      font-size: 11.2px;
+      line-height: 1.4;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* === 固定底部收尾欄 === */
+    .footer-secret {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+      border: 1px solid var(--ink);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .secret-pill {
+      flex-shrink: 0;
+      background-color: var(--lemon);
+      color: var(--ink);
+      font-size: 11.5px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border: 1px solid var(--bg-paper);
+      letter-spacing: 0.08em;
+    }
+
+    .secret-text {
+      font-size: 11.6px;
+      line-height: 1.42;
+      font-weight: 400;
+    }
+
+    @media print {
+      body { background: none; padding: 0; min-height: auto; }
+      .poster { box-shadow: none; border: none; width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <!-- 1. 固定左上角主標題區 -->
+    <header class="header-area">
+      <section class="title-block">
+        <div>
+          <div class="tag-row">
+            <span class="tag tag-no">NO.001</span>
+            <span class="tag tag-cat">動物圖鑑</span>
+            <span class="tag tag-mood">非洲沙漠小哨兵</span>
+          </div>
+          <h1 class="main-title">
+            <span>站高高小哨兵</span>
+            <span class="diamond-join"><span>◆</span></span>
+            <span class="title-accent">狐獴</span>
+          </h1>
+        </div>
+        <p class="subtitle">Meerkat — Suricata suricatta（又稱細尾獴）</p>
+      </section>
+
+      <aside class="lead-box">
+        <span class="lead-label">◆ INTRO / 認識新朋友</span>
+        <p class="lead-text">你看過兩隻腳站得直挺挺、一臉認真東張西望的小傢伙嗎？牠們就是自帶太陽眼鏡的超萌沙漠守望員！</p>
+      </aside>
+    </header>
+
+    <!-- 2. 上半部：高精細立體感 3/4 視角可愛狐獴主視覺 + 小檔案 -->
+    <section class="row-top">
+      <article class="panel">
+        <div class="panel-header ph-green">
+          <span>全身都是可愛小機關！</span>
+          <span class="panel-en">FEATURE ILLUSTRATION</span>
+        </div>
+
+        <div class="hero-stage">
+          <!-- 高精細立體毛髮感漸層＋動物方城市神韻 3/4 視角狐獴插畫 -->
+          <svg class="hero-svg" viewBox="0 0 448 418" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- 動物方城市式亮麗晴空漸層 -->
+              <linearGradient id="zooSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#4A8CC2" />
+                <stop offset="38%" stop-color="#7EB8DA" />
+                <stop offset="72%" stop-color="#DDEEF7" />
+                <stop offset="100%" stop-color="#FAF0D2" />
+              </linearGradient>
+
+              <radialGradient id="warmSun" cx="68%" cy="32%" r="36%">
+                <stop offset="0%" stop-color="#FFFDF0" stop-opacity="0.95" />
+                <stop offset="35%" stop-color="#F6D66D" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#F6D66D" stop-opacity="0" />
+              </radialGradient>
+
+              <!-- 3D感毛皮立體光影漸層 -->
+              <radialGradient id="head3D" cx="56%" cy="38%" r="62%">
+                <stop offset="0%" stop-color="#FFF5E1" />
+                <stop offset="48%" stop-color="#E8C99B" />
+                <stop offset="82%" stop-color="#C69761" />
+                <stop offset="100%" stop-color="#9A6D42" />
+              </radialGradient>
+
+              <linearGradient id="body3D" x1="0" y1="0" x2="1" y2="0.2">
+                <stop offset="0%" stop-color="#A87849" />
+                <stop offset="28%" stop-color="#DFBC8B" />
+                <stop offset="68%" stop-color="#F5E3C3" />
+                <stop offset="90%" stop-color="#D8B17E" />
+                <stop offset="100%" stop-color="#9E6E42" />
+              </linearGradient>
+
+              <linearGradient id="chestCream" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFF9EC" />
+                <stop offset="60%" stop-color="#F2DFBE" />
+                <stop offset="100%" stop-color="#D2AE81" />
+              </linearGradient>
+
+              <linearGradient id="muzzle3D" x1="0.2" y1="0" x2="0.8" y2="1">
+                <stop offset="0%" stop-color="#FFFDF8" />
+                <stop offset="65%" stop-color="#F2DEC0" />
+                <stop offset="100%" stop-color="#CAA376" />
+              </linearGradient>
+
+              <radialGradient id="irisZootopia" cx="40%" cy="36%" r="65%">
+                <stop offset="0%" stop-color="#F6C967" />
+                <stop offset="45%" stop-color="#B56A2B" />
+                <stop offset="85%" stop-color="#5B2D12" />
+                <stop offset="100%" stop-color="#2D1508" />
+              </radialGradient>
+
+              <linearGradient id="logWood" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#C89362" />
+                <stop offset="22%" stop-color="#A6754B" />
+                <stop offset="75%" stop-color="#7B512F" />
+                <stop offset="100%" stop-color="#573820" />
+              </linearGradient>
+
+              <linearGradient id="desertSand" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E7C896" />
+                <stop offset="100%" stop-color="#C3945E" />
+              </linearGradient>
+
+              <filter id="softShadow" x="-15%" y="-15%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#3E2A19" flood-opacity="0.25" />
+              </filter>
+            </defs>
+
+            <!-- 1. 明亮晴空背景與太陽柔光 -->
+            <rect x="0" y="0" width="448" height="418" fill="url(#zooSky)" />
+            <rect x="0" y="0" width="448" height="418" fill="url(#warmSun)" />
+
+            <!-- 立體棉花雲朵 -->
+            <g opacity="0.92">
+              <path d="M24 128 C24 106 54 96 76 108 C92 84 134 86 148 110 C172 104 192 118 190 138 L20 138 Z" fill="#FFFFFF" />
+              <path d="M22 132 L188 132 C188 138 180 140 165 140 L34 140 C24 140 20 136 22 132 Z" fill="#D5E7F3" />
+
+              <path d="M254 146 C254 126 280 118 302 128 C318 106 358 108 372 130 C394 126 414 140 412 156 L250 156 Z" fill="#FFFFFF" />
+              <path d="M252 150 L410 150 C410 156 400 158 388 158 L264 158 C254 158 250 154 252 150 Z" fill="#DCEAF4" />
+            </g>
+
+            <!-- 遠空飛翔的小鳥剪影 -->
+            <path d="M332 82 Q339 74 344 81 Q350 74 358 79 Q349 83 344 85 Q338 83 332 82 Z" fill="#3B5B78" opacity="0.72" />
+
+            <!-- 遠景草原與喀拉哈里沙丘（層次遠景） -->
+            <path d="M0 264 Q90 248 185 262 T375 252 L448 258 L448 418 L0 418 Z" fill="#B5C99A" />
+            <!-- 遠景非洲金合歡剪影 -->
+            <g fill="#6E8F5E" opacity="0.65">
+              <rect x="64" y="232" width="4" height="28" />
+              <ellipse cx="66" cy="230" rx="22" ry="6" />
+              <rect x="378" y="228" width="3.5" height="26" />
+              <ellipse cx="380" cy="226" rx="18" ry="5" />
+            </g>
+            <path d="M0 284 Q130 268 265 286 T448 276 L448 418 L0 418 Z" fill="#89A86F" />
+            <path d="M0 304 Q155 292 310 308 T448 298 L448 418 L0 418 Z" fill="url(#desertSand)" />
+
+            <!-- 精緻寫實感枯木與草叢 -->
+            <g filter="url(#softShadow)">
+              <path d="M58 304 Q220 296 382 304 L394 334 Q220 328 46 334 Z" fill="url(#logWood)" stroke="#4A301B" stroke-width="1.2" />
+              <!-- 枯木頂部受光邊緣與木紋 -->
+              <path d="M62 305 Q220 297 380 305 L378 310 Q220 302 60 310 Z" fill="#DFB07C" opacity="0.75" />
+              <path d="M84 316 Q165 312 248 317 M270 316 Q328 313 368 318 M104 325 Q195 322 292 326" fill="none" stroke="#4A301B" stroke-width="1.2" stroke-linecap="round" opacity="0.65" />
+              <!-- 枯木左側小裂紋 -->
+              <path d="M72 311 L96 314 L82 320" fill="none" stroke="#4A301B" stroke-width="1.1" opacity="0.7" />
+            </g>
+
+            <!-- 枯木旁抹茶綠草叢 -->
+            <g fill="#5D8A58" stroke="#364F33" stroke-width="0.9">
+              <path d="M66 333 Q54 314 48 302 Q62 312 72 332 Z" />
+              <path d="M74 333 Q72 310 78 296 Q82 314 82 333 Z" fill="#77A370" />
+              <path d="M358 332 Q364 312 374 300 Q370 318 366 332 Z" />
+              <path d="M366 332 Q378 316 390 308 Q380 322 374 333 Z" fill="#77A370" />
+            </g>
+
+            <!-- ===== 主角：3/4視角動物方城市靈動神韻大狐獴 ===== -->
+            <g id="zootopia-adult-meerkat" filter="url(#softShadow)">
+              <!-- 1. 撐地平衡的細長尾巴（立體陰影＋黑色尾尖） -->
+              <path d="M226 276 Q268 304 308 314 Q320 317 316 323 Q298 326 264 314 Q236 302 216 288 Z" fill="url(#body3D)" stroke="#4A301B" stroke-width="1.2" />
+              <path d="M290 309 Q310 315 316 317 Q320 321 314 323 Q298 324 282 317 Z" fill="#2A1F1A" />
+
+              <!-- 2. 左後腿與右後腿（自然站姿） -->
+              <path d="M180 288 Q174 306 164 313 L194 313 Q196 300 198 288 Z" fill="#C49663" stroke="#4A301B" stroke-width="1.1" />
+              <path d="M214 288 Q216 302 212 313 L244 313 Q236 304 232 288 Z" fill="#DFBC8B" stroke="#4A301B" stroke-width="1.1" />
+              <!-- 腳趾細節 -->
+              <path d="M169 313 L169 309 M176 313 L176 308 M183 313 L183 309 M223 313 L223 309 M230 313 L230 308 M237 313 L237 309" stroke="#4A301B" stroke-width="1" stroke-linecap="round" />
+
+              <!-- 3. 身體主體（自然S曲線站立感＋毛絨輪廓小尖毛） -->
+              <path d="M182 158
+                       Q164 195 162 246
+                       L158 254 L163 262
+                       Q166 296 184 304
+                       L230 304
+                       Q246 292 244 252
+                       L248 244 L242 236
+                       Q236 190 222 158 Z"
+                    fill="url(#body3D)" stroke="#4A301B" stroke-width="1.2" stroke-linejoin="round" />
+
+              <!-- 背部褐色橫紋（保留真實狐獴特徵） -->
+              <path d="M165 204 Q178 201 188 206 M163 220 Q176 217 186 222 M162 236 Q175 233 185 238 M164 252 Q176 249 185 254" fill="none" stroke="#6E492D" stroke-width="2.2" stroke-linecap="round" opacity="0.82" />
+
+              <!-- 胸口淺奶油絨毛＋腹部太陽能深色皮膚區 -->
+              <path d="M188 164 Q182 204 186 238 Q206 244 226 236 Q230 198 218 164 Z" fill="url(#chestCream)" opacity="0.92" />
+              <!-- 腹部稀疏毛下的深色太陽能皮膚區 -->
+              <ellipse cx="206" cy="254" rx="19" ry="34" fill="#735747" opacity="0.78" />
+              <ellipse cx="208" cy="250" rx="11" ry="22" fill="#594033" opacity="0.55" />
+              <!-- 腹毛過渡絨毛絲 -->
+              <path d="M192 232 L195 238 M204 230 L206 237 M216 232 L214 238" stroke="#E8C99B" stroke-width="1.4" stroke-linecap="round" />
+
+              <!-- 4. 左臂（在胸前自然微彎，清楚展示約 2cm 長彎曲挖洞爪子！） -->
+              <path d="M180 170 Q168 198 178 220 Q186 226 196 222 Q200 214 192 206 Q186 194 188 176" fill="#D5AB77" stroke="#4A301B" stroke-width="1.2" />
+              <!-- 彎曲強壯前爪 -->
+              <path d="M186 222 Q188 232 183 235 M191 222 Q195 232 190 235 M196 219 Q201 228 197 231" fill="none" stroke="#2D2018" stroke-width="2" stroke-linecap="round" />
+
+              <!-- 5. 右臂（生動抬起扶胸/自信神態，呼應動物方城市角色活力！） -->
+              <path d="M224 168 Q242 188 232 212 Q222 222 210 216 Q206 208 214 202 Q220 194 216 176" fill="#F2DEC0" stroke="#4A301B" stroke-width="1.2" />
+              <path d="M210 214 Q204 222 206 226 M215 217 Q211 226 214 229 M220 217 Q218 226 222 228" fill="none" stroke="#2D2018" stroke-width="1.9" stroke-linecap="round" />
+
+              <!-- 6. 3/4 視角動物方城市風格狐獴頭部（最關鍵的靈動感！） -->
+              <!-- 遠側小黑耳（右側） -->
+              <ellipse cx="238" cy="122" rx="8" ry="10.5" transform="rotate(14 238 122)" fill="#241B16" />
+              <ellipse cx="238" cy="123" rx="4" ry="5.5" transform="rotate(14 238 123)" fill="#59473C" />
+
+              <!-- 頭部主輪廓（微朝右上方機靈看遠方，有毛絨臉頰與頭頂軟毛） -->
+              <path d="M204 86
+                       C224 86 239 98 241 116
+                       C242 128 244 136 238 144
+                       C232 153 218 160 201 160
+                       C180 160 164 148 161 131
+                       L156 125 L162 119
+                       C164 98 182 86 204 86 Z"
+                    fill="url(#head3D)" stroke="#4A301B" stroke-width="1.2" stroke-linejoin="round" />
+
+              <!-- 額頭細碎可愛呆毛 -->
+              <path d="M196 87 Q192 78 202 79 Q200 84 205 87" fill="#F5E3C3" stroke="#4A301B" stroke-width="1" />
+
+              <!-- 近側小黑耳（左側，圓潤立體） -->
+              <ellipse cx="161" cy="121" rx="8.5" ry="11" transform="rotate(-12 161 121)" fill="#241B16" />
+              <ellipse cx="162" cy="122" rx="4.2" ry="6" transform="rotate(-12 162 122)" fill="#635043" />
+
+              <!-- 天然太陽眼鏡深黑眼圈（微傾斜呈現3/4立體透視） -->
+              <ellipse cx="192" cy="119" rx="13.5" ry="11" transform="rotate(-8 192 119)" fill="#261D18" />
+              <ellipse cx="226" cy="117" rx="11.5" ry="10.2" transform="rotate(6 226 117)" fill="#261D18" />
+
+              <!-- 動物方城市神韻杏仁大眼（上眼瞼微挑＋自信機靈眼神＋晶亮瞳孔！） -->
+              <!-- 近側左眼 -->
+              <path d="M182 119 Q192 108 203 118 Q193 128 182 119 Z" fill="#FFFDF8" />
+              <circle cx="194" cy="118.5" r="6.2" fill="url(#irisZootopia)" />
+              <circle cx="194.5" cy="118.5" r="3" fill="#180D06" />
+              <path d="M181 118.5 Q192 107 204 117.5" fill="none" stroke="#180D06" stroke-width="2.2" stroke-linecap="round" />
+              <circle cx="191.5" cy="116" r="2.3" fill="#FFFFFF" />
+              <circle cx="197" cy="121" r="1" fill="#FFF5D6" />
+
+              <!-- 遠側右眼（透視略窄一點更自然） -->
+              <path d="M217 117.5 Q226 108 235 117 Q226 126 217 117.5 Z" fill="#FFFDF8" />
+              <circle cx="227" cy="117.5" r="5.5" fill="url(#irisZootopia)" />
+              <circle cx="227.5" cy="117.5" r="2.7" fill="#180D06" />
+              <path d="M216 117 Q226 107 236 116.5" fill="none" stroke="#180D06" stroke-width="2.1" stroke-linecap="round" />
+              <circle cx="225" cy="115" r="2" fill="#FFFFFF" />
+              <circle cx="229.5" cy="119.5" r="0.9" fill="#FFF5D6" />
+
+              <!-- 動物方城市招牌生動眉毛（一挑一平，超有靈魂！） -->
+              <path d="M180 105 Q191 98 202 104" fill="none" stroke="#362418" stroke-width="2.1" stroke-linecap="round" />
+              <path d="M216 104 Q225 100 234 105" fill="none" stroke="#362418" stroke-width="1.8" stroke-linecap="round" />
+
+              <!-- 立體微突小口鼻（3/4視角鼻樑＋淺奶油吻部＋自信可愛微笑） -->
+              <path d="M198 124 Q212 122 223 128 Q232 135 224 146 Q212 154 196 150 Q186 144 190 133 Z" fill="url(#muzzle3D)" stroke="#8B633F" stroke-width="0.8" />
+              <!-- 鼻樑柔和亮光 -->
+              <path d="M208 119 Q214 123 217 130" fill="none" stroke="#FFFDF8" stroke-width="2" stroke-linecap="round" opacity="0.85" />
+              <!-- 俏皮小黑鼻頭 -->
+              <path d="M215 130 Q221 128 225 131 Q223 136 219 136 Q216 136 215 130 Z" fill="#2A1C15" />
+              <ellipse cx="218.5" cy="130.5" rx="2" ry="0.9" fill="#FFFFFF" opacity="0.55" />
+              <!-- 可愛「w」微笑嘴角（呼應尼克的靈動笑意！） -->
+              <path d="M204 141 Q213 145 220 139 Q224 143 227 140" fill="none" stroke="#3E281B" stroke-width="1.6" stroke-linecap="round" />
+              <!-- 淡淡暖腮紅 -->
+              <ellipse cx="182" cy="134" rx="6.5" ry="3.5" fill="#F28C6A" opacity="0.38" />
+              <ellipse cx="233" cy="132" rx="4.5" ry="2.8" fill="#F28C6A" opacity="0.35" />
+            </g>
+
+            <!-- ===== 可愛小狐獴寶寶（站右旁，抬頭崇拜看著大哥哥！） ===== -->
+            <g id="zootopia-baby-meerkat" transform="translate(262, 198) scale(0.76)" filter="url(#softShadow)">
+              <!-- 細小尾巴 -->
+              <path d="M56 138 Q80 144 92 145" fill="none" stroke="#4A301B" stroke-width="5" stroke-linecap="round" />
+              <path d="M56 138 Q75 143 84 144" fill="none" stroke="#DFBC8B" stroke-width="2.6" stroke-linecap="round" />
+              <!-- 腳腳 -->
+              <ellipse cx="26" cy="144" rx="10" ry="5" fill="#D5B285" stroke="#4A301B" stroke-width="1.3" />
+              <ellipse cx="52" cy="144" rx="10" ry="5" fill="#E3C499" stroke="#4A301B" stroke-width="1.3" />
+              <!-- 圓潤小身軀 -->
+              <path d="M21 66 Q12 104 15 142 L63 142 Q66 104 57 66 Z" fill="url(#body3D)" stroke="#4A301B" stroke-width="1.3" />
+              <ellipse cx="38" cy="112" rx="14" ry="20" fill="#735747" opacity="0.48" />
+              <path d="M24 70 Q20 96 25 112 Q39 116 52 110 Q56 92 52 70 Z" fill="url(#chestCream)" opacity="0.88" />
+              <!-- 兩隻舉高高好奇小手 -->
+              <path d="M22 80 Q15 96 24 102 Q29 102 28 94" fill="#DFBC8B" stroke="#4A301B" stroke-width="1.3" />
+              <path d="M56 80 Q63 96 54 102 Q49 102 50 94" fill="#F2DEC0" stroke="#4A301B" stroke-width="1.3" />
+
+              <!-- 寶寶圓臉（微向左仰望大狐獴） -->
+              <ellipse cx="10" cy="40" rx="8" ry="9.5" fill="#241B16" />
+              <ellipse cx="68" cy="40" rx="8" ry="9.5" fill="#241B16" />
+              <path d="M39 14 C59 14 70 26 70 43 L74 48 L68 53 C64 64 53 70 39 70 C25 70 14 64 10 53 L4 48 L8 43 C8 26 19 14 39 14 Z" fill="url(#head3D)" stroke="#4A301B" stroke-width="1.4" />
+              <!-- 太陽眼鏡小黑圈＋仰望大眼 -->
+              <ellipse cx="25" cy="42" rx="10.5" ry="9" fill="#261D18" />
+              <ellipse cx="52" cy="42" rx="10.5" ry="9" fill="#261D18" />
+              <path d="M17 42 Q25 33 33 41 Q25 49 17 42 Z" fill="#FFFDF8" />
+              <circle cx="24" cy="41.5" r="5" fill="url(#irisZootopia)" />
+              <circle cx="23.5" cy="41" r="2.3" fill="#180D06" />
+              <circle cx="22" cy="39" r="1.9" fill="#FFFFFF" />
+
+              <path d="M44 41 Q52 33 60 42 Q52 49 44 41 Z" fill="#FFFDF8" />
+              <circle cx="51" cy="41.5" r="5" fill="url(#irisZootopia)" />
+              <circle cx="50.5" cy="41" r="2.3" fill="#180D06" />
+              <circle cx="49" cy="39" r="1.9" fill="#FFFFFF" />
+
+              <!-- 寶寶可愛吻部 -->
+              <ellipse cx="37" cy="54" rx="12" ry="8.5" fill="url(#muzzle3D)" />
+              <polygon points="34,50 40,50 37,54" fill="#2A1C15" />
+              <path d="M32 56 Q37 60 42 56" fill="none" stroke="#3E281B" stroke-width="1.4" stroke-linecap="round" />
+              <ellipse cx="16" cy="54" rx="5" ry="2.8" fill="#F28C6A" opacity="0.45" />
+              <ellipse cx="60" cy="54" rx="5" ry="2.8" fill="#F28C6A" opacity="0.45" />
+            </g>
+
+            <!-- 四角標註指引線（精準指向對應器官，完全不遮擋角色臉部） -->
+            <g stroke="#232323" stroke-width="1.2" fill="none" opacity="0.9">
+              <!-- 1. 天然太陽眼鏡 -> 眼圈 -->
+              <polyline points="145,56 184,114" />
+              <rect x="181" y="111" width="6" height="6" transform="rotate(45 184 114)" fill="#F6D66D" stroke="#232323" stroke-width="1" />
+
+              <!-- 2. 太陽能小肚肚 -> 腹部深色皮膚 -->
+              <polyline points="292,58 258,242 216,250" />
+              <rect x="213" y="247" width="6" height="6" transform="rotate(45 216 250)" fill="#F28C6A" stroke="#232323" stroke-width="1" />
+
+              <!-- 3. 挖洞小怪手 -> 彎曲前爪 -->
+              <polyline points="122,350 185,234" />
+              <rect x="182" y="231" width="6" height="6" transform="rotate(45 185 234)" fill="#7EB8DA" stroke="#232323" stroke-width="1" />
+
+              <!-- 4. 平衡第三隻腳 -> 黑尖細尾 -->
+              <polyline points="322,350 302,318" />
+              <rect x="299" y="315" width="6" height="6" transform="rotate(45 302 318)" fill="#E3EEDC" stroke="#232323" stroke-width="1" />
+            </g>
+          </svg>
+
+          <!-- 四個角落圖鑑標註卡 -->
+          <div class="callout c-glasses">
+            <span class="callout-title">1. 天然太陽眼鏡</span>
+            <p class="callout-desc">黑黑眼圈擋住沙漠強光，抬頭找老鷹也不會刺眼！</p>
+          </div>
+
+          <div class="callout c-belly">
+            <span class="callout-title">2. 太陽能小肚肚</span>
+            <p class="callout-desc">肚子毛少露深色皮膚，早起站著曬太陽迅速充電暖身！</p>
+          </div>
+
+          <div class="callout c-claws">
+            <span class="callout-title">3. 挖洞小怪手</span>
+            <p class="callout-desc">約 2 公分長彎曲強爪，挖隧道、抓蟲蟲超拿手！</p>
+          </div>
+
+          <div class="callout c-tail">
+            <span class="callout-title">4. 平衡第三隻腳</span>
+            <p class="callout-desc">黑尖細長尾撐住身體，直立站崗穩穩不晃動！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：狐獴小檔案 -->
+      <article class="panel">
+        <div class="panel-header ph-sky">
+          <span>狐獴小檔案</span>
+          <span class="panel-en">DATA FILE</span>
+        </div>
+
+        <div class="profile-body">
+          <div class="fact-item">
+            <span class="fact-badge">分類</span>
+            <p class="fact-text"><strong>食肉目・獴科・細尾獴屬</strong><br />雖然名字有個「狐」，其實跟狐狸和貓咪都沒有親戚關係喔！</p>
+          </div>
+
+          <div class="fact-item fi-lemon">
+            <span class="fact-badge b-lemon">老家</span>
+            <p class="fact-text"><strong>非洲南部沙漠＆乾旱區</strong><br />主要住在喀拉哈里沙漠一帶，超習慣乾爽又有太陽的生活。</p>
+          </div>
+
+          <div class="fact-item fi-peach">
+            <span class="fact-badge b-peach">體型</span>
+            <p class="fact-text"><strong>頭軀幹 25～35 cm｜尾 17.5～25 cm</strong><br />平均體重約 <strong>720～731 克</strong>，身材嬌小輕巧又靈活！</p>
+          </div>
+
+          <div class="fact-item fi-sky">
+            <span class="fact-badge b-sky">作息</span>
+            <p class="fact-text"><strong>標準晝行性乖寶寶</strong><br />日出而作、日落而息，太陽下山就乖乖回地洞睡覺。</p>
+          </div>
+
+          <div class="scale-strip">
+            <svg width="36" height="42" viewBox="0 0 38 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="12" y="2" width="14" height="6" fill="#7EB8DA" stroke="#362E27" stroke-width="1.2" />
+              <rect x="7" y="8" width="24" height="33" fill="#FFFDF8" stroke="#362E27" stroke-width="1.3" />
+              <rect x="7" y="18" width="24" height="12" fill="#E3EEDC" stroke="#362E27" stroke-width="1" />
+              <text x="19" y="27" text-anchor="middle" font-size="8" font-weight="700" fill="#232323">720g</text>
+            </svg>
+            <p>抱起來的重量，大約就跟<strong>一瓶大罐礦泉水</strong>差不多重喔！</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 下半部：雙欄圖鑑模組 -->
+    <section class="row-bottom">
+      <!-- 左：大家庭 -->
+      <article class="panel">
+        <div class="panel-header ph-caramel">
+          <span>超級團結的大家庭</span>
+          <span class="panel-en">FAMILY &amp; BOND</span>
+        </div>
+
+        <div class="module-content">
+          <div class="burrow-box">
+            <svg viewBox="0 0 340 116" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="miniSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#7EB8DA" />
+                  <stop offset="100%" stop-color="#E8F4FA" />
+                </linearGradient>
+                <linearGradient id="miniEarth" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#C89869" />
+                  <stop offset="100%" stop-color="#8C603B" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="340" height="52" fill="url(#miniSky)" />
+              <rect x="0" y="52" width="340" height="64" fill="url(#miniEarth)" />
+              <line x1="0" y1="52" x2="340" y2="52" stroke="#362E27" stroke-width="1.4" />
+
+              <!-- 地上放風哨兵（立體小狐獴輪廓） -->
+              <g transform="translate(44, 10)">
+                <path d="M8 24 Q6 36 8 42 L18 42 Q20 36 18 24 Z" fill="#DFBC8B" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="6" cy="18" rx="3" ry="3.8" fill="#241B16" />
+                <ellipse cx="20" cy="18" rx="3" ry="3.8" fill="#241B16" />
+                <ellipse cx="13" cy="18" rx="8.5" ry="7.8" fill="#F2DEC0" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="10" cy="17.5" rx="3" ry="2.5" fill="#241B16" />
+                <ellipse cx="16.5" cy="17.5" rx="3" ry="2.5" fill="#241B16" />
+                <circle cx="9.8" cy="17" r="1.1" fill="#FFFFFF" />
+                <circle cx="16.2" cy="17" r="1.1" fill="#FFFFFF" />
+                <polygon points="12.5,20 15.5,20 14,22" fill="#241B16" />
+              </g>
+
+              <polygon points="80,8 228,8 228,38 96,38 86,44 88,38 80,38" fill="rgba(255,253,248,0.95)" stroke="#362E27" stroke-width="1.1" />
+              <text x="154" y="21" text-anchor="middle" font-size="9.5" font-weight="700" fill="#232323">空中／地面有不同警報聲！</text>
+              <text x="154" y="33" text-anchor="middle" font-size="8.4" font-weight="500" fill="#554F47">哨兵一叫，大家秒衝回洞！</text>
+
+              <!-- 空中老鷹遠影 -->
+              <path d="M262 19 Q272 11 280 19 Q288 11 298 19" fill="none" stroke="#362E27" stroke-width="1.6" stroke-linecap="round" />
+              <text x="280" y="35" text-anchor="middle" font-size="9" font-weight="700" fill="#B84B2A">警戒天敵</text>
+
+              <!-- 地底多入口暖色大豪宅 -->
+              <path d="M36 52 L36 89 L298 89 L298 52 M162 52 L162 89" fill="none" stroke="#FAF7EE" stroke-width="23" stroke-linecap="square" />
+              <path d="M24 52 L24 101 L310 101 L310 52 M48 52 L48 77 L150 77 L150 52 M174 52 L174 77 L286 77 L286 52" fill="none" stroke="#362E27" stroke-width="1.2" />
+
+              <!-- 洞內兩隻狐獴理毛互動 -->
+              <g transform="translate(80, 78)">
+                <ellipse cx="10" cy="11" rx="8" ry="7" fill="#F2DEC0" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="4" cy="9" rx="2" ry="2.5" fill="#241B16" />
+                <path d="M7 10 Q9 8 11 10 M12 10 Q14 8 16 10" fill="none" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="29" cy="11" rx="8" ry="7" fill="#DFBC8B" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="35" cy="9" rx="2" ry="2.5" fill="#241B16" />
+                <path d="M24 10 Q26 8 28 10 M29 10 Q31 8 33 10" fill="none" stroke="#362E27" stroke-width="1.1" />
+                <text x="20" y="-3" text-anchor="middle" font-size="8.8" font-weight="700" fill="#D46542">♥ 互相理毛中</text>
+              </g>
+
+              <!-- 洞內保母照顧小寶寶 -->
+              <g transform="translate(210, 78)">
+                <ellipse cx="12" cy="10" rx="8.5" ry="7.5" fill="#F2DEC0" stroke="#362E27" stroke-width="1.1" />
+                <ellipse cx="5" cy="8" rx="2" ry="2.5" fill="#241B16" />
+                <circle cx="9.5" cy="9.5" r="1.4" fill="#241B16" />
+                <circle cx="15" cy="9.5" r="1.4" fill="#241B16" />
+                <ellipse cx="30" cy="12" rx="6" ry="5" fill="#FFF2DA" stroke="#362E27" stroke-width="1.1" />
+                <path d="M27 12 Q29.5 14 32 12" fill="none" stroke="#362E27" stroke-width="1.1" />
+                <text x="21" y="-3" text-anchor="middle" font-size="8.8" font-weight="700" fill="#467042">全族當保母 ◆</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>地底大豪宅（幾隻～超過 40 隻）</div>
+              <p>超級愛熱鬧的群居動物！平常還會互相理毛增進感情；住在地底有多個出入口的網狀大洞穴，夜晚或遇險就躲進去。</p>
+            </div>
+
+            <div class="info-card c-caramel">
+              <div class="info-card-title"><span class="diamond-bullet"></span>輪流站崗好默契</div>
+              <p>大家低頭覓食時，總會有成員爬上高處當「哨兵」。面對空中飛來或地上跑來的天敵，還會發出不同的專屬警報聲！</p>
+            </div>
+
+            <div class="info-card c-sky">
+              <div class="info-card-title"><span class="diamond-bullet"></span>全族一起當保母</div>
+              <p>由最高階級的「當家母首領」與配偶主導繁殖；寶寶出生後，整個家族的成員都會輪流幫忙照顧、守護牠長大。</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：沙漠美食家 ＆ 隱藏小秘密 -->
+      <article class="panel">
+        <div class="panel-header ph-peach">
+          <span>沙漠美食家 ＆ 隱藏小秘密</span>
+          <span class="panel-en">DIET &amp; TRIVIA</span>
+        </div>
+
+        <div class="module-content">
+          <div class="diet-strip">
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag">抗毒 OK</span>
+              <svg viewBox="0 0 136 86" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="86" fill="#FAFDF6" />
+                <polygon points="90,15 113,23 109,47 90,57 71,47 67,23" fill="#E3EEDC" stroke="#5D8A58" stroke-width="1.1" />
+                <g transform="translate(18, 29)">
+                  <ellipse cx="18" cy="20" rx="13" ry="10" fill="#5D8A58" stroke="#362E27" stroke-width="1.2" />
+                  <ellipse cx="15" cy="17" rx="5" ry="2.5" fill="#89B983" opacity="0.7" />
+                  <path d="M8 14 L2 10 M8 26 L2 30 M28 14 L34 10 M28 26 L34 30" stroke="#362E27" stroke-width="1.3" stroke-linecap="round" />
+                </g>
+                <g transform="translate(69, 21)">
+                  <ellipse cx="18" cy="34" rx="11" ry="8" fill="#F28C6A" stroke="#362E27" stroke-width="1.2" />
+                  <path d="M27 32 Q40 26 38 12 Q36 5 28 8" fill="none" stroke="#362E27" stroke-width="2.2" stroke-linecap="round" />
+                  <circle cx="27" cy="9" r="3" fill="#F6D66D" stroke="#362E27" stroke-width="1.1" />
+                  <path d="M8 31 Q2 23 8 18 M12 28 Q8 20 14 17" fill="none" stroke="#362E27" stroke-width="1.3" stroke-linecap="round" />
+                </g>
+                <text x="68" y="79" text-anchor="middle" font-size="9.4" font-weight="700" fill="#232323">昆蟲・毒蠍都能吃！</text>
+              </svg>
+            </div>
+
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag warn">要閃遠</span>
+              <svg viewBox="0 0 136 86" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="86" fill="#FFF9F6" />
+                <path d="M36 56 Q68 65 100 56" fill="none" stroke="#362E27" stroke-width="3" stroke-linecap="round" />
+                <path d="M60 56 Q58 32 68 23 Q78 32 76 56" fill="#A6754B" stroke="#362E27" stroke-width="1.2" />
+                <ellipse cx="68" cy="23" rx="13" ry="10.5" fill="#F28C6A" stroke="#362E27" stroke-width="1.2" />
+                <polygon points="59,20 65,23 60,25" fill="#232323" />
+                <polygon points="77,20 71,23 76,25" fill="#232323" />
+                <path d="M68 29 L68 38 M68 38 L65 41 M68 38 L71 41" stroke="#362E27" stroke-width="1.2" />
+                <text x="68" y="79" text-anchor="middle" font-size="9.4" font-weight="700" fill="#232323">眼鏡蛇等劇毒蛇會中招</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>不挑食小獵手</div>
+              <p>最愛吃昆蟲，也會吃蜘蛛、蜥蜴、蛇、鳥蛋、小型哺乳動物、植物與蕈類；靠著靈敏嗅覺把地底美味通通挖出來。</p>
+            </div>
+
+            <div class="info-card c-peach">
+              <div class="info-card-title"><span class="diamond-bullet"></span>自帶抗毒體質</div>
+              <p>對許多毒液有免疫力，連帶毒刺的蠍子都能安心吃下肚！（但遇上眼鏡蛇或鼓腹噝蝰這類劇毒蛇還是得小心閃避喔。）</p>
+            </div>
+
+            <div class="timon-note">
+              <span class="timon-badge">大明星本尊</span>
+              <p>迪士尼《獅子王》裡活潑搞笑的「<strong>丁滿</strong>」，原型就是可愛的狐獴喔！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. 固定底部收尾欄 -->
+    <footer class="footer-secret">
+      <span class="secret-pill">觀察小秘密</span>
+      <p class="secret-text">下次在動物園看到狐獴排排站曬太陽，記得仔細找找牠們的黑眼圈和撐地的細長尾巴——那正是牠們替全家族努力放風的超萌日常！</p>
+    </footer>
+
+  </main>
+</body>
+</html>

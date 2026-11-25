@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NO.003 頂著小頭盔的大嘴管家 ◆ 犀鳥｜動物圖鑑海報</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+    :root {
+      --bg-paper: #FAF7EE;
+      --bg-card: #FFFDF8;
+      --bg-glass: rgba(255, 253, 248, 0.94);
+      --ink: #232323;
+      --ink-sub: #554F47;
+      --line: #362E27;
+      --line-soft: rgba(54, 46, 39, 0.24);
+      --matcha: #5D8A58;
+      --sprout: #E3EEDC;
+      --caramel: #A6754B;
+      --peach: #F28C6A;
+      --lemon: #F6D66D;
+      --sky: #7EB8DA;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background-color: #DCD6C6;
+      font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 固定單頁 A4 直式畫布 */
+    .poster {
+      width: 794px;
+      height: 1123px;
+      background-color: var(--bg-paper);
+      background-image:
+        linear-gradient(180deg, rgba(126, 184, 218, 0.12) 0%, rgba(250, 247, 238, 0) 30%, rgba(246, 214, 109, 0.08) 100%);
+      padding: 20px 24px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 0 12px 32px rgba(35, 35, 35, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid var(--line-soft);
+      pointer-events: none;
+    }
+
+    /* === 1. 固定左上角主標題區 === */
+    .header-area {
+      display: grid;
+      grid-template-columns: 1fr 248px;
+      gap: 12px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-block {
+      background: linear-gradient(135deg, #FFFDF8 0%, #F5F8FA 100%);
+      border: 1.5px solid var(--line);
+      border-left: 6px solid var(--matcha);
+      padding: 11px 16px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      line-height: 1.3;
+    }
+
+    .tag-no { background-color: var(--ink); color: var(--bg-paper); }
+    .tag-cat { background-color: var(--sprout); color: var(--ink); }
+    .tag-mood { background-color: #EBF5FB; color: #2D6282; border-color: #5495BA; }
+
+    .main-title {
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .diamond-join {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10px;
+      transform: rotate(45deg);
+      margin: 0 3px;
+      border: 1px solid var(--lemon);
+      flex-shrink: 0;
+    }
+
+    .diamond-join span {
+      transform: rotate(-45deg);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .title-accent {
+      color: #FFFFFF;
+      background-color: var(--sky);
+      color: var(--ink);
+      padding: 1px 10px 2px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--peach);
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      font-size: 11.8px;
+      font-weight: 700;
+      color: var(--ink-sub);
+      letter-spacing: 0.03em;
+    }
+
+    .lead-box {
+      background: linear-gradient(160deg, #E3EEDC 0%, #FFFDF8 100%);
+      border: 1.5px solid var(--line);
+      border-top: 4px solid var(--peach);
+      padding: 10px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .lead-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--caramel);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .lead-text {
+      font-size: 11.2px;
+      line-height: 1.48;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* === 2. 中段第一排：主視覺 + 犀鳥小檔案 === */
+    .row-top {
+      display: grid;
+      grid-template-columns: 452px 1fr;
+      gap: 12px;
+      height: 456px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      border-bottom: 1.5px solid var(--line);
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .ph-green { background: linear-gradient(90deg, #5D8A58 0%, #719D6B 100%); color: #FFFFFF; }
+    .ph-sky { background: linear-gradient(90deg, #7EB8DA 0%, #A4CEE8 100%); color: var(--ink); }
+    .ph-caramel { background: linear-gradient(90deg, #A6754B 0%, #BF8E63 100%); color: #FFFFFF; }
+    .ph-peach { background: linear-gradient(90deg, #F28C6A 0%, #F7AC8E 100%); color: var(--ink); }
+
+    .panel-en {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+    }
+
+    .hero-stage {
+      position: relative;
+      flex: 1;
+      background-color: #7EB8DA;
+      overflow: hidden;
+    }
+
+    .hero-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .callout {
+      position: absolute;
+      background-color: var(--bg-glass);
+      border: 1.2px solid var(--line);
+      padding: 5px 8px;
+      box-shadow: 0 3px 8px rgba(35, 35, 35, 0.14);
+    }
+
+    .callout-title {
+      display: inline-block;
+      font-size: 10.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      margin-bottom: 2px;
+      color: var(--ink);
+      border-left: 3px solid var(--ink);
+    }
+
+    .callout-desc {
+      font-size: 10px;
+      line-height: 1.34;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    .c-casque { top: 10px; left: 10px; max-width: 172px; }
+    .c-casque .callout-title { background-color: var(--lemon); }
+
+    .c-beak { top: 10px; right: 10px; max-width: 174px; }
+    .c-beak .callout-title { background-color: rgba(242, 140, 106, 0.38); border-left-color: var(--peach); }
+
+    .c-lashes { bottom: 10px; left: 10px; max-width: 172px; }
+    .c-lashes .callout-title { background-color: rgba(126, 184, 218, 0.42); border-left-color: var(--sky); }
+
+    .c-plumage { bottom: 10px; right: 10px; max-width: 174px; }
+    .c-plumage .callout-title { background-color: var(--sprout); border-left-color: var(--matcha); }
+
+    /* 右側角色檔案卡 */
+    .profile-body {
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 6px;
+      background-color: var(--bg-card);
+    }
+
+    .fact-item {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6.5px 9px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .fact-item.fi-lemon { border-left-color: var(--lemon); }
+    .fact-item.fi-peach { border-left-color: var(--peach); }
+    .fact-item.fi-sky { border-left-color: var(--sky); }
+
+    .fact-badge {
+      flex-shrink: 0;
+      width: 42px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 2px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+    }
+
+    .fact-badge.b-sky { background-color: rgba(126, 184, 218, 0.35); }
+    .fact-badge.b-lemon { background-color: rgba(246, 214, 109, 0.6); }
+    .fact-badge.b-peach { background-color: rgba(242, 140, 106, 0.38); }
+
+    .fact-text {
+      font-size: 11.2px;
+      line-height: 1.42;
+      color: var(--ink);
+    }
+
+    .fact-text strong {
+      font-weight: 700;
+      color: #1A1714;
+      background: linear-gradient(transparent 66%, rgba(246, 214, 109, 0.72) 66%);
+    }
+
+    .scale-strip {
+      border: 1px solid var(--caramel);
+      background: linear-gradient(90deg, #FAF4E6 0%, #FFFDF8 100%);
+      padding: 6px 9px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .scale-strip p {
+      font-size: 10.8px;
+      line-height: 1.38;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    /* === 3. 中段第二排：雙欄圖鑑模組 === */
+    .row-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .module-content {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .scene-box {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      height: 114px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .info-card {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6px 9px;
+    }
+
+    .info-card.c-caramel { border-left-color: var(--caramel); }
+    .info-card.c-peach { border-left-color: var(--peach); }
+    .info-card.c-sky { border-left-color: var(--sky); }
+
+    .info-card-title {
+      font-size: 11.8px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+    }
+
+    .diamond-bullet {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--caramel);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .info-card p {
+      font-size: 10.9px;
+      line-height: 1.42;
+      color: var(--ink-sub);
+    }
+
+    .diet-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      height: 114px;
+    }
+
+    .diet-mini-panel {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diet-mini-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 9.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+      z-index: 2;
+    }
+
+    .diet-mini-tag.seed { background-color: rgba(246, 214, 109, 0.75); }
+
+    .zazu-note {
+      background: linear-gradient(90deg, #FBF0C4 0%, #FFF8DE 100%);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--sky);
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .zazu-badge {
+      flex-shrink: 0;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 3px 7px;
+      letter-spacing: 0.05em;
+    }
+
+    .zazu-note p {
+      font-size: 11.1px;
+      line-height: 1.42;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* === 4. 固定底部收尾欄 === */
+    .footer-secret {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+      border: 1px solid var(--ink);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .secret-pill {
+      flex-shrink: 0;
+      background-color: var(--lemon);
+      color: var(--ink);
+      font-size: 11.5px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border: 1px solid var(--bg-paper);
+      letter-spacing: 0.08em;
+    }
+
+    .secret-text {
+      font-size: 11.4px;
+      line-height: 1.42;
+      font-weight: 400;
+    }
+
+    @media print {
+      body { background: none; padding: 0; min-height: auto; }
+      .poster { box-shadow: none; border: none; width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <!-- 1. 固定左上角主標題區 -->
+    <header class="header-area">
+      <section class="title-block">
+        <div>
+          <div class="tag-row">
+            <span class="tag tag-no">NO.003</span>
+            <span class="tag tag-cat">動物圖鑑</span>
+            <span class="tag tag-mood">《獅子王》沙祖本尊</span>
+          </div>
+          <h1 class="main-title">
+            <span>頂著小頭盔的大嘴管家</span>
+            <span class="diamond-join"><span>◆</span></span>
+            <span class="title-accent">犀鳥</span>
+          </h1>
+        </div>
+        <p class="subtitle">Hornbill — Bucerotidae（《獅子王》沙祖本尊）</p>
+      </section>
+
+      <aside class="lead-box">
+        <span class="lead-label">◆ INTRO / 認識新朋友</span>
+        <p class="lead-text">還記得《獅子王》裡那位穿著燕尾服風範、每天忙著替國王報告大小事的嘮叨管家「沙祖」嗎？牠的原型正是自帶超大彎嘴與帥氣頭盔的「犀鳥」！</p>
+      </aside>
+    </header>
+
+    <!-- 2. 上半部：主視覺＋全身吸睛亮點標註 + 犀鳥小檔案 -->
+    <section class="row-top">
+      <article class="panel">
+        <div class="panel-header ph-green">
+          <span>全身都是吸睛亮點！</span>
+          <span class="panel-en">FEATURE ILLUSTRATION</span>
+        </div>
+
+        <div class="hero-stage">
+          <svg class="hero-svg" viewBox="0 0 448 418" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="forestSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5898CE" />
+                <stop offset="45%" stop-color="#8DC3E3" />
+                <stop offset="80%" stop-color="#E5F3EC" />
+                <stop offset="100%" stop-color="#FAF3D8" />
+              </linearGradient>
+
+              <radialGradient id="canopySun" cx="76%" cy="26%" r="36%">
+                <stop offset="0%" stop-color="#FFFDF0" stop-opacity="0.95" />
+                <stop offset="40%" stop-color="#F6D66D" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#F6D66D" stop-opacity="0" />
+              </radialGradient>
+
+              <!-- 犀鳥帶綠光澤的烏黑羽毛漸層 -->
+              <linearGradient id="hornbillBlack" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#3E4E46" />
+                <stop offset="35%" stop-color="#222926" />
+                <stop offset="85%" stop-color="#171A19" />
+                <stop offset="100%" stop-color="#2F3B36" />
+              </linearGradient>
+
+              <!-- 招牌大彎嘴與盔突漸層 -->
+              <linearGradient id="hornbillBeak" x1="0" y1="0" x2="1" y2="0.4">
+                <stop offset="0%" stop-color="#F8DE7E" />
+                <stop offset="55%" stop-color="#F2B84B" />
+                <stop offset="85%" stop-color="#E87A48" />
+                <stop offset="100%" stop-color="#D4502A" />
+              </linearGradient>
+
+              <linearGradient id="casqueGrad" x1="0" y1="0" x2="1" y2="0.8">
+                <stop offset="0%" stop-color="#F6D66D" />
+                <stop offset="65%" stop-color="#E59247" />
+                <stop offset="100%" stop-color="#C94B2B" />
+              </linearGradient>
+
+              <linearGradient id="branchWood" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#B98759" />
+                <stop offset="50%" stop-color="#8C5F3B" />
+                <stop offset="100%" stop-color="#5E3D24" />
+              </linearGradient>
+
+              <filter id="birdShadow" x="-15%" y="-15%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#261D15" flood-opacity="0.25" />
+              </filter>
+            </defs>
+
+            <!-- 晴空與樹冠光暈 -->
+            <rect x="0" y="0" width="448" height="418" fill="url(#forestSky)" />
+            <rect x="0" y="0" width="448" height="418" fill="url(#canopySun)" />
+
+            <!-- 棉花雲朵 -->
+            <g opacity="0.88">
+              <path d="M24 126 C24 108 48 100 68 110 C82 90 118 92 130 112 C150 108 166 120 164 134 L20 134 Z" fill="#FFFFFF" />
+              <path d="M276 138 C276 122 298 114 316 124 C330 108 364 110 374 126 C392 122 406 134 404 146 L272 146 Z" fill="#FFFFFF" />
+            </g>
+
+            <!-- 遠景熱帶雨林山巒 -->
+            <path d="M0 282 Q120 256 240 278 T448 268 L448 418 L0 418 Z" fill="#9EBC8E" />
+            <path d="M0 310 Q160 292 315 314 T448 302 L448 418 L0 418 Z" fill="#6E9462" />
+
+            <!-- 前景斜向大樹枝（犀鳥停棲處） -->
+            <g filter="url(#birdShadow)">
+              <path d="M-10 338 Q165 304 348 332 L344 358 Q165 332 -10 368 Z" fill="url(#branchWood)" stroke="#362619" stroke-width="1.3" />
+              <path d="M20 344 Q140 322 280 338" fill="none" stroke="#D2A476" stroke-width="1.5" stroke-linecap="round" opacity="0.7" />
+              <!-- 樹枝上的抹茶綠葉片 -->
+              <path d="M292 326 Q312 308 334 314 Q320 332 292 326 Z" fill="#5D8A58" stroke="#232323" stroke-width="1.1" />
+              <path d="M312 332 Q336 324 354 336 Q334 346 312 332 Z" fill="#78A672" stroke="#232323" stroke-width="1.1" />
+              <path d="M34 334 Q18 314 2 320 Q14 338 34 334 Z" fill="#5D8A58" stroke="#232323" stroke-width="1.1" />
+            </g>
+
+            <!-- ===== 主角：帥氣又可愛的雙角犀鳥 / 管家犀鳥（朝右停棲） ===== -->
+            <g id="hero-hornbill" filter="url(#birdShadow)">
+              <!-- 1. 長長的黑白相間尾羽 -->
+              <path d="M132 276 L88 378 L112 384 L152 282 Z" fill="#FFFDF8" stroke="#232323" stroke-width="1.2" />
+              <path d="M118 274 L74 372 L92 378 L136 278 Z" fill="#FFFDF8" stroke="#232323" stroke-width="1.2" />
+              <!-- 尾羽中段招牌寬黑帶 -->
+              <polygon points="99,324 132,332 124,352 90,344" fill="#1F2421" />
+              <polygon points="86,320 112,327 104,346 78,339" fill="#1F2421" />
+
+              <!-- 2. 圓潤飽滿的鳥身（烏黑背羽帶綠色金屬光澤） -->
+              <path d="M158 178
+                       C136 202 126 244 138 282
+                       C152 304 188 308 214 290
+                       C232 272 232 224 212 184 Z"
+                    fill="url(#hornbillBlack)" stroke="#181C1A" stroke-width="1.3" />
+
+              <!-- 胸前與腹部的純白羽色區塊（像穿燕尾服的管家！） -->
+              <path d="M188 184
+                       C208 198 220 232 214 268
+                       C204 288 176 296 158 286
+                       C166 264 176 226 188 184 Z"
+                    fill="#FFFDF8" />
+
+              <!-- 3. 層次分明的翅膀（烏黑羽毛＋白色翼緣與飛羽尖端！） -->
+              <path d="M154 196
+                       C136 222 132 258 144 286
+                       L188 274
+                       C196 246 188 214 172 194 Z"
+                    fill="url(#hornbillBlack)" stroke="#181C1A" stroke-width="1.2" />
+              <!-- 翼緣白色條紋 -->
+              <path d="M142 246 Q164 242 186 236 L187 244 Q165 250 142 254 Z" fill="#FFFDF8" />
+              <!-- 飛羽尖端白色羽緣 -->
+              <path d="M143 282 L152 292 L160 280 L169 290 L177 278 L186 286 L189 272 Z" fill="#FFFDF8" stroke="#232323" stroke-width="1" />
+              <!-- 綠色金屬光澤高光筆觸 -->
+              <path d="M156 212 Q166 222 162 236" fill="none" stroke="#6FA37A" stroke-width="2" stroke-linecap="round" opacity="0.65" />
+
+              <!-- 4. 抓穩樹枝的灰黑色鳥爪 -->
+              <g stroke="#232323" stroke-width="1.3" fill="#595550">
+                <path d="M174 294 L172 322" stroke-width="3.5" stroke-linecap="round" />
+                <path d="M166 322 Q173 317 180 322 Q178 327 172 327 Q166 327 166 322 Z" />
+                <path d="M194 292 L196 324" stroke-width="3.5" stroke-linecap="round" />
+                <path d="M188 324 Q196 319 204 324 Q202 329 196 329 Q189 329 188 324 Z" />
+              </g>
+
+              <!-- 5. 優雅微彎的頸部與頭部 -->
+              <path d="M164 186
+                       C162 156 172 132 196 128
+                       C216 126 230 142 226 166
+                       C222 184 210 194 198 196 Z"
+                    fill="#FFFDF8" stroke="#232323" stroke-width="1.3" />
+              <!-- 後頸烏黑羽毛 -->
+              <path d="M164 186 C162 156 172 132 194 128 C184 146 180 168 182 190 Z" fill="url(#hornbillBlack)" />
+
+              <!-- 6. 犀牛角般的小頭盔「盔突」（Casque） -->
+              <path d="M194 130
+                       C196 106 218 98 254 102
+                       C276 105 292 114 294 124
+                       C282 128 242 134 206 138 Z"
+                    fill="url(#casqueGrad)" stroke="#232323" stroke-width="1.3" stroke-linejoin="round" />
+              <!-- 盔突前端小雙角細節與受光高光 -->
+              <path d="M286 116 L296 112 L292 123" fill="#D4502A" stroke="#232323" stroke-width="1.1" />
+              <path d="M206 112 Q238 106 272 111" fill="none" stroke="#FFF9D6" stroke-width="2" stroke-linecap="round" opacity="0.8" />
+
+              <!-- 7. 超長比例大彎嘴（佔身長 1/3 到 1/2！） -->
+              <!-- 上喙 -->
+              <path d="M210 134
+                       C256 126 308 134 348 164
+                       C324 166 268 162 214 156 Z"
+                    fill="url(#hornbillBeak)" stroke="#232323" stroke-width="1.3" stroke-linejoin="round" />
+              <!-- 下喙 -->
+              <path d="M214 156
+                       C266 160 314 164 344 166
+                       C316 178 262 178 214 168 Z"
+                    fill="#F4C752" stroke="#232323" stroke-width="1.3" stroke-linejoin="round" />
+              <!-- 嘴基黑色邊飾與上喙受光線 -->
+              <path d="M208 134 L218 133 L218 168 L210 167 Z" fill="#232323" />
+              <path d="M226 140 Q276 138 326 155" fill="none" stroke="#FFFDF0" stroke-width="1.8" stroke-linecap="round" opacity="0.7" />
+
+              <!-- 8. 自帶長眼睫毛的靈動大眼睛 -->
+              <circle cx="201" cy="147" r="9.5" fill="#7EB8DA" opacity="0.45" />
+              <circle cx="201" cy="147" r="7.5" fill="#FFFDF8" stroke="#232323" stroke-width="1.2" />
+              <circle cx="202.5" cy="147" r="4.3" fill="#B5382A" />
+              <circle cx="203" cy="147" r="2.1" fill="#181210" />
+              <circle cx="201" cy="145" r="1.8" fill="#FFFFFF" />
+              <!-- 招牌剛毛狀長眼睫毛！ -->
+              <path d="M194 141 L188 135 M198 139 L195 132 M203 139 L203 132 M207 140 L210 134" stroke="#232323" stroke-width="1.5" stroke-linecap="round" />
+              <!-- 可愛微紅臉頰 -->
+              <ellipse cx="195" cy="158" rx="4.5" ry="2.5" fill="#F28C6A" opacity="0.5" />
+            </g>
+
+            <!-- 四角標註指引線 -->
+            <g stroke="#232323" stroke-width="1.2" fill="none" opacity="0.9">
+              <!-- 1. 犀牛角般的小頭盔 -->
+              <polyline points="168,58 228,104" />
+              <rect x="225" y="101" width="6" height="6" transform="rotate(45 228 104)" fill="#F6D66D" stroke="#232323" stroke-width="1" />
+
+              <!-- 2. 超長比例大彎嘴 -->
+              <polyline points="326,64 316,144" />
+              <rect x="313" y="141" width="6" height="6" transform="rotate(45 316 144)" fill="#F28C6A" stroke="#232323" stroke-width="1" />
+
+              <!-- 3. 自帶眼睫毛的大眼睛 -->
+              <polyline points="134,344 196,154" />
+              <rect x="193" y="151" width="6" height="6" transform="rotate(45 196 154)" fill="#7EB8DA" stroke="#232323" stroke-width="1" />
+
+              <!-- 4. 閃亮黑羽與白翼緣 -->
+              <polyline points="294,344 174,264" />
+              <rect x="171" y="261" width="6" height="6" transform="rotate(45 174 264)" fill="#E3EEDC" stroke="#232323" stroke-width="1" />
+            </g>
+          </svg>
+
+          <!-- 四個角落圖鑑標註卡 -->
+          <div class="callout c-casque">
+            <span class="callout-title">1. 犀牛角般的小頭盔</span>
+            <p class="callout-desc">頭頂長著銅盔狀突起「盔突」，外型神似犀牛角，「犀鳥」因此得名！</p>
+          </div>
+
+          <div class="callout c-beak">
+            <span class="callout-title">2. 超長比例大彎嘴</span>
+            <p class="callout-desc">嘴長佔身長三分之一到一半！內部是輕巧蜂窩結構，甩頭叼果實超靈活。</p>
+          </div>
+
+          <div class="callout c-lashes">
+            <span class="callout-title">3. 自帶眼睫毛的大眼睛</span>
+            <p class="callout-desc">眼周長著長長的剛毛狀「眼睫毛」，能遮擋樹林陽光與飛塵，眼神超有戲！</p>
+          </div>
+
+          <div class="callout c-plumage">
+            <span class="callout-title">4. 閃亮黑羽與白翼緣</span>
+            <p class="callout-desc">大型犀鳥背羽烏黑帶綠色金屬光澤，翅膀邊緣與飛羽尖端點綴白色羽毛！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：犀鳥小檔案 -->
+      <article class="panel">
+        <div class="panel-header ph-sky">
+          <span>犀鳥小檔案</span>
+          <span class="panel-en">DATA FILE</span>
+        </div>
+
+        <div class="profile-body">
+          <div class="fact-item">
+            <span class="fact-badge">分類</span>
+            <p class="fact-text"><strong>鳥綱・犀鳥目・犀鳥科</strong><br />全球共有約 <strong>57 種</strong>，像是雙角犀鳥、紅嘴犀鳥都屬於這個大家族喔！</p>
+          </div>
+
+          <div class="fact-item fi-lemon">
+            <span class="fact-badge b-lemon">老家</span>
+            <p class="fact-text"><strong>非洲撒哈拉以南＆南亞、東南亞熱帶林</strong><br />馬來西亞砂拉越州更以犀鳥作為州徽象徵，被當地人視為吉祥聖鳥！</p>
+          </div>
+
+          <div class="fact-item fi-peach">
+            <span class="fact-badge b-peach">體型</span>
+            <p class="fact-text"><strong>大型犀鳥體長約 75 公分以上</strong><br />依種類不同有大有小，巨大彎嘴加上頭頂盔突，在樹冠間辨識度超高！</p>
+          </div>
+
+          <div class="fact-item fi-sky">
+            <span class="fact-badge b-sky">社交</span>
+            <p class="fact-text"><strong>繁殖季成雙成對，非繁殖季聚成大群</strong><br />繁殖期夫妻形影不離、恩愛合作；平常則愛熱鬧集體活動！</p>
+          </div>
+
+          <div class="scale-strip">
+            <svg width="44" height="40" viewBox="0 0 46 42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="3" y="14" width="22" height="16" fill="#E3EEDC" stroke="#362E27" stroke-width="1.2" />
+              <rect x="25" y="14" width="18" height="16" fill="#F6D66D" stroke="#362E27" stroke-width="1.2" />
+              <text x="14" y="25" text-anchor="middle" font-size="8" font-weight="700" fill="#232323">身體</text>
+              <text x="34" y="25" text-anchor="middle" font-size="7.5" font-weight="900" fill="#232323">1/3~1/2</text>
+              <text x="23" y="10" text-anchor="middle" font-size="7.5" font-weight="700" fill="#A6754B">大嘴佔身長比例</text>
+            </svg>
+            <p>光是一張大彎嘴就佔了<strong>整個身體長度的三分之一到一半</strong>，是名副其實的大嘴鳥！</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 下半部：雙欄圖鑑模組 -->
+    <section class="row-bottom">
+      <!-- 左：鳥界最深情的「封巢育雛」大作戰 -->
+      <article class="panel">
+        <div class="panel-header ph-caramel">
+          <span>鳥界最深情的「封巢育雛」</span>
+          <span class="panel-en">NESTING &amp; CARE</span>
+        </div>
+
+        <div class="module-content">
+          <div class="scene-box">
+            <svg viewBox="0 0 340 112" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="nestSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#87BFE0" />
+                  <stop offset="100%" stop-color="#EEF7F1" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="340" height="112" fill="url(#nestSky)" />
+
+              <!-- 左側參天大樹幹剖面 -->
+              <rect x="18" y="0" width="136" height="112" fill="#8C5F3B" stroke="#362E27" stroke-width="1.3" />
+              <line x1="34" y1="0" x2="34" y2="112" stroke="#6E472A" stroke-width="1.2" />
+              <line x1="138" y1="0" x2="138" y2="112" stroke="#6E472A" stroke-width="1.2" />
+
+              <!-- 溫暖樹洞育嬰室 -->
+              <path d="M46 24 C46 14 114 14 114 24 L114 96 C114 104 46 104 46 96 Z" fill="#FAF2DE" stroke="#362E27" stroke-width="1.3" />
+              <!-- 洞底軟草墊與鳥蛋/小寶寶 -->
+              <path d="M48 92 Q80 86 112 92 L112 100 L48 100 Z" fill="#D5B278" />
+              <ellipse cx="64" cy="87" rx="6" ry="8" fill="#FFFDF8" stroke="#362E27" stroke-width="1" />
+              <ellipse cx="76" cy="88" rx="5.5" ry="7.5" fill="#FFFDF8" stroke="#362E27" stroke-width="1" />
+
+              <!-- 樹洞內的母犀鳥（把尖嘴伸出狹窄封口縫隙） -->
+              <g transform="translate(68, 36)">
+                <path d="M12 18 C2 26 2 44 12 52 L34 52 C40 42 38 26 28 18 Z" fill="#222926" stroke="#232323" stroke-width="1.1" />
+                <circle cx="26" cy="14" r="9" fill="#FFFDF8" stroke="#232323" stroke-width="1.1" />
+                <circle cx="28" cy="13" r="2.2" fill="#232323" />
+                <!-- 伸出洞縫的尖嘴 -->
+                <path d="M34 11 L88 18 L34 18 Z" fill="#F2B84B" stroke="#232323" stroke-width="1.1" />
+              </g>
+
+              <!-- 泥土果肉封住的洞口（僅留一道小縫隙！） -->
+              <rect x="114" y="16" width="40" height="31" fill="#634229" stroke="#232323" stroke-width="1.2" />
+              <rect x="114" y="55" width="40" height="45" fill="#634229" stroke="#232323" stroke-width="1.2" />
+              <text x="134" y="35" text-anchor="middle" font-size="8.2" font-weight="900" fill="#F6D66D">泥封洞口</text>
+              <text x="134" y="76" text-anchor="middle" font-size="8" font-weight="700" fill="#FAF7EE">僅留窄縫</text>
+
+              <!-- 洞外神隊友鳥爸爸送果實外賣！ -->
+              <g transform="translate(174, 24)">
+                <path d="M44 26 C58 34 62 52 52 66 L32 66 C26 54 28 36 38 26 Z" fill="#222926" stroke="#232323" stroke-width="1.2" />
+                <path d="M38 28 C30 38 30 52 36 62 L46 62 C44 48 44 36 38 28 Z" fill="#FFFDF8" />
+                <circle cx="36" cy="20" r="10" fill="#FFFDF8" stroke="#232323" stroke-width="1.2" />
+                <path d="M22 10 Q34 6 44 12 L42 16 L22 15 Z" fill="#E59247" stroke="#232323" stroke-width="1" />
+                <circle cx="33" cy="19" r="2.3" fill="#232323" />
+                <!-- 鳥爸爸大彎嘴夾著紅果實餵進縫裡 -->
+                <path d="M27 17 C12 18 -4 22 -14 27 C-2 27 14 26 28 24 Z" fill="#F2B84B" stroke="#232323" stroke-width="1.1" />
+                <circle cx="-15" cy="27" r="4.5" fill="#F28C6A" stroke="#232323" stroke-width="1" />
+              </g>
+
+              <!-- 右上說明小牌 -->
+              <rect x="234" y="10" width="96" height="32" fill="rgba(255,253,248,0.95)" stroke="#362E27" stroke-width="1.1" />
+              <text x="282" y="23" text-anchor="middle" font-size="9" font-weight="900" fill="#5D3F27">模範神隊友爸爸</text>
+              <text x="282" y="35" text-anchor="middle" font-size="8.2" font-weight="500" fill="#554F47">天天採果餵進洞縫！</text>
+            </svg>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>天然樹洞育嬰房</div>
+              <p>每年夏天繁殖季，犀鳥夫妻會一起挑選高大樹幹裡的天然樹洞當作產房，避開地面天敵。</p>
+            </div>
+
+            <div class="info-card c-caramel">
+              <div class="info-card-title"><span class="diamond-bullet"></span>把洞口封起來超安心</div>
+              <p>母鳥進洞產卵後，夫妻倆會用泥土、果肉和排泄物把樹洞口封住，<strong>只留一道能伸出嘴尖的小縫隙</strong>，防範蛇或猛禽偷襲！</p>
+            </div>
+
+            <div class="info-card c-sky">
+              <div class="info-card-title"><span class="diamond-bullet"></span>神隊友爸爸天天送外賣</div>
+              <p>母鳥與寶寶在洞內安心孵化長大時，全家的三餐都靠鳥爸爸在外面辛苦覓食，再飛回洞口一口一口精準餵進縫隙裡！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：森林美食家 ＆ 隱藏小秘密 -->
+      <article class="panel">
+        <div class="panel-header ph-peach">
+          <span>森林美食家 ＆ 隱藏小秘密</span>
+          <span class="panel-en">DIET &amp; TRIVIA</span>
+        </div>
+
+        <div class="module-content">
+          <div class="diet-strip">
+            <!-- 左小圖：水果與昆蟲大餐 -->
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag">主食菜單</span>
+              <svg viewBox="0 0 136 90" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="90" fill="#FAFDF6" />
+                <!-- 樹枝與多汁果實 -->
+                <path d="M12 34 Q46 28 76 36" fill="none" stroke="#8C5F3B" stroke-width="3" stroke-linecap="round" />
+                <path d="M26 31 Q20 18 32 16 Q38 24 26 31 Z" fill="#5D8A58" stroke="#362E27" stroke-width="1" />
+                <circle cx="42" cy="43" r="8" fill="#F28C6A" stroke="#362E27" stroke-width="1.2" />
+                <circle cx="57" cy="41" r="7" fill="#F6D66D" stroke="#362E27" stroke-width="1.2" />
+                <!-- 小甲蟲/昆蟲 -->
+                <g transform="translate(82, 30)">
+                  <ellipse cx="18" cy="18" rx="12" ry="9" fill="#5D8A58" stroke="#362E27" stroke-width="1.2" />
+                  <circle cx="30" cy="18" r="4.5" fill="#232323" />
+                  <path d="M12 11 L8 6 M18 10 L18 5 M24 11 L28 6 M12 25 L8 30 M18 26 L18 31 M24 25 L28 30" stroke="#362E27" stroke-width="1.2" stroke-linecap="round" />
+                </g>
+                <text x="68" y="81" text-anchor="middle" font-size="9.2" font-weight="700" fill="#232323">多汁水果・昆蟲・小動物</text>
+              </svg>
+            </div>
+
+            <!-- 右小圖：森林種子傳播小幫手 -->
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag seed">森林功臣</span>
+              <svg viewBox="0 0 136 90" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="60" fill="#F2F9FC" />
+                <rect x="0" y="60" width="136" height="30" fill="#D5B285" />
+                <line x1="0" y1="60" x2="136" y2="60" stroke="#362E27" stroke-width="1.2" />
+                <!-- 飛翔的小犀鳥剪影 -->
+                <g transform="translate(22, 12)">
+                  <ellipse cx="22" cy="18" rx="14" ry="8" fill="#232323" />
+                  <path d="M16 14 L6 3 L26 12 Z" fill="#3B4942" />
+                  <path d="M34 15 Q48 14 56 21 Q44 22 34 20 Z" fill="#F2B84B" stroke="#232323" stroke-width="1" />
+                </g>
+                <!-- 掉落的果實種子長出嫩芽 -->
+                <circle cx="66" cy="38" r="2.5" fill="#A6754B" />
+                <circle cx="72" cy="48" r="2.5" fill="#A6754B" />
+                <path d="M88 60 L88 45" stroke="#5D8A58" stroke-width="2" stroke-linecap="round" />
+                <path d="M88 48 Q78 40 74 46 Q80 52 88 48 Z" fill="#5D8A58" stroke="#362E27" stroke-width="1" />
+                <path d="M88 45 Q98 37 102 43 Q96 49 88 45 Z" fill="#78A672" stroke="#362E27" stroke-width="1" />
+                <text x="68" y="81" text-anchor="middle" font-size="9.2" font-weight="700" fill="#232323">播種大樹的雨林園丁</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>不挑食的雜食獵手</div>
+              <p>最喜歡在參天大樹上享用多汁水果，也會捕捉昆蟲、蜘蛛和小型脊椎動物，是熱帶森林裡超重要的種子傳播小幫手。</p>
+            </div>
+
+            <div class="info-card c-peach">
+              <div class="info-card-title"><span class="diamond-bullet"></span>蜂窩構造輕巧大嘴</div>
+              <p>別看犀鳥嘴巴佔了快一半身長，其實內部是海綿般的輕巧蜂窩骨質結構，飛翔或甩頭接果實時一點也不會頭重腳輕！</p>
+            </div>
+
+            <div class="zazu-note">
+              <span class="zazu-badge">大明星沙祖</span>
+              <p>迪士尼《獅子王》裡忠心又愛碎念的管家「<strong>沙祖</strong>」，原型就是非洲常見的<strong>紅嘴彎嘴犀鳥</strong>，跟「丁滿」、「彭彭」都是大草原上的經典夥伴！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. 固定底部收尾欄 -->
+    <footer class="footer-secret">
+      <span class="secret-pill">觀察小秘密</span>
+      <p class="secret-text">下次看到犀鳥時，不妨觀察牠那占了身體快一半的彎彎大嘴和頭頂的小「盔突」——如果看到鳥爸爸正忙著把果子往樹洞縫裡送，那就是牠們正在進行超暖心的封巢育兒任務喔！</p>
+    </footer>
+
+  </main>
+</body>
+</html>

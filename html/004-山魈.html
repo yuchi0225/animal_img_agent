@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NO.004 自帶彩色面具的雨林長老 ◆ 山魈｜動物圖鑑海報</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+    :root {
+      --bg-paper: #FAF7EE;
+      --bg-card: #FFFDF8;
+      --bg-glass: rgba(255, 253, 248, 0.94);
+      --ink: #232323;
+      --ink-sub: #554F47;
+      --line: #362E27;
+      --line-soft: rgba(54, 46, 39, 0.24);
+      --matcha: #5D8A58;
+      --sprout: #E3EEDC;
+      --caramel: #A6754B;
+      --peach: #F28C6A;
+      --lemon: #F6D66D;
+      --sky: #7EB8DA;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background-color: #DCD6C6;
+      font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 固定單頁 A4 直式畫布 */
+    .poster {
+      width: 794px;
+      height: 1123px;
+      background-color: var(--bg-paper);
+      background-image:
+        linear-gradient(180deg, rgba(126, 184, 218, 0.12) 0%, rgba(250, 247, 238, 0) 30%, rgba(246, 214, 109, 0.08) 100%);
+      padding: 20px 24px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 0 12px 32px rgba(35, 35, 35, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid var(--line-soft);
+      pointer-events: none;
+    }
+
+    /* === 1. 固定左上角主標題區 === */
+    .header-area {
+      display: grid;
+      grid-template-columns: 1fr 248px;
+      gap: 12px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-block {
+      background: linear-gradient(135deg, #FFFDF8 0%, #F5F8FA 100%);
+      border: 1.5px solid var(--line);
+      border-left: 6px solid var(--matcha);
+      padding: 11px 16px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      line-height: 1.3;
+    }
+
+    .tag-no { background-color: var(--ink); color: var(--bg-paper); }
+    .tag-cat { background-color: var(--sprout); color: var(--ink); }
+    .tag-mood { background-color: #FDECE6; color: #8A3B22; border-color: #C96A4B; }
+
+    .main-title {
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .diamond-join {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10px;
+      transform: rotate(45deg);
+      margin: 0 3px;
+      border: 1px solid var(--lemon);
+      flex-shrink: 0;
+    }
+
+    .diamond-join span {
+      transform: rotate(-45deg);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .title-accent {
+      background-color: var(--peach);
+      color: var(--ink);
+      padding: 1px 10px 2px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--sky);
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      font-size: 11.6px;
+      font-weight: 700;
+      color: var(--ink-sub);
+      letter-spacing: 0.02em;
+    }
+
+    .lead-box {
+      background: linear-gradient(160deg, #E3EEDC 0%, #FFFDF8 100%);
+      border: 1.5px solid var(--line);
+      border-top: 4px solid var(--peach);
+      padding: 10px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .lead-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--caramel);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .lead-text {
+      font-size: 11.1px;
+      line-height: 1.48;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* === 2. 中段第一排：主視覺 + 山魈小檔案 === */
+    .row-top {
+      display: grid;
+      grid-template-columns: 452px 1fr;
+      gap: 12px;
+      height: 456px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      border-bottom: 1.5px solid var(--line);
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .ph-green { background: linear-gradient(90deg, #5D8A58 0%, #719D6B 100%); color: #FFFFFF; }
+    .ph-sky { background: linear-gradient(90deg, #7EB8DA 0%, #A4CEE8 100%); color: var(--ink); }
+    .ph-caramel { background: linear-gradient(90deg, #A6754B 0%, #BF8E63 100%); color: #FFFFFF; }
+    .ph-peach { background: linear-gradient(90deg, #F28C6A 0%, #F7AC8E 100%); color: var(--ink); }
+
+    .panel-en {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+    }
+
+    .hero-stage {
+      position: relative;
+      flex: 1;
+      background-color: #7EB8DA;
+      overflow: hidden;
+    }
+
+    .hero-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .callout {
+      position: absolute;
+      background-color: var(--bg-glass);
+      border: 1.2px solid var(--line);
+      padding: 5px 8px;
+      box-shadow: 0 3px 8px rgba(35, 35, 35, 0.14);
+    }
+
+    .callout-title {
+      display: inline-block;
+      font-size: 10.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      margin-bottom: 2px;
+      color: var(--ink);
+      border-left: 3px solid var(--ink);
+    }
+
+    .callout-desc {
+      font-size: 10px;
+      line-height: 1.34;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    .c-mask { top: 10px; left: 10px; max-width: 174px; }
+    .c-mask .callout-title { background-color: rgba(242, 140, 106, 0.42); border-left-color: var(--peach); }
+
+    .c-mature { top: 10px; right: 10px; max-width: 172px; }
+    .c-mature .callout-title { background-color: rgba(126, 184, 218, 0.42); border-left-color: var(--sky); }
+
+    .c-fur { bottom: 10px; left: 10px; max-width: 174px; }
+    .c-fur .callout-title { background-color: var(--sprout); border-left-color: var(--matcha); }
+
+    .c-beard { bottom: 10px; right: 10px; max-width: 172px; }
+    .c-beard .callout-title { background-color: var(--lemon); }
+
+    /* 右側角色檔案卡 */
+    .profile-body {
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 6px;
+      background-color: var(--bg-card);
+    }
+
+    .fact-item {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6.5px 9px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .fact-item.fi-lemon { border-left-color: var(--lemon); }
+    .fact-item.fi-peach { border-left-color: var(--peach); }
+    .fact-item.fi-sky { border-left-color: var(--sky); }
+
+    .fact-badge {
+      flex-shrink: 0;
+      width: 42px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 2px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+    }
+
+    .fact-badge.b-sky { background-color: rgba(126, 184, 218, 0.35); }
+    .fact-badge.b-lemon { background-color: rgba(246, 214, 109, 0.6); }
+    .fact-badge.b-peach { background-color: rgba(242, 140, 106, 0.38); }
+
+    .fact-text {
+      font-size: 11.1px;
+      line-height: 1.42;
+      color: var(--ink);
+    }
+
+    .fact-text strong {
+      font-weight: 700;
+      color: #1A1714;
+      background: linear-gradient(transparent 66%, rgba(246, 214, 109, 0.72) 66%);
+    }
+
+    .scale-strip {
+      border: 1px solid var(--caramel);
+      background: linear-gradient(90deg, #FAF4E6 0%, #FFFDF8 100%);
+      padding: 6px 9px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .scale-strip p {
+      font-size: 10.8px;
+      line-height: 1.38;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    /* === 3. 中段第二排：雙欄圖鑑模組 === */
+    .row-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .module-content {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .scene-box {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      height: 114px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .info-card {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6px 9px;
+    }
+
+    .info-card.c-caramel { border-left-color: var(--caramel); }
+    .info-card.c-peach { border-left-color: var(--peach); }
+    .info-card.c-sky { border-left-color: var(--sky); }
+
+    .info-card-title {
+      font-size: 11.8px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+    }
+
+    .diamond-bullet {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--caramel);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .info-card p {
+      font-size: 10.9px;
+      line-height: 1.42;
+      color: var(--ink-sub);
+    }
+
+    .diet-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      height: 114px;
+    }
+
+    .diet-mini-panel {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diet-mini-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 9.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+      z-index: 2;
+    }
+
+    .diet-mini-tag.brave { background-color: rgba(242, 140, 106, 0.48); }
+
+    .rafiki-note {
+      background: linear-gradient(90deg, #FBF0C4 0%, #FFF8DE 100%);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--peach);
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .rafiki-badge {
+      flex-shrink: 0;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 3px 7px;
+      letter-spacing: 0.05em;
+    }
+
+    .rafiki-note p {
+      font-size: 11.1px;
+      line-height: 1.42;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* === 4. 固定底部收尾欄 === */
+    .footer-secret {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+      border: 1px solid var(--ink);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .secret-pill {
+      flex-shrink: 0;
+      background-color: var(--lemon);
+      color: var(--ink);
+      font-size: 11.5px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border: 1px solid var(--bg-paper);
+      letter-spacing: 0.08em;
+    }
+
+    .secret-text {
+      font-size: 11.4px;
+      line-height: 1.42;
+      font-weight: 400;
+    }
+
+    @media print {
+      body { background: none; padding: 0; min-height: auto; }
+      .poster { box-shadow: none; border: none; width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <!-- 1. 固定左上角主標題區 -->
+    <header class="header-area">
+      <section class="title-block">
+        <div>
+          <div class="tag-row">
+            <span class="tag tag-no">NO.004</span>
+            <span class="tag tag-cat">動物圖鑑</span>
+            <span class="tag tag-mood">世界體型最大的猴子</span>
+          </div>
+          <h1 class="main-title">
+            <span>自帶彩色面具的雨林長老</span>
+            <span class="diamond-join"><span>◆</span></span>
+            <span class="title-accent">山魈</span>
+          </h1>
+        </div>
+        <p class="subtitle">Mandrill — Mandrillus sphinx（俗稱彩面狒狒，《獅子王》拉飛奇原型）</p>
+      </section>
+
+      <aside class="lead-box">
+        <span class="lead-label">◆ INTRO / 認識新朋友</span>
+        <p class="lead-text">還記得《獅子王》裡高高舉起小辛巴、充滿神秘智慧的長老「拉飛奇」嗎？牠的原型就是臉上畫著紅藍彩色面具、體型壯碩的「山魈」（讀音同「宵」）喔！</p>
+      </aside>
+    </header>
+
+    <!-- 2. 上半部：主視覺＋全身霸氣亮點標註 + 山魈小檔案 -->
+    <section class="row-top">
+      <article class="panel">
+        <div class="panel-header ph-green">
+          <span>全身都是霸氣亮點！</span>
+          <span class="panel-en">FEATURE ILLUSTRATION</span>
+        </div>
+
+        <div class="hero-stage">
+          <svg class="hero-svg" viewBox="0 0 448 418" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="rainforestSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5B9BD1" />
+                <stop offset="45%" stop-color="#8FC6E6" />
+                <stop offset="82%" stop-color="#E3F2E8" />
+                <stop offset="100%" stop-color="#FAF3D8" />
+              </linearGradient>
+
+              <radialGradient id="jungleSun" cx="76%" cy="24%" r="36%">
+                <stop offset="0%" stop-color="#FFFDF0" stop-opacity="0.95" />
+                <stop offset="45%" stop-color="#F6D66D" stop-opacity="0.4" />
+                <stop offset="100%" stop-color="#F6D66D" stop-opacity="0" />
+              </radialGradient>
+
+              <!-- 橄欖褐色濃密體毛漸層 -->
+              <linearGradient id="mandrillFur" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#6B6A4A" />
+                <stop offset="50%" stop-color="#535238" />
+                <stop offset="100%" stop-color="#3B3A28" />
+              </linearGradient>
+
+              <linearGradient id="mandrillChest" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E3DAC3" />
+                <stop offset="70%" stop-color="#C4B699" />
+                <stop offset="100%" stop-color="#9A8C72" />
+              </linearGradient>
+
+              <!-- 鮮豔紅色鼻樑漸層 -->
+              <linearGradient id="redNose" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#F26B52" />
+                <stop offset="65%" stop-color="#D94432" />
+                <stop offset="100%" stop-color="#B52E20" />
+              </linearGradient>
+
+              <!-- 藍色溝紋臉頰漸層 -->
+              <linearGradient id="blueCheek" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#67A9D8" />
+                <stop offset="60%" stop-color="#417FB3" />
+                <stop offset="100%" stop-color="#2D5B85" />
+              </linearGradient>
+
+              <filter id="apeShadow" x="-15%" y="-15%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#262118" flood-opacity="0.25" />
+              </filter>
+            </defs>
+
+            <!-- 熱帶雨林背景 -->
+            <rect x="0" y="0" width="448" height="418" fill="url(#rainforestSky)" />
+            <rect x="0" y="0" width="448" height="418" fill="url(#jungleSun)" />
+
+            <!-- 遠處雨林樹冠與藤蔓葉片 -->
+            <path d="M0 264 Q115 240 230 260 T448 248 L448 418 L0 418 Z" fill="#9BB88B" />
+            <path d="M0 296 Q150 278 300 298 T448 288 L448 418 L0 418 Z" fill="#6E9462" />
+            <path d="M0 326 Q180 314 340 330 T448 322 L448 418 L0 418 Z" fill="#B59367" />
+
+            <!-- 雨林闊葉裝飾 -->
+            <g fill="#5D8A58" stroke="#232323" stroke-width="1.1">
+              <path d="M12 318 Q36 290 64 302 Q44 324 12 318 Z" />
+              <path d="M24 332 Q54 316 78 332 Q52 344 24 332 Z" fill="#78A672" />
+              <path d="M380 314 Q408 288 436 298 Q416 322 380 314 Z" />
+              <path d="M366 330 Q396 314 422 330 Q394 342 366 330 Z" fill="#78A672" />
+            </g>
+
+            <!-- ===== 主角：霸氣又可愛的成年公山魈（穩健坐姿，正面3/4展示紅藍彩色面具！） ===== -->
+            <g id="hero-mandrill" filter="url(#apeShadow)">
+              <!-- 1. 寬厚壯碩的橄欖褐色身軀 -->
+              <path d="M158 188
+                       C132 204 122 248 134 294
+                       C144 320 174 330 224 330
+                       C274 330 304 320 314 294
+                       C326 248 316 204 290 188 Z"
+                    fill="url(#mandrillFur)" stroke="#232323" stroke-width="1.3" />
+
+              <!-- 胸前淺米色毛髮 -->
+              <path d="M188 214
+                       C178 242 180 282 194 314
+                       L254 314
+                       C268 282 270 242 260 214 Z"
+                    fill="url(#mandrillChest)" />
+
+              <!-- 2. 粗壯的前肢（撐在膝蓋與地面上，展現力量感） -->
+              <path d="M148 202 C126 228 122 274 134 318 L158 324 C156 286 160 246 172 222 Z" fill="url(#mandrillFur)" stroke="#232323" stroke-width="1.3" />
+              <path d="M300 202 C322 228 326 274 314 318 L290 324 C292 286 288 246 276 222 Z" fill="url(#mandrillFur)" stroke="#232323" stroke-width="1.3" />
+
+              <!-- 彎曲坐姿的後腿與手掌 -->
+              <path d="M154 290 Q178 278 196 312 L188 334 L144 334 Z" fill="#494832" stroke="#232323" stroke-width="1.2" />
+              <path d="M294 290 Q270 278 252 312 L260 334 L304 334 Z" fill="#494832" stroke="#232323" stroke-width="1.2" />
+              <!-- 靈長類手掌與腳掌 -->
+              <ellipse cx="148" cy="328" rx="14" ry="8" fill="#3D342E" stroke="#232323" stroke-width="1.2" />
+              <ellipse cx="300" cy="328" rx="14" ry="8" fill="#3D342E" stroke="#232323" stroke-width="1.2" />
+
+              <!-- 3. 頭頂冠毛與蓬鬆兩頰鬚毛 -->
+              <!-- 頭頂帥氣冠毛 -->
+              <path d="M196 106 L210 82 L224 98 L236 82 L248 106 Z" fill="#4B4A33" stroke="#232323" stroke-width="1.2" stroke-linejoin="round" />
+
+              <!-- 兩側深色耳朵 -->
+              <ellipse cx="164" cy="146" rx="11" ry="14" fill="#3B322C" stroke="#232323" stroke-width="1.2" />
+              <ellipse cx="284" cy="146" rx="11" ry="14" fill="#3B322C" stroke="#232323" stroke-width="1.2" />
+
+              <!-- 蓬鬆圍巾般的奶油金黃頰鬚與下巴鬍子！ -->
+              <path d="M172 134
+                       C152 154 150 186 168 206
+                       L182 200 L188 218 L206 212 L224 234 L242 212 L260 218 L266 200 L280 206
+                       C298 186 296 154 276 134 Z"
+                    fill="#F5DF96" stroke="#232323" stroke-width="1.3" stroke-linejoin="round" />
+              <!-- 金黃鬍鬚層次筆觸 -->
+              <path d="M174 176 L186 192 M274 176 L262 192 M214 206 L224 224 L234 206" fill="none" stroke="#C99E48" stroke-width="1.6" stroke-linecap="round" />
+
+              <!-- 4. 頭部主輪廓 -->
+              <path d="M180 124
+                       C180 104 202 96 224 96
+                       C246 96 268 104 268 124
+                       C272 154 260 192 224 198
+                       C188 192 176 154 180 124 Z"
+                    fill="#5E5D40" stroke="#232323" stroke-width="1.3" />
+
+              <!-- 5. 招牌紅藍相間「彩色面具」核心結構！ -->
+              <!-- 左側藍色溝紋臉頰 -->
+              <path d="M186 136 C182 156 188 180 208 188 L212 142 Z" fill="url(#blueCheek)" stroke="#232323" stroke-width="1.2" />
+              <!-- 右側藍色溝紋臉頰 -->
+              <path d="M262 136 C266 156 260 180 240 188 L236 142 Z" fill="url(#blueCheek)" stroke="#232323" stroke-width="1.2" />
+              <!-- 藍色臉頰上的立體溝紋線條 -->
+              <path d="M188 148 Q198 152 208 150 M187 159 Q198 163 208 161 M190 170 Q200 174 208 172" fill="none" stroke="#234566" stroke-width="1.6" stroke-linecap="round" />
+              <path d="M260 148 Q250 152 240 150 M261 159 Q250 163 240 161 M258 170 Q248 174 240 172" fill="none" stroke="#234566" stroke-width="1.6" stroke-linecap="round" />
+
+              <!-- 中央鮮豔紅色鼻樑與鼻頭 -->
+              <path d="M214 132 L234 132 L240 186 C232 194 216 194 208 186 Z" fill="url(#redNose)" stroke="#232323" stroke-width="1.2" />
+              <!-- 鼻樑受光高光 -->
+              <path d="M224 138 L224 172" stroke="#FFA38F" stroke-width="2.5" stroke-linecap="round" opacity="0.75" />
+              <!-- 鼻孔與微笑嘴線 -->
+              <ellipse cx="218" cy="180" rx="3" ry="2.2" fill="#3B1410" />
+              <ellipse cx="230" cy="180" rx="3" ry="2.2" fill="#3B1410" />
+              <path d="M210 190 Q224 196 238 190" fill="none" stroke="#232323" stroke-width="1.6" stroke-linecap="round" />
+
+              <!-- 6. 濃密眉脊與沉穩睿智的雙眼 -->
+              <path d="M186 124 Q204 118 224 126 Q244 118 262 124" fill="none" stroke="#2B2A1E" stroke-width="4" stroke-linecap="round" />
+              <!-- 左眼 -->
+              <ellipse cx="204" cy="131" rx="7.5" ry="6" fill="#FFFDF8" stroke="#232323" stroke-width="1.2" />
+              <circle cx="204.5" cy="131" r="3.8" fill="#8C4A1E" />
+              <circle cx="204.5" cy="131" r="1.9" fill="#181210" />
+              <circle cx="203" cy="129.5" r="1.4" fill="#FFFFFF" />
+              <!-- 右眼 -->
+              <ellipse cx="244" cy="131" rx="7.5" ry="6" fill="#FFFDF8" stroke="#232323" stroke-width="1.2" />
+              <circle cx="243.5" cy="131" r="3.8" fill="#8C4A1E" />
+              <circle cx="243.5" cy="131" r="1.9" fill="#181210" />
+              <circle cx="242" cy="129.5" r="1.4" fill="#FFFFFF" />
+            </g>
+
+            <!-- 四角標註指引線 -->
+            <g stroke="#232323" stroke-width="1.2" fill="none" opacity="0.9">
+              <!-- 1. 紅藍相間彩色面具 -->
+              <polyline points="154,60 218,150" />
+              <rect x="215" y="147" width="6" height="6" transform="rotate(45 218 150)" fill="#F28C6A" stroke="#232323" stroke-width="1" />
+
+              <!-- 2. 越成熟越鮮豔 -->
+              <polyline points="294,60 252,158" />
+              <rect x="249" y="155" width="6" height="6" transform="rotate(45 252 158)" fill="#7EB8DA" stroke="#232323" stroke-width="1" />
+
+              <!-- 3. 橄欖色厚實毛皮 -->
+              <polyline points="124,344 146,268" />
+              <rect x="143" y="265" width="6" height="6" transform="rotate(45 146 268)" fill="#E3EEDC" stroke="#232323" stroke-width="1" />
+
+              <!-- 4. 蓬鬆金黃頰鬚 -->
+              <polyline points="304,344 268,202" />
+              <rect x="265" y="199" width="6" height="6" transform="rotate(45 268 202)" fill="#F6D66D" stroke="#232323" stroke-width="1" />
+            </g>
+          </svg>
+
+          <!-- 四個角落圖鑑標註卡 -->
+          <div class="callout c-mask">
+            <span class="callout-title">1. 紅藍相間彩色面具</span>
+            <p class="callout-desc">鮮豔紅色鼻樑搭配藍色溝紋臉頰，就像戴上華麗的雨林部落面具！</p>
+          </div>
+
+          <div class="callout c-mature">
+            <span class="callout-title">2. 越成熟越鮮豔</span>
+            <p class="callout-desc">公山魈臉部色彩比母山魈濃郁，隨著性成熟度提高，臉色會越來越亮眼！</p>
+          </div>
+
+          <div class="callout c-fur">
+            <span class="callout-title">3. 橄欖色厚實毛皮</span>
+            <p class="callout-desc">全身披著橄欖褐色濃密體毛，在昏暗熱帶雨林裡既保暖又有保護色！</p>
+          </div>
+
+          <div class="callout c-beard">
+            <span class="callout-title">4. 蓬鬆金黃頰鬚</span>
+            <p class="callout-desc">臉龐周圍長滿奶油金黃色長鬚毛，襯托出長老般威嚴又帥氣的氣場！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：山魈小檔案 -->
+      <article class="panel">
+        <div class="panel-header ph-sky">
+          <span>山魈小檔案</span>
+          <span class="panel-en">DATA FILE</span>
+        </div>
+
+        <div class="profile-body">
+          <div class="fact-item">
+            <span class="fact-badge">分類</span>
+            <p class="fact-text"><strong>靈長目・猴科・山魈屬</strong><br />俗稱「彩面狒狒」，其實自成一屬，是<strong>世界上體型最大的猴子</strong>！</p>
+          </div>
+
+          <div class="fact-item fi-lemon">
+            <span class="fact-badge b-lemon">老家</span>
+            <p class="fact-text"><strong>非洲中西部熱帶雨林</strong><br />分布於喀麥隆南部、加彭、赤道幾內亞與剛果，目前為 <strong>IUCN 易危物種</strong>。</p>
+          </div>
+
+          <div class="fact-item fi-peach">
+            <span class="fact-badge b-peach">體型</span>
+            <p class="fact-text"><strong>體長可達 1 公尺｜公山魈重達 30 公斤</strong><br />體格相當魁梧壯碩，母山魈較嬌小，體重大約只有公山魈的一半！</p>
+          </div>
+
+          <div class="fact-item fi-sky">
+            <span class="fact-badge b-sky">繁殖</span>
+            <p class="fact-text"><strong>圈養壽命最長約 25 年</strong><br />懷孕期約 <strong>6～7 個月</strong>，通常在每年 1 月到 4 月間迎接可愛小寶寶。</p>
+          </div>
+
+          <div class="scale-strip">
+            <svg width="44" height="40" viewBox="0 0 46 42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="4" y="11" width="18" height="20" fill="#F28C6A" stroke="#362E27" stroke-width="1.2" />
+              <rect x="26" y="21" width="16" height="10" fill="#7EB8DA" stroke="#362E27" stroke-width="1.2" />
+              <text x="13" y="24" text-anchor="middle" font-size="7.5" font-weight="900" fill="#232323">公30kg</text>
+              <text x="34" y="29" text-anchor="middle" font-size="7" font-weight="700" fill="#232323">母1/2</text>
+              <text x="23" y="8" text-anchor="middle" font-size="7.5" font-weight="700" fill="#A6754B">公母體重對比</text>
+            </svg>
+            <p>公山魈體重可達 <strong>30 公斤</strong>，是母山魈的兩倍重，霸氣十足！</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 下半部：雙欄圖鑑模組 -->
+    <section class="row-bottom">
+      <!-- 左：母系大家庭與獨行俠紳士 -->
+      <article class="panel">
+        <div class="panel-header ph-caramel">
+          <span>母系大家庭與獨行俠紳士</span>
+          <span class="panel-en">TROOP &amp; SOCIETY</span>
+        </div>
+
+        <div class="module-content">
+          <div class="scene-box">
+            <svg viewBox="0 0 340 112" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="troopBg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#E5F3EC" />
+                  <stop offset="100%" stop-color="#FAF4E4" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="340" height="78" fill="url(#troopBg)" />
+              <rect x="0" y="78" width="340" height="34" fill="#C9A878" />
+              <line x1="0" y1="78" x2="340" y2="78" stroke="#362E27" stroke-width="1.2" />
+              <line x1="224" y1="8" x2="224" y2="104" stroke="#362E27" stroke-width="1.1" stroke-dasharray="3 3" />
+
+              <!-- 左側：母系大家庭（1隻首領公山魈 + 多隻母山魈與小寶寶） -->
+              <rect x="10" y="8" width="144" height="20" fill="#E3EEDC" stroke="#362E27" stroke-width="1.1" />
+              <text x="82" y="21" text-anchor="middle" font-size="9" font-weight="900" fill="#232323">母系核心大家庭（1位首領）</text>
+
+              <!-- 首領公山魈 -->
+              <g transform="translate(24, 34)">
+                <ellipse cx="18" cy="28" rx="13" ry="15" fill="#535238" stroke="#232323" stroke-width="1.1" />
+                <circle cx="18" cy="13" r="10" fill="#F5DF96" stroke="#232323" stroke-width="1.1" />
+                <rect x="16" y="10" width="4" height="9" fill="#D94432" />
+                <circle cx="14" cy="12" r="1.4" fill="#232323" />
+                <circle cx="22" cy="12" r="1.4" fill="#232323" />
+              </g>
+              <!-- 母山魈 1 -->
+              <g transform="translate(68, 42)">
+                <ellipse cx="14" cy="22" rx="10" ry="12" fill="#636244" stroke="#232323" stroke-width="1.1" />
+                <circle cx="14" cy="10" r="8" fill="#E3DAC3" stroke="#232323" stroke-width="1.1" />
+                <rect x="12.5" y="8" width="3" height="6" fill="#E87A64" />
+                <circle cx="11" cy="9" r="1.2" fill="#232323" />
+                <circle cx="17" cy="9" r="1.2" fill="#232323" />
+              </g>
+              <!-- 母山魈 2 + 小寶寶 -->
+              <g transform="translate(106, 42)">
+                <ellipse cx="14" cy="22" rx="10" ry="12" fill="#636244" stroke="#232323" stroke-width="1.1" />
+                <circle cx="14" cy="10" r="8" fill="#E3DAC3" stroke="#232323" stroke-width="1.1" />
+                <rect x="12.5" y="8" width="3" height="6" fill="#E87A64" />
+                <circle cx="11" cy="9" r="1.2" fill="#232323" />
+                <circle cx="17" cy="9" r="1.2" fill="#232323" />
+              </g>
+              <g transform="translate(142, 54)">
+                <ellipse cx="10" cy="14" rx="7" ry="8" fill="#757452" stroke="#232323" stroke-width="1" />
+                <circle cx="10" cy="6" r="5.5" fill="#F2E6CE" stroke="#232323" stroke-width="1" />
+                <circle cx="8" cy="5.5" r="1" fill="#232323" />
+                <circle cx="12" cy="5.5" r="1" fill="#232323" />
+              </g>
+
+              <!-- 右側：獨居的成年公山魈 -->
+              <rect x="236" y="8" width="94" height="20" fill="#F6D66D" stroke="#362E27" stroke-width="1.1" />
+              <text x="283" y="21" text-anchor="middle" font-size="9" font-weight="900" fill="#232323">獨行俠公山魈</text>
+              <g transform="translate(264, 36)">
+                <ellipse cx="18" cy="27" rx="12" ry="14" fill="#535238" stroke="#232323" stroke-width="1.1" />
+                <circle cx="18" cy="12" r="9.5" fill="#F5DF96" stroke="#232323" stroke-width="1.1" />
+                <rect x="16" y="9" width="4" height="8" fill="#D94432" />
+                <circle cx="14" cy="11" r="1.3" fill="#232323" />
+                <circle cx="22" cy="11" r="1.3" fill="#232323" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>溫馨母系社會</div>
+              <p>山魈是群居動物，族群主要由好幾頭母山魈與孩子們組成核心大家庭，彼此互相照顧、一起在雨林間活動。</p>
+            </div>
+
+            <div class="info-card c-caramel">
+              <div class="info-card-title"><span class="diamond-bullet"></span>一位首領帶隊</div>
+              <p>一個母系族群裡通常只會有<strong>一隻成年公山魈</strong>當家作主，守護整個大家庭的安全與秩序。</p>
+            </div>
+
+            <div class="info-card c-sky">
+              <div class="info-card-title"><span class="diamond-bullet"></span>瀟灑的獨行俠紳士</div>
+              <p>族群以外的大部分成年公山魈則會離開群體，過著自由自在的獨居生活，平時各自在林間活動！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：雨林雜食王 ＆ 隱藏小秘密 -->
+      <article class="panel">
+        <div class="panel-header ph-peach">
+          <span>雨林雜食王 ＆ 隱藏小秘密</span>
+          <span class="panel-en">DIET &amp; TRIVIA</span>
+        </div>
+
+        <div class="module-content">
+          <div class="diet-strip">
+            <!-- 左小圖：地面植物、果實與昆蟲 -->
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag">主食菜單</span>
+              <svg viewBox="0 0 136 90" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="60" fill="#FAFDF6" />
+                <rect x="0" y="60" width="136" height="30" fill="#D5B285" />
+                <line x1="0" y1="60" x2="136" y2="60" stroke="#362E27" stroke-width="1.2" />
+                <!-- 雨林植物葉片與果實 -->
+                <path d="M22 60 Q14 40 28 32 Q38 44 22 60 Z" fill="#5D8A58" stroke="#362E27" stroke-width="1.1" />
+                <path d="M30 60 Q38 38 52 36 Q46 50 30 60 Z" fill="#78A672" stroke="#362E27" stroke-width="1.1" />
+                <circle cx="52" cy="52" r="7.5" fill="#F28C6A" stroke="#362E27" stroke-width="1.1" />
+                <!-- 昆蟲小甲蟲 -->
+                <g transform="translate(76, 30)">
+                  <ellipse cx="18" cy="18" rx="12" ry="9" fill="#5D8A58" stroke="#362E27" stroke-width="1.2" />
+                  <circle cx="30" cy="18" r="4.5" fill="#232323" />
+                  <path d="M12 11 L8 6 M18 10 L18 5 M24 11 L28 6 M12 25 L8 30 M18 26 L18 31 M24 25 L28 30" stroke="#362E27" stroke-width="1.2" stroke-linecap="round" />
+                </g>
+                <text x="68" y="81" text-anchor="middle" font-size="9.2" font-weight="700" fill="#232323">植物・果實・昆蟲小動物</text>
+              </svg>
+            </div>
+
+            <!-- 右小圖：連花豹都敬畏三分 -->
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag brave">雨林硬漢</span>
+              <svg viewBox="0 0 136 90" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="90" fill="#FFF9F6" />
+                <!-- 退縮的花豹剪影與驚嘆號 -->
+                <g transform="translate(26, 20)">
+                  <ellipse cx="36" cy="24" rx="22" ry="12" fill="#F2B84B" stroke="#362E27" stroke-width="1.2" />
+                  <circle cx="58" cy="18" r="9" fill="#F2B84B" stroke="#362E27" stroke-width="1.2" />
+                  <circle cx="54" cy="11" r="3" fill="#F2B84B" stroke="#362E27" stroke-width="1" />
+                  <circle cx="62" cy="11" r="3" fill="#F2B84B" stroke="#362E27" stroke-width="1" />
+                  <!-- 花豹斑點 -->
+                  <circle cx="28" cy="22" r="2" fill="#362E27" />
+                  <circle cx="38" cy="20" r="2" fill="#362E27" />
+                  <circle cx="34" cy="28" r="2" fill="#362E27" />
+                  <circle cx="45" cy="26" r="2" fill="#362E27" />
+                  <!-- 驚訝汗滴 -->
+                  <path d="M74 10 Q78 16 74 19 Q70 16 74 10 Z" fill="#7EB8DA" stroke="#362E27" stroke-width="1" />
+                </g>
+                <text x="68" y="81" text-anchor="middle" font-size="9.2" font-weight="700" fill="#232323">氣勢兇猛連花豹都怕！</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>地面尋寶美食家</div>
+              <p>屬於雜食性動物，最常在雨林地面尋找植物、果實，也會捕捉昆蟲和其他小動物補充蛋白質（大群山魈偶爾還會跑進農田吃莊稼呢！）。</p>
+            </div>
+
+            <div class="info-card c-peach">
+              <div class="info-card-title"><span class="diamond-bullet"></span>連花豹都敬畏三分</div>
+              <p>雖然花豹是牠們的天敵，但成年公山魈體格壯碩、性格兇猛，生氣起來連花豹都會被嚇跑，不敢輕易招惹！</p>
+            </div>
+
+            <div class="rafiki-note">
+              <span class="rafiki-badge">大明星拉飛奇</span>
+              <p>迪士尼《獅子王》裡拿著木杖、為小辛巴祈福的智者長老「<strong>拉飛奇</strong>」，外型靈感正是來自色彩繽紛的山魈喔！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. 固定底部收尾欄 -->
+    <footer class="footer-secret">
+      <span class="secret-pill">觀察小秘密</span>
+      <p class="secret-text">下次看到山魈時，不妨觀察牠那張像畫了紅藍彩繪的臉龐——色彩越鮮豔代表越成熟霸氣，而且牠可是連花豹都不敢隨便靠近的「世界最大猴子」呢！</p>
+    </footer>
+
+  </main>
+</body>
+</html>

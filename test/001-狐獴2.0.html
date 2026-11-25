@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NO.001 站高高小哨兵！狐獴｜日系動漫圖鑑海報</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500;700;900&family=Zen+Maru+Gothic:wght@500;700;900&display=swap');
+
+    :root {
+      --bg-paper: #FAF7EE;
+      --bg-card: #FFFDF8;
+      --bg-white: #FFFFFF;
+      --ink: #232323;
+      --ink-sub: #554F47;
+      --matcha: #5D8A58;
+      --sprout: #E3EEDC;
+      --caramel: #A6754B;
+      --peach: #F28C6A;
+      --lemon: #F6D66D;
+      --sky: #7EB8DA;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background-color: #E7E2D4;
+      font-family: 'Zen Maru Gothic', 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 固定單頁 A4 直式海報畫布 */
+    .poster {
+      width: 794px;
+      height: 1123px;
+      background-color: var(--bg-paper);
+      background-image:
+        radial-gradient(rgba(35, 35, 35, 0.09) 1px, transparent 1px);
+      background-size: 14px 14px;
+      padding: 22px 24px;
+      border: 2.5px solid var(--ink);
+      box-shadow: 8px 8px 0 rgba(35, 35, 35, 0.18);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* 日系動漫漫畫網點裝飾條 */
+    .screentone-bg {
+      background-image: radial-gradient(rgba(35, 35, 35, 0.14) 1.2px, transparent 1.2px);
+      background-size: 7px 7px;
+    }
+
+    /* === 固定左上角主標題區（動漫角色設定風） === */
+    .header-area {
+      display: grid;
+      grid-template-columns: 1fr 228px;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .title-block {
+      background-color: var(--bg-card);
+      border: 2.5px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
+      padding: 11px 16px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    /* 動漫雜誌風右上角小閃亮標籤 */
+    .anime-burst {
+      position: absolute;
+      top: 8px;
+      right: 12px;
+      background-color: var(--lemon);
+      border: 1.5px solid var(--ink);
+      padding: 2px 7px;
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      transform: rotate(2deg);
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 6px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      padding: 2px 8px;
+      border: 1.5px solid var(--ink);
+      line-height: 1.3;
+    }
+
+    .tag-no { background-color: var(--ink); color: var(--bg-paper); }
+    .tag-cat { background-color: var(--sprout); color: var(--ink); }
+    .tag-mood { background-color: var(--peach); color: var(--ink); }
+
+    .main-title {
+      font-size: 31px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+    }
+
+    .main-title .highlight-name {
+      display: inline-block;
+      background-color: var(--lemon);
+      padding: 0 7px;
+      border: 2px solid var(--ink);
+      box-shadow: 2px 2px 0 var(--peach);
+      margin-left: 3px;
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ink-sub);
+      letter-spacing: 0.03em;
+    }
+
+    .lead-box {
+      background-color: var(--sprout);
+      border: 2.5px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--matcha);
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .tape {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1.5deg);
+      width: 72px;
+      height: 14px;
+      background-color: var(--lemon);
+      border: 1.5px solid var(--ink);
+    }
+
+    .lead-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--matcha);
+      letter-spacing: 0.06em;
+      margin-bottom: 3px;
+    }
+
+    .lead-text {
+      font-size: 11.6px;
+      line-height: 1.46;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* === 中段第一排：動漫角色主視覺 + 小檔案 === */
+    .row-top {
+      display: grid;
+      grid-template-columns: 448px 1fr;
+      gap: 12px;
+      height: 452px;
+    }
+
+    .panel {
+      background-color: var(--bg-card);
+      border: 2.5px solid var(--ink);
+      box-shadow: 5px 5px 0 var(--ink);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      border-bottom: 2.5px solid var(--ink);
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+
+    .ph-green { background-color: var(--matcha); color: #FFFFFF; }
+    .ph-sky { background-color: var(--sky); color: var(--ink); }
+    .ph-caramel { background-color: var(--caramel); color: #FFFFFF; }
+    .ph-peach { background-color: var(--peach); color: var(--ink); }
+
+    .panel-en {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      background-color: rgba(255, 255, 255, 0.25);
+      padding: 1px 5px;
+      border: 1px solid currentColor;
+    }
+
+    /* 動漫感主視覺舞台 */
+    .hero-stage {
+      position: relative;
+      flex: 1;
+      background-color: var(--bg-white);
+      background-image:
+        linear-gradient(to right, rgba(166, 117, 75, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(166, 117, 75, 0.06) 1px, transparent 1px);
+      background-size: 18px 18px;
+      overflow: hidden;
+    }
+
+    .hero-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    /* 漫畫風直角標註貼紙 */
+    .callout {
+      position: absolute;
+      background-color: var(--bg-card);
+      border: 2px solid var(--ink);
+      padding: 5px 7px;
+      box-shadow: 3px 3px 0 var(--ink);
+    }
+
+    .callout-title {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 1px 5px;
+      margin-bottom: 2px;
+      border: 1.5px solid var(--ink);
+    }
+
+    .callout-desc {
+      font-size: 10.4px;
+      line-height: 1.34;
+      color: var(--ink-sub);
+      font-weight: 700;
+    }
+
+    .c-glasses { top: 10px; left: 10px; max-width: 158px; }
+    .c-glasses .callout-title { background-color: var(--lemon); }
+
+    .c-belly { top: 10px; right: 10px; max-width: 158px; }
+    .c-belly .callout-title { background-color: var(--peach); }
+
+    .c-claws { bottom: 10px; left: 10px; max-width: 168px; }
+    .c-claws .callout-title { background-color: var(--sky); }
+
+    .c-tail { bottom: 10px; right: 10px; max-width: 168px; }
+    .c-tail .callout-title { background-color: var(--sprout); }
+
+    /* 右側角色檔案卡 */
+    .profile-body {
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 6px;
+    }
+
+    .fact-item {
+      border: 2px solid var(--ink);
+      background-color: var(--bg-white);
+      padding: 6px 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      box-shadow: 2px 2px 0 rgba(35, 35, 35, 0.12);
+    }
+
+    .fact-badge {
+      flex-shrink: 0;
+      width: 44px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 3px 2px;
+      border: 1.5px solid var(--ink);
+      background-color: var(--sprout);
+    }
+
+    .fact-badge.b-sky { background-color: var(--sky); }
+    .fact-badge.b-lemon { background-color: var(--lemon); }
+    .fact-badge.b-peach { background-color: var(--peach); }
+
+    .fact-text {
+      font-size: 11.3px;
+      line-height: 1.4;
+      color: var(--ink);
+    }
+
+    .fact-text strong {
+      font-weight: 900;
+      background: linear-gradient(transparent 62%, var(--lemon) 62%);
+    }
+
+    .scale-strip {
+      border: 2px dashed var(--caramel);
+      background-color: var(--bg-paper);
+      padding: 6px 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .scale-strip p {
+      font-size: 11px;
+      line-height: 1.38;
+      color: var(--ink-sub);
+      font-weight: 700;
+    }
+
+    /* === 中段第二排：漫畫分鏡感雙欄模組 === */
+    .row-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .module-content {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .burrow-box {
+      border: 2px solid var(--ink);
+      background-color: var(--bg-white);
+      height: 120px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .info-card {
+      border-left: 6px solid var(--matcha);
+      border-top: 1.5px solid var(--ink);
+      border-right: 1.5px solid var(--ink);
+      border-bottom: 1.5px solid var(--ink);
+      background-color: var(--bg-white);
+      padding: 6px 9px;
+    }
+
+    .info-card.c-caramel { border-left-color: var(--caramel); }
+    .info-card.c-peach { border-left-color: var(--peach); }
+    .info-card.c-sky { border-left-color: var(--sky); }
+
+    .info-card-title {
+      font-size: 12.1px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mini-star {
+      display: inline-block;
+      font-size: 11px;
+      color: var(--peach);
+      -webkit-text-stroke: 0.6px var(--ink);
+    }
+
+    .info-card p {
+      font-size: 11.1px;
+      line-height: 1.42;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    .diet-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      height: 110px;
+    }
+
+    .diet-mini-panel {
+      border: 2px solid var(--ink);
+      background-color: var(--bg-white);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2px;
+      position: relative;
+    }
+
+    .diet-mini-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 1px 5px;
+      border: 1.5px solid var(--ink);
+      background-color: var(--sprout);
+      z-index: 2;
+    }
+
+    .diet-mini-tag.warn { background-color: var(--peach); }
+
+    .timon-note {
+      background-color: var(--lemon);
+      border: 2px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--ink);
+      padding: 7px 9px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .timon-badge {
+      flex-shrink: 0;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 3px 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .timon-note p {
+      font-size: 11.2px;
+      line-height: 1.38;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    /* === 固定底部收尾欄 === */
+    .footer-secret {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+      border: 2.5px solid var(--ink);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .secret-pill {
+      flex-shrink: 0;
+      background-color: var(--lemon);
+      color: var(--ink);
+      font-size: 12px;
+      font-weight: 900;
+      padding: 4px 10px;
+      border: 1.5px solid var(--bg-paper);
+      letter-spacing: 0.06em;
+    }
+
+    .secret-text {
+      font-size: 11.8px;
+      line-height: 1.4;
+      font-weight: 500;
+    }
+
+    @media print {
+      body { background: none; padding: 0; min-height: auto; }
+      .poster { box-shadow: none; border: none; width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <!-- 1. 固定左上角主標題區 -->
+    <header class="header-area">
+      <section class="title-block screentone-bg">
+        <span class="anime-burst">✦ 放風守望中!!</span>
+        <div>
+          <div class="tag-row">
+            <span class="tag tag-no">NO.001</span>
+            <span class="tag tag-cat">動物圖鑑</span>
+            <span class="tag tag-mood">非洲沙漠小哨兵</span>
+          </div>
+          <h1 class="main-title">站高高小哨兵！<span class="highlight-name">狐獴</span></h1>
+        </div>
+        <p class="subtitle">Meerkat ｜ Suricata suricatta（又稱細尾獴）</p>
+      </section>
+
+      <aside class="lead-box">
+        <div class="tape" aria-hidden="true"></div>
+        <span class="lead-label">HELLO! 認識新朋友 ✦</span>
+        <p class="lead-text">你看過兩隻腳站得直挺挺、一臉認真東張西望的小傢伙嗎？牠們就是自帶太陽眼鏡的超萌沙漠守望員！</p>
+      </aside>
+    </header>
+
+    <!-- 2. 上半部：日系動漫風萌狐獴插畫 + 基本小檔案 -->
+    <section class="row-top">
+      <!-- 左：全身可愛小機關主視覺 -->
+      <article class="panel">
+        <div class="panel-header ph-green">
+          <span>全身都是可愛小機關！</span>
+          <span class="panel-en">CHARA SHEET ✦</span>
+        </div>
+
+        <div class="hero-stage">
+          <!-- 日系動漫賽璐璐風格矢量插畫：大眼萌狐獴哥哥 & 小狐獴寶寶 -->
+          <svg class="hero-svg" viewBox="0 0 442 410" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <!-- 暖色動漫賽璐璐漸層 -->
+              <linearGradient id="furBase" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#F6E5C8" />
+                <stop offset="65%" stop-color="#E7C99E" />
+                <stop offset="100%" stop-color="#D4AE7D" />
+              </linearGradient>
+              <linearGradient id="furShade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#C89C69" />
+                <stop offset="100%" stop-color="#B07E4C" />
+              </linearGradient>
+              <linearGradient id="animeIris" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3E2314" />
+                <stop offset="55%" stop-color="#7D4927" />
+                <stop offset="100%" stop-color="#DDA257" />
+              </linearGradient>
+            </defs>
+
+            <!-- 動漫風集中閃耀背景圓光環 & 漫畫網點感太陽 -->
+            <circle cx="222" cy="186" r="126" fill="#FAF7EE" stroke="#E3EEDC" stroke-width="8" stroke-dasharray="10 6" />
+            <circle cx="222" cy="48" r="22" fill="#F6D66D" stroke="#232323" stroke-width="2.2" />
+            <g stroke="#F28C6A" stroke-width="2.4" stroke-linecap="round">
+              <line x1="222" y1="18" x2="222" y2="10" />
+              <line x1="245" y1="26" x2="251" y2="20" />
+              <line x1="252" y1="48" x2="260" y2="48" />
+              <line x1="199" y1="26" x2="193" y2="20" />
+              <line x1="192" y1="48" x2="184" y2="48" />
+            </g>
+
+            <!-- 遠景沙漠丘陵與可愛Q版仙人掌 -->
+            <path d="M0 278 Q115 248 228 274 T442 260 L442 410 L0 410 Z" fill="#E3EEDC" stroke="#232323" stroke-width="2" />
+            <path d="M0 306 Q165 292 300 312 T442 302 L442 410 L0 410 Z" fill="#F2E2C4" stroke="#232323" stroke-width="2" />
+
+            <!-- 遠景仙人掌（帶動漫小花） -->
+            <g transform="translate(50, 230)">
+              <rect x="0" y="14" width="13" height="34" fill="#5D8A58" stroke="#232323" stroke-width="2" />
+              <rect x="-10" y="22" width="10" height="8" fill="#5D8A58" stroke="#232323" stroke-width="2" />
+              <rect x="13" y="18" width="10" height="8" fill="#5D8A58" stroke="#232323" stroke-width="2" />
+              <!-- 仙人掌小紅花 -->
+              <polygon points="6,4 10,12 2,12" fill="#F28C6A" stroke="#232323" stroke-width="1.3" />
+            </g>
+
+            <!-- 動漫風閃亮星星與對話氣泡 -->
+            <g fill="#F6D66D" stroke="#232323" stroke-width="1.4">
+              <path d="M138 118 L141 125 L148 128 L141 131 L138 138 L135 131 L128 128 L135 125 Z" />
+              <path d="M326 146 L328 151 L333 153 L328 155 L326 160 L324 155 L319 153 L324 151 Z" />
+            </g>
+            <!-- 漫畫效果氣泡「ピカッ！」 -->
+            <g transform="translate(248, 80)">
+              <polygon points="0,0 74,0 74,24 18,24 6,34 10,24 0,24" fill="#FFFFFF" stroke="#232323" stroke-width="2" />
+              <text x="37" y="16" text-anchor="middle" font-size="10.5" font-weight="900" fill="#232323">發現目標!!</text>
+            </g>
+
+            <!-- 橫臥沙漠枯木底座 -->
+            <path d="M68 310 L368 310 L380 336 L56 336 Z" fill="#A6754B" stroke="#232323" stroke-width="2.4" />
+            <path d="M72 313 L366 313 L368 318 L70 318 Z" fill="#C48F5E" />
+            <path d="M84 322 Q180 319 250 324 M270 323 Q318 320 355 325 M108 330 Q195 327 290 331" fill="none" stroke="#232323" stroke-width="1.4" stroke-linecap="round" />
+
+            <!-- ===== 主角：日系動漫風大狐獴（敬禮眺望姿勢） ===== -->
+            <g id="anime-big-meerkat" transform="translate(-8, -32)">
+              <!-- 撐地平衡的細長尾巴（帶賽璐璐陰影＋黑色尾尖） -->
+              <path d="M230 296 Q276 328 314 342 Q325 346 320 353 Q302 356 269 341 Q240 327 220 313 Z" fill="url(#furBase)" stroke="#232323" stroke-width="2.4" />
+              <path d="M230 306 Q266 330 302 346 Q292 349 266 338 Q238 325 224 314 Z" fill="url(#furShade)" opacity="0.55" />
+              <path d="M292 332 Q313 341 320 345 Q324 351 317 353 Q301 354 285 346 Z" fill="#232323" />
+
+              <!-- 身體主輪廓（微Q版萌系比例） -->
+              <path d="M168 172 Q150 226 149 288 Q149 334 173 342 L233 342 Q249 334 242 286 Q234 226 220 172 Z" fill="url(#furBase)" stroke="#232323" stroke-width="2.5" />
+              <!-- 身體右側賽璐璐陰影 -->
+              <path d="M214 176 Q226 230 233 288 Q238 326 225 340 L233 340 Q247 332 241 286 Q233 226 219 175 Z" fill="#C99B68" opacity="0.55" />
+
+              <!-- 可愛背部虎斑小條紋 -->
+              <path d="M157 226 Q170 223 180 228 M154 244 Q167 241 178 246 M153 262 Q166 259 177 264 M220 226 Q229 224 235 228 M223 245 Q232 243 238 247" fill="none" stroke="#8A5E3B" stroke-width="2.6" stroke-linecap="round" />
+
+              <!-- 太陽能深色小肚肚（可愛圓潤輪廓＋熱能閃亮小標） -->
+              <ellipse cx="198" cy="264" rx="23" ry="42" fill="#6F584A" stroke="#232323" stroke-width="1.6" stroke-dasharray="3 2" />
+              <ellipse cx="196" cy="252" rx="14" ry="24" fill="#523E33" opacity="0.6" />
+              <ellipse cx="190" cy="242" rx="5" ry="10" fill="#9A7E6E" opacity="0.45" />
+
+              <!-- 可愛雙腳 -->
+              <path d="M164 335 L152 344 L185 344 L186 335 Z" fill="#D5B285" stroke="#232323" stroke-width="2.2" />
+              <path d="M212 335 L210 344 L242 344 L231 335 Z" fill="#D5B285" stroke="#232323" stroke-width="2.2" />
+
+              <!-- 左手：垂在胸前展示2cm強壯彎曲挖洞爪子 -->
+              <path d="M168 196 Q158 228 168 252 Q175 256 181 248 Q181 222 180 198" fill="#E4C69B" stroke="#232323" stroke-width="2.3" />
+              <path d="M166 251 L163 262 M171 253 L170 264 M176 251 L178 262" stroke="#232323" stroke-width="2.3" stroke-linecap="round" />
+
+              <!-- 右手：可愛動漫風抬手敬禮看遠方！ -->
+              <path d="M222 194 Q246 188 252 162 Q253 153 244 152 Q237 154 234 166 Q230 178 218 184" fill="#E4C69B" stroke="#232323" stroke-width="2.3" />
+              <path d="M244 152 L241 146 M248 153 L247 146 M251 156 L253 149" stroke="#232323" stroke-width="1.9" stroke-linecap="round" />
+
+              <!-- 動漫萌系大頭：蓬鬆毛絨臉頰尖毛 + 圓黑小耳朵 -->
+              <ellipse cx="155" cy="142" rx="10" ry="12" fill="#232323" />
+              <ellipse cx="157" cy="143" rx="4.5" ry="6" fill="#554F47" />
+              <ellipse cx="241" cy="142" rx="10" ry="12" fill="#232323" />
+              <ellipse cx="239" cy="143" rx="4.5" ry="6" fill="#554F47" />
+
+              <!-- 帶毛絨耳邊與腮幫尖毛的動漫頭型 -->
+              <path d="M198 104
+                       C224 104 240 120 241 142
+                       L247 148 L240 154
+                       C236 170 220 180 198 180
+                       C176 180 160 170 156 154
+                       L149 148 L155 142
+                       C156 120 172 104 198 104 Z"
+                    fill="url(#furBase)" stroke="#232323" stroke-width="2.5" stroke-linejoin="round" />
+              <!-- 額頭毛髮高光 -->
+              <path d="M180 112 Q198 107 216 112" fill="none" stroke="#FFFDF8" stroke-width="3" stroke-linecap="round" opacity="0.85" />
+
+              <!-- 可愛動漫挑眉（認真放風神情） -->
+              <path d="M167 124 Q177 118 188 123" fill="none" stroke="#232323" stroke-width="2.2" stroke-linecap="round" />
+              <path d="M208 123 Q219 118 229 124" fill="none" stroke="#232323" stroke-width="2.2" stroke-linecap="round" />
+
+              <!-- 天然太陽眼鏡黑眼圈（微傾斜動漫萌感） -->
+              <ellipse cx="177" cy="141" rx="14.5" ry="12.5" transform="rotate(-6 177 141)" fill="#232323" />
+              <ellipse cx="219" cy="141" rx="14.5" ry="12.5" transform="rotate(6 219 141)" fill="#232323" />
+
+              <!-- 動漫大眼睛（多層虹膜＋大高光＋小星星閃光！） -->
+              <!-- 左眼 -->
+              <ellipse cx="178" cy="141" rx="9.2" ry="9.5" fill="#FFFDF8" />
+              <ellipse cx="178.5" cy="142" rx="7.6" ry="8.2" fill="url(#animeIris)" />
+              <circle cx="178.5" cy="142" r="4.1" fill="#1B1410" />
+              <ellipse cx="178.5" cy="146.5" rx="4.5" ry="2.2" fill="#F6D66D" opacity="0.65" />
+              <circle cx="175" cy="138" r="3.1" fill="#FFFFFF" />
+              <circle cx="182" cy="145.5" r="1.4" fill="#FFFFFF" />
+              <!-- 右眼 -->
+              <ellipse cx="218" cy="141" rx="9.2" ry="9.5" fill="#FFFDF8" />
+              <ellipse cx="217.5" cy="142" rx="7.6" ry="8.2" fill="url(#animeIris)" />
+              <circle cx="217.5" cy="142" r="4.1" fill="#1B1410" />
+              <ellipse cx="217.5" cy="146.5" rx="4.5" ry="2.2" fill="#F6D66D" opacity="0.65" />
+              <circle cx="214" cy="138" r="3.1" fill="#FFFFFF" />
+              <circle cx="221" cy="145.5" r="1.4" fill="#FFFFFF" />
+
+              <!-- 淺色可愛小口鼻部 + 粉嫩動漫斜線腮紅 -->
+              <ellipse cx="198" cy="158" rx="14" ry="11" fill="#FFFDF8" opacity="0.72" />
+              <ellipse cx="163" cy="156" rx="7.5" ry="4.5" fill="#F28C6A" opacity="0.58" />
+              <ellipse cx="233" cy="156" rx="7.5" ry="4.5" fill="#F28C6A" opacity="0.58" />
+              <path d="M160 157 L162 154 M164 157 L166 154 M230 157 L232 154 M234 157 L236 154" stroke="#E06844" stroke-width="1.2" stroke-linecap="round" />
+
+              <!-- 小巧黑鼻頭 + 超可愛動漫「ω」微笑小嘴 -->
+              <path d="M193 151 Q198 149 203 151 Q200 156 198 156 Q196 156 193 151 Z" fill="#232323" />
+              <path d="M191 160 Q194.5 164 198 159 Q201.5 164 205 160" fill="none" stroke="#232323" stroke-width="2" stroke-linecap="round" />
+            </g>
+
+            <!-- ===== 可愛小狐獴寶寶（Q版二頭身在旁邊閃亮崇拜！） ===== -->
+            <g id="anime-baby-meerkat" transform="translate(268, 176) scale(0.76)">
+              <!-- 尾巴 -->
+              <path d="M58 164 Q86 172 100 173" fill="none" stroke="#232323" stroke-width="6.5" stroke-linecap="round" />
+              <path d="M58 164 Q82 171 91 172" fill="none" stroke="#DFC49B" stroke-width="3.2" stroke-linecap="round" />
+              <!-- 圓滾滾小身體 -->
+              <path d="M19 74 Q9 122 12 168 L68 168 Q71 122 61 74 Z" fill="url(#furBase)" stroke="#232323" stroke-width="2.8" />
+              <ellipse cx="40" cy="128" rx="15" ry="22" fill="#8C7362" opacity="0.45" />
+              <!-- 雙腳 -->
+              <ellipse cx="26" cy="168" rx="10" ry="5" fill="#D5B285" stroke="#232323" stroke-width="2.4" />
+              <ellipse cx="54" cy="168" rx="10" ry="5" fill="#D5B285" stroke="#232323" stroke-width="2.4" />
+              <!-- 可愛大頭 + 小黑耳 -->
+              <ellipse cx="9" cy="46" rx="9" ry="11" fill="#232323" />
+              <ellipse cx="71" cy="46" rx="9" ry="11" fill="#232323" />
+              <path d="M40 14 C64 14 75 29 75 48 L80 53 L73 59 C69 72 56 80 40 80 C24 80 11 72 7 59 L0 53 L5 48 C5 29 16 14 40 14 Z" fill="#F6E6CA" stroke="#232323" stroke-width="2.8" stroke-linejoin="round" />
+              <!-- 黑眼圈＋閃亮星星大眼 -->
+              <ellipse cx="24" cy="48" rx="12" ry="10.5" fill="#232323" />
+              <ellipse cx="56" cy="48" rx="12" ry="10.5" fill="#232323" />
+              <circle cx="24.5" cy="48" r="7.5" fill="#FFFDF8" />
+              <circle cx="24.5" cy="48.5" r="6" fill="url(#animeIris)" />
+              <circle cx="24.5" cy="48.5" r="3" fill="#1B1410" />
+              <circle cx="22" cy="45" r="2.7" fill="#FFFFFF" />
+              <circle cx="27" cy="51" r="1.2" fill="#FFFFFF" />
+
+              <circle cx="55.5" cy="48" r="7.5" fill="#FFFDF8" />
+              <circle cx="55.5" cy="48.5" r="6" fill="url(#animeIris)" />
+              <circle cx="55.5" cy="48.5" r="3" fill="#1B1410" />
+              <circle cx="53" cy="45" r="2.7" fill="#FFFFFF" />
+              <circle cx="58" cy="51" r="1.2" fill="#FFFFFF" />
+
+              <!-- 腮紅與小嘴 -->
+              <ellipse cx="14" cy="60" rx="6" ry="3.5" fill="#F28C6A" opacity="0.65" />
+              <ellipse cx="66" cy="60" rx="6" ry="3.5" fill="#F28C6A" opacity="0.65" />
+              <polygon points="37,54 43,54 40,59" fill="#232323" />
+              <path d="M35 61 Q37.5 64 40 60 Q42.5 64 45 61" fill="none" stroke="#232323" stroke-width="2" stroke-linecap="round" />
+              <!-- 兩隻舉在胸前握拳崇拜的小手手 -->
+              <path d="M21 90 Q17 110 27 116 Q32 117 31 108" fill="#E4C69B" stroke="#232323" stroke-width="2.6" stroke-linecap="round" />
+              <path d="M59 90 Q63 110 53 116 Q48 117 49 108" fill="#E4C69B" stroke="#232323" stroke-width="2.6" stroke-linecap="round" />
+            </g>
+
+            <!-- 標註指引線（與四角漫畫貼紙連結，無重疊） -->
+            <g stroke="#232323" stroke-width="1.8" stroke-dasharray="3 2" fill="none">
+              <!-- 天然太陽眼鏡 -> 眼圈 -->
+              <polyline points="145,56 164,106" />
+              <circle cx="164" cy="106" r="4" fill="#F6D66D" stroke="#232323" stroke-width="1.6" stroke-dasharray="none" />
+
+              <!-- 太陽能小肚肚 -> 腹部 -->
+              <polyline points="292,58 258,214 205,222" />
+              <circle cx="205" cy="222" r="4" fill="#F28C6A" stroke="#232323" stroke-width="1.6" stroke-dasharray="none" />
+
+              <!-- 挖洞小怪手 -> 前爪 -->
+              <polyline points="118,342 162,226" />
+              <circle cx="162" cy="226" r="4" fill="#7EB8DA" stroke="#232323" stroke-width="1.6" stroke-dasharray="none" />
+
+              <!-- 平衡用第三隻腳 -> 尾巴 -->
+              <polyline points="324,342 302,314" />
+              <circle cx="302" cy="314" r="4" fill="#E3EEDC" stroke="#232323" stroke-width="1.6" stroke-dasharray="none" />
+            </g>
+          </svg>
+
+          <!-- 四個四角漫畫風標註貼紙 -->
+          <div class="callout c-glasses">
+            <span class="callout-title">1. 天然太陽眼鏡</span>
+            <p class="callout-desc">黑黑眼圈擋住沙漠強光，抬頭找老鷹也不會刺眼！</p>
+          </div>
+
+          <div class="callout c-belly">
+            <span class="callout-title">2. 太陽能小肚肚</span>
+            <p class="callout-desc">肚子毛少露深色皮膚，早起站著曬太陽迅速充電暖身！</p>
+          </div>
+
+          <div class="callout c-claws">
+            <span class="callout-title">3. 挖洞小怪手</span>
+            <p class="callout-desc">約 2 公分長彎曲強爪，挖隧道、抓蟲蟲超拿手！</p>
+          </div>
+
+          <div class="callout c-tail">
+            <span class="callout-title">4. 平衡第三隻腳</span>
+            <p class="callout-desc">黑尖細長尾撐住身體，直立站崗穩穩不晃動！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：角色小檔案 -->
+      <article class="panel">
+        <div class="panel-header ph-sky">
+          <span>狐獴小檔案</span>
+          <span class="panel-en">DATA FILE</span>
+        </div>
+
+        <div class="profile-body">
+          <div class="fact-item">
+            <span class="fact-badge">分類</span>
+            <p class="fact-text"><strong>食肉目・獴科・細尾獴屬</strong><br />雖然名字有個「狐」，其實跟狐狸和貓咪都沒有親戚關係喔！</p>
+          </div>
+
+          <div class="fact-item">
+            <span class="fact-badge b-lemon">老家</span>
+            <p class="fact-text"><strong>非洲南部沙漠＆乾旱區</strong><br />主要住在喀拉哈里沙漠一帶，超習慣乾爽又有太陽的生活。</p>
+          </div>
+
+          <div class="fact-item">
+            <span class="fact-badge b-peach">體型</span>
+            <p class="fact-text"><strong>頭軀幹 25～35 cm｜尾 17.5～25 cm</strong><br />平均體重約 <strong>720～731 克</strong>，身材嬌小輕巧又靈活！</p>
+          </div>
+
+          <div class="fact-item">
+            <span class="fact-badge b-sky">作息</span>
+            <p class="fact-text"><strong>標準晝行性乖寶寶</strong><br />日出而作、日落而息，太陽下山就乖乖回地洞睡覺。</p>
+          </div>
+
+          <div class="scale-strip">
+            <svg width="38" height="44" viewBox="0 0 38 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="12" y="2" width="14" height="6" fill="#7EB8DA" stroke="#232323" stroke-width="1.8" />
+              <rect x="7" y="8" width="24" height="33" fill="#FFFDF8" stroke="#232323" stroke-width="2" />
+              <rect x="7" y="18" width="24" height="12" fill="#E3EEDC" stroke="#232323" stroke-width="1.5" />
+              <text x="19" y="27" text-anchor="middle" font-size="8" font-weight="900" fill="#232323">720g</text>
+            </svg>
+            <p>抱起來的重量，大約就跟<strong>一瓶大罐礦泉水</strong>差不多重喔！</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 下半部：動漫分鏡感雙欄模組 -->
+    <section class="row-bottom">
+      <!-- 左：大家庭 -->
+      <article class="panel">
+        <div class="panel-header ph-caramel">
+          <span>超級團結的大家庭</span>
+          <span class="panel-en">TEAMWORK!</span>
+        </div>
+
+        <div class="module-content">
+          <!-- 日系Q版動漫風地底豪宅圖解 -->
+          <div class="burrow-box">
+            <svg viewBox="0 0 340 116" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <rect x="0" y="0" width="340" height="52" fill="#E3EEDC" />
+              <rect x="0" y="52" width="340" height="64" fill="#C99E6E" />
+              <line x1="0" y1="52" x2="340" y2="52" stroke="#232323" stroke-width="2.2" />
+
+              <!-- 地上放風哨兵Q版小狐獴 -->
+              <g transform="translate(46, 8)">
+                <rect x="5" y="26" width="14" height="18" fill="#E7C99E" stroke="#232323" stroke-width="1.8" />
+                <ellipse cx="4" cy="18" rx="3.5" ry="4.5" fill="#232323" />
+                <ellipse cx="20" cy="18" rx="3.5" ry="4.5" fill="#232323" />
+                <circle cx="12" cy="19" r="9" fill="#F6E5C8" stroke="#232323" stroke-width="1.8" />
+                <circle cx="8.5" cy="18.5" r="3" fill="#232323" />
+                <circle cx="15.5" cy="18.5" r="3" fill="#232323" />
+                <circle cx="8" cy="18" r="1.2" fill="#FFFFFF" />
+                <circle cx="15" cy="18" r="1.2" fill="#FFFFFF" />
+                <text x="12" y="7" text-anchor="middle" font-size="10" font-weight="900" fill="#F28C6A">!</text>
+              </g>
+
+              <!-- 漫畫對話泡泡 -->
+              <polygon points="82,7 224,7 224,38 96,38 86,44 88,38 82,38" fill="#F6D66D" stroke="#232323" stroke-width="1.8" />
+              <text x="153" y="21" text-anchor="middle" font-size="9.5" font-weight="900" fill="#232323">空中／地面有不同警報聲！</text>
+              <text x="153" y="33" text-anchor="middle" font-size="8.5" font-weight="700" fill="#554F47">哨兵一叫，大家秒衝回洞！</text>
+
+              <!-- 空中警戒老鷹剪影 -->
+              <path d="M262 19 Q272 10 280 19 Q288 10 298 19" fill="none" stroke="#232323" stroke-width="2.2" stroke-linecap="round" />
+              <text x="280" y="36" text-anchor="middle" font-size="9.5" font-weight="900" fill="#F28C6A">危險警戒!!</text>
+
+              <!-- 地底多入口大豪宅 -->
+              <path d="M36 52 L36 89 L298 89 L298 52 M162 52 L162 89" fill="none" stroke="#FAF7EE" stroke-width="24" stroke-linecap="square" />
+              <path d="M24 52 L24 101 L310 101 L310 52 M48 52 L48 77 L150 77 L150 52 M174 52 L174 77 L286 77 L286 52" fill="none" stroke="#232323" stroke-width="1.8" />
+
+              <!-- 洞裡開心地 ^ ^ 互相理毛 -->
+              <g transform="translate(82, 79)">
+                <circle cx="10" cy="10" r="8" fill="#F6E5C8" stroke="#232323" stroke-width="1.6" />
+                <path d="M6 9 Q8 7 10 9 M11 9 Q13 7 15 9" fill="none" stroke="#232323" stroke-width="1.3" />
+                <circle cx="28" cy="10" r="8" fill="#DFC096" stroke="#232323" stroke-width="1.6" />
+                <path d="M24 9 Q26 7 28 9 M29 9 Q31 7 33 9" fill="none" stroke="#232323" stroke-width="1.3" />
+                <text x="19" y="-3" text-anchor="middle" font-size="9" font-weight="900" fill="#F28C6A">♥ 互相理毛中</text>
+              </g>
+
+              <!-- 洞裡照顧小寶寶 -->
+              <g transform="translate(212, 79)">
+                <circle cx="12" cy="10" r="8.5" fill="#F6E5C8" stroke="#232323" stroke-width="1.6" />
+                <circle cx="9" cy="9" r="1.4" fill="#232323" />
+                <circle cx="15" cy="9" r="1.4" fill="#232323" />
+                <circle cx="29" cy="12" r="5.8" fill="#FFF2DA" stroke="#232323" stroke-width="1.6" />
+                <path d="M26 12 Q28 13.5 31 12" fill="none" stroke="#232323" stroke-width="1.2" />
+                <text x="20" y="-3" text-anchor="middle" font-size="9" font-weight="900" fill="#5D8A58">全族當保母 ✦</text>
+              </g>
+            </svg>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="mini-star">★</span>地底大豪宅（幾隻～超過 40 隻）</div>
+              <p>超級愛熱鬧的群居動物！平常還會互相理毛增進感情；住在地底有多個出入口的網狀大洞穴，夜晚或遇險就躲進去。</p>
+            </div>
+
+            <div class="info-card c-caramel">
+              <div class="info-card-title"><span class="mini-star">★</span>輪流站崗好默契</div>
+              <p>大家低頭覓食時，總會有成員爬上高處當「哨兵」。面對空中飛來或地上跑來的天敵，還會發出不同的專屬警報聲！</p>
+            </div>
+
+            <div class="info-card c-sky">
+              <div class="info-card-title"><span class="mini-star">★</span>全族一起當保母</div>
+              <p>由最高階級的「當家母首領」與配偶主導繁殖；寶寶出生後，整個家族的成員都會輪流幫忙照顧、守護牠長大。</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：沙漠美食家 ＆ 隱藏小秘密 -->
+      <article class="panel">
+        <div class="panel-header ph-peach">
+          <span>沙漠美食家 ＆ 隱藏小秘密</span>
+          <span class="panel-en">EPISODE &amp; DIET</span>
+        </div>
+
+        <div class="module-content">
+          <!-- 日系Q版動漫食物與毒蛇警報小圖 -->
+          <div class="diet-strip">
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag">抗毒 OK!</span>
+              <svg viewBox="0 0 136 86" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- Q版閃亮抗毒盾牌背景 -->
+                <polygon points="88,16 112,24 108,48 88,58 68,48 64,24" fill="#E3EEDC" stroke="#5D8A58" stroke-width="1.6" />
+                <!-- 可愛大眼小甲蟲 -->
+                <g transform="translate(18, 30)">
+                  <ellipse cx="18" cy="20" rx="13" ry="10" fill="#5D8A58" stroke="#232323" stroke-width="1.9" />
+                  <circle cx="13" cy="18" r="2.2" fill="#FFFFFF" />
+                  <circle cx="13" cy="18" r="1" fill="#232323" />
+                  <path d="M8 14 L2 10 M8 26 L2 30 M28 14 L34 10 M28 26 L34 30" stroke="#232323" stroke-width="1.8" stroke-linecap="round" />
+                </g>
+                <!-- 可愛Q版小蠍子 -->
+                <g transform="translate(68, 22)">
+                  <ellipse cx="18" cy="34" rx="11" ry="8" fill="#F28C6A" stroke="#232323" stroke-width="1.9" />
+                  <circle cx="14" cy="33" r="2.2" fill="#FFFFFF" />
+                  <circle cx="14" cy="33" r="1" fill="#232323" />
+                  <path d="M27 32 Q40 26 38 12 Q36 5 28 8" fill="none" stroke="#232323" stroke-width="3" stroke-linecap="round" />
+                  <circle cx="27" cy="9" r="3.2" fill="#F6D66D" stroke="#232323" stroke-width="1.4" />
+                  <path d="M8 31 Q2 23 8 18 M12 28 Q8 20 14 17" fill="none" stroke="#232323" stroke-width="1.9" stroke-linecap="round" />
+                </g>
+                <text x="68" y="79" text-anchor="middle" font-size="9.5" font-weight="900" fill="#232323">昆蟲・毒蠍都能吃！</text>
+              </svg>
+            </div>
+
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag warn">要閃遠!</span>
+              <svg viewBox="0 0 136 86" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <!-- 漫畫風警告線條 -->
+                <text x="108" y="32" font-size="12" font-weight="900" fill="#F28C6A">⚡</text>
+                <path d="M36 56 Q68 66 100 56" fill="none" stroke="#232323" stroke-width="4" stroke-linecap="round" />
+                <path d="M60 56 Q58 32 68 23 Q78 32 76 56" fill="#A6754B" stroke="#232323" stroke-width="2" />
+                <ellipse cx="68" cy="23" rx="14" ry="11" fill="#F28C6A" stroke="#232323" stroke-width="2" />
+                <!-- 銳利動漫眼 -->
+                <polygon points="59,20 65,23 60,25" fill="#232323" />
+                <polygon points="77,20 71,23 76,25" fill="#232323" />
+                <path d="M68 29 L68 38 M68 38 L65 41 M68 38 L71 41" stroke="#232323" stroke-width="1.5" />
+                <text x="68" y="79" text-anchor="middle" font-size="9.5" font-weight="900" fill="#232323">眼鏡蛇等劇毒蛇會中招</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="mini-star">★</span>不挑食小獵手</div>
+              <p>最愛吃昆蟲，也會吃蜘蛛、蜥蜴、蛇、鳥蛋、小型哺乳動物、植物與蕈類；靠著靈敏嗅覺把地底美味通通挖出來。</p>
+            </div>
+
+            <div class="info-card c-peach">
+              <div class="info-card-title"><span class="mini-star">★</span>自帶抗毒體質</div>
+              <p>對許多毒液有免疫力，連帶毒刺的蠍子都能安心吃下肚！（但遇上眼鏡蛇或鼓腹噝蝰這類劇毒蛇還是得小心閃避喔。）</p>
+            </div>
+
+            <div class="timon-note">
+              <span class="timon-badge">大明星本尊</span>
+              <p>迪士尼《獅子王》裡活潑搞笑的「<strong>丁滿</strong>」，原型就是可愛的狐獴喔！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. 固定底部收尾欄 -->
+    <footer class="footer-secret">
+      <span class="secret-pill">觀察小秘密</span>
+      <p class="secret-text">下次在動物園看到狐獴排排站曬太陽，記得仔細找找牠們的黑眼圈和撐地的細長尾巴——那正是牠們替全家族努力放風的超萌日常！</p>
+    </footer>
+
+  </main>
+</body>
+</html>

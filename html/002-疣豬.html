@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NO.002 草原酷酷大獠牙 ◆ 疣豬｜動物圖鑑海報</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
+
+    :root {
+      --bg-paper: #FAF7EE;
+      --bg-card: #FFFDF8;
+      --bg-glass: rgba(255, 253, 248, 0.94);
+      --ink: #232323;
+      --ink-sub: #554F47;
+      --line: #362E27;
+      --line-soft: rgba(54, 46, 39, 0.24);
+      --matcha: #5D8A58;
+      --sprout: #E3EEDC;
+      --caramel: #A6754B;
+      --peach: #F28C6A;
+      --lemon: #F6D66D;
+      --sky: #7EB8DA;
+    }
+
+    * {
+      box-sizing: border-box;
+      border-radius: 0px !important;
+      margin: 0;
+      padding: 0;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      background-color: #DCD6C6;
+      font-family: 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 24px 0;
+      min-height: 100vh;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    /* 固定單頁 A4 直式畫布 */
+    .poster {
+      width: 794px;
+      height: 1123px;
+      background-color: var(--bg-paper);
+      background-image:
+        linear-gradient(180deg, rgba(126, 184, 218, 0.12) 0%, rgba(250, 247, 238, 0) 30%, rgba(246, 214, 109, 0.08) 100%);
+      padding: 20px 24px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 0 12px 32px rgba(35, 35, 35, 0.16);
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .poster::before {
+      content: "";
+      position: absolute;
+      inset: 7px;
+      border: 1px solid var(--line-soft);
+      pointer-events: none;
+    }
+
+    /* === 1. 固定左上角主標題區 === */
+    .header-area {
+      display: grid;
+      grid-template-columns: 1fr 248px;
+      gap: 12px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .title-block {
+      background: linear-gradient(135deg, #FFFDF8 0%, #F5F8FA 100%);
+      border: 1.5px solid var(--line);
+      border-left: 6px solid var(--matcha);
+      padding: 11px 16px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .tag-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 5px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      padding: 2px 8px;
+      border: 1px solid var(--line);
+      line-height: 1.3;
+    }
+
+    .tag-no { background-color: var(--ink); color: var(--bg-paper); }
+    .tag-cat { background-color: var(--sprout); color: var(--ink); }
+    .tag-mood { background-color: #FDF3D7; color: #755318; border-color: #B88A38; }
+
+    .main-title {
+      font-size: 30px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .diamond-join {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 21px;
+      height: 21px;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10px;
+      transform: rotate(45deg);
+      margin: 0 3px;
+      border: 1px solid var(--lemon);
+      flex-shrink: 0;
+    }
+
+    .diamond-join span {
+      transform: rotate(-45deg);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .title-accent {
+      color: #FFFFFF;
+      background-color: var(--caramel);
+      padding: 1px 10px 2px;
+      border: 1.5px solid var(--ink);
+      box-shadow: 3px 3px 0 var(--lemon);
+    }
+
+    .subtitle {
+      margin-top: 5px;
+      font-size: 11.8px;
+      font-weight: 700;
+      color: var(--ink-sub);
+      letter-spacing: 0.03em;
+    }
+
+    .lead-box {
+      background: linear-gradient(160deg, #E3EEDC 0%, #FFFDF8 100%);
+      border: 1.5px solid var(--line);
+      border-top: 4px solid var(--peach);
+      padding: 10px 13px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+    }
+
+    .lead-label {
+      font-size: 11px;
+      font-weight: 900;
+      color: var(--caramel);
+      letter-spacing: 0.08em;
+      margin-bottom: 4px;
+    }
+
+    .lead-text {
+      font-size: 11.3px;
+      line-height: 1.48;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    /* === 2. 中段第一排：主視覺 + 疣豬小檔案 === */
+    .row-top {
+      display: grid;
+      grid-template-columns: 452px 1fr;
+      gap: 12px;
+      height: 456px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .panel {
+      background-color: var(--bg-card);
+      border: 1.5px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 6px 12px;
+      border-bottom: 1.5px solid var(--line);
+      font-size: 13.5px;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+    }
+
+    .ph-green { background: linear-gradient(90deg, #5D8A58 0%, #719D6B 100%); color: #FFFFFF; }
+    .ph-sky { background: linear-gradient(90deg, #7EB8DA 0%, #A4CEE8 100%); color: var(--ink); }
+    .ph-caramel { background: linear-gradient(90deg, #A6754B 0%, #BF8E63 100%); color: #FFFFFF; }
+    .ph-peach { background: linear-gradient(90deg, #F28C6A 0%, #F7AC8E 100%); color: var(--ink); }
+
+    .panel-en {
+      font-size: 9.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      opacity: 0.9;
+    }
+
+    .hero-stage {
+      position: relative;
+      flex: 1;
+      background-color: #7EB8DA;
+      overflow: hidden;
+    }
+
+    .hero-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .callout {
+      position: absolute;
+      background-color: var(--bg-glass);
+      border: 1.2px solid var(--line);
+      padding: 5px 8px;
+      box-shadow: 0 3px 8px rgba(35, 35, 35, 0.14);
+    }
+
+    .callout-title {
+      display: inline-block;
+      font-size: 10.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      margin-bottom: 2px;
+      color: var(--ink);
+      border-left: 3px solid var(--ink);
+    }
+
+    .callout-desc {
+      font-size: 10px;
+      line-height: 1.34;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    .c-mane { top: 10px; left: 10px; max-width: 170px; }
+    .c-mane .callout-title { background-color: var(--sprout); border-left-color: var(--matcha); }
+
+    .c-tusks { top: 10px; right: 10px; max-width: 174px; }
+    .c-tusks .callout-title { background-color: var(--lemon); }
+
+    .c-warts { bottom: 10px; left: 10px; max-width: 176px; }
+    .c-warts .callout-title { background-color: rgba(242, 140, 106, 0.38); border-left-color: var(--peach); }
+
+    .c-gender { bottom: 10px; right: 10px; max-width: 174px; }
+    .c-gender .callout-title { background-color: rgba(126, 184, 218, 0.42); border-left-color: var(--sky); }
+
+    /* 右側角色檔案卡 */
+    .profile-body {
+      padding: 9px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 6px;
+      background-color: var(--bg-card);
+    }
+
+    .fact-item {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6.5px 9px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .fact-item.fi-lemon { border-left-color: var(--lemon); }
+    .fact-item.fi-peach { border-left-color: var(--peach); }
+    .fact-item.fi-sky { border-left-color: var(--sky); }
+
+    .fact-badge {
+      flex-shrink: 0;
+      width: 42px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 900;
+      padding: 2px 2px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+    }
+
+    .fact-badge.b-sky { background-color: rgba(126, 184, 218, 0.35); }
+    .fact-badge.b-lemon { background-color: rgba(246, 214, 109, 0.6); }
+    .fact-badge.b-peach { background-color: rgba(242, 140, 106, 0.38); }
+
+    .fact-text {
+      font-size: 11.2px;
+      line-height: 1.42;
+      color: var(--ink);
+    }
+
+    .fact-text strong {
+      font-weight: 700;
+      color: #1A1714;
+      background: linear-gradient(transparent 66%, rgba(246, 214, 109, 0.72) 66%);
+    }
+
+    .scale-strip {
+      border: 1px solid var(--caramel);
+      background: linear-gradient(90deg, #FAF4E6 0%, #FFFDF8 100%);
+      padding: 6px 9px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .scale-strip p {
+      font-size: 10.8px;
+      line-height: 1.38;
+      color: var(--ink-sub);
+      font-weight: 500;
+    }
+
+    /* === 3. 中段第二排：雙欄圖鑑模組 === */
+    .row-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      flex: 1;
+      min-height: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .module-content {
+      padding: 9px 11px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      flex: 1;
+    }
+
+    .scene-box {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      height: 114px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .info-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6.5px;
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .info-card {
+      border: 1px solid var(--line-soft);
+      border-left: 4px solid var(--matcha);
+      background-color: #FFFFFF;
+      padding: 6px 9px;
+    }
+
+    .info-card.c-caramel { border-left-color: var(--caramel); }
+    .info-card.c-peach { border-left-color: var(--peach); }
+    .info-card.c-sky { border-left-color: var(--sky); }
+
+    .info-card-title {
+      font-size: 11.8px;
+      font-weight: 900;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--ink);
+    }
+
+    .diamond-bullet {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background-color: var(--caramel);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .info-card p {
+      font-size: 10.9px;
+      line-height: 1.42;
+      color: var(--ink-sub);
+    }
+
+    .diet-strip {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      height: 114px;
+    }
+
+    .diet-mini-panel {
+      border: 1px solid var(--line);
+      background-color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .diet-mini-tag {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      font-size: 9.8px;
+      font-weight: 900;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      background-color: var(--sprout);
+      z-index: 2;
+    }
+
+    .diet-mini-tag.dig { background-color: rgba(246, 214, 109, 0.75); }
+
+    .pumbaa-note {
+      background: linear-gradient(90deg, #FBF0C4 0%, #FFF8DE 100%);
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--peach);
+      padding: 8px 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .pumbaa-badge {
+      flex-shrink: 0;
+      background-color: var(--ink);
+      color: var(--lemon);
+      font-size: 10.5px;
+      font-weight: 900;
+      padding: 3px 7px;
+      letter-spacing: 0.05em;
+    }
+
+    .pumbaa-note p {
+      font-size: 11.1px;
+      line-height: 1.42;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    /* === 4. 固定底部收尾欄 === */
+    .footer-secret {
+      background-color: var(--ink);
+      color: var(--bg-paper);
+      border: 1px solid var(--ink);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .secret-pill {
+      flex-shrink: 0;
+      background-color: var(--lemon);
+      color: var(--ink);
+      font-size: 11.5px;
+      font-weight: 900;
+      padding: 3px 10px;
+      border: 1px solid var(--bg-paper);
+      letter-spacing: 0.08em;
+    }
+
+    .secret-text {
+      font-size: 11.4px;
+      line-height: 1.42;
+      font-weight: 400;
+    }
+
+    @media print {
+      body { background: none; padding: 0; min-height: auto; }
+      .poster { box-shadow: none; border: none; width: 210mm; height: 297mm; }
+    }
+  </style>
+</head>
+<body>
+  <main class="poster">
+
+    <!-- 1. 固定左上角主標題區 -->
+    <header class="header-area">
+      <section class="title-block">
+        <div>
+          <div class="tag-row">
+            <span class="tag tag-no">NO.002</span>
+            <span class="tag tag-cat">動物圖鑑</span>
+            <span class="tag tag-mood">非洲草原大明星</span>
+          </div>
+          <h1 class="main-title">
+            <span>草原酷酷大獠牙</span>
+            <span class="diamond-join"><span>◆</span></span>
+            <span class="title-accent">疣豬</span>
+          </h1>
+        </div>
+        <p class="subtitle">Common Warthog — Phacochoerus africanus（又稱非洲疣豬）</p>
+      </section>
+
+      <aside class="lead-box">
+        <span class="lead-label">◆ INTRO / 認識新朋友</span>
+        <p class="lead-text">你認識臉上長著肉肉「小護墊」、嘴角掛著兩對彎彎大獠牙的非洲大明星嗎？牠們就是看似粗獷、其實超愛泡泥巴浴的「疣豬」！</p>
+      </aside>
+    </header>
+
+    <!-- 2. 上半部：主視覺＋全身配備標註 + 疣豬小檔案 -->
+    <section class="row-top">
+      <article class="panel">
+        <div class="panel-header ph-green">
+          <span>全身都是帥氣小配備！</span>
+          <span class="panel-en">FEATURE ILLUSTRATION</span>
+        </div>
+
+        <div class="hero-stage">
+          <svg class="hero-svg" viewBox="0 0 448 418" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="savannaSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#5B9BD1" />
+                <stop offset="42%" stop-color="#8EC4E4" />
+                <stop offset="76%" stop-color="#E6F2F8" />
+                <stop offset="100%" stop-color="#FAF1D6" />
+              </linearGradient>
+
+              <radialGradient id="sunGlow" cx="72%" cy="28%" r="34%">
+                <stop offset="0%" stop-color="#FFFDF0" stop-opacity="0.95" />
+                <stop offset="40%" stop-color="#F6D66D" stop-opacity="0.45" />
+                <stop offset="100%" stop-color="#F6D66D" stop-opacity="0" />
+              </radialGradient>
+
+              <linearGradient id="warthogBody" x1="0" y1="0" x2="0.2" y2="1">
+                <stop offset="0%" stop-color="#9A7E6A" />
+                <stop offset="45%" stop-color="#7B6251" />
+                <stop offset="88%" stop-color="#5E493B" />
+                <stop offset="100%" stop-color="#48362B" />
+              </linearGradient>
+
+              <linearGradient id="warthogHead" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#A68873" />
+                <stop offset="55%" stop-color="#826755" />
+                <stop offset="100%" stop-color="#5D4739" />
+              </linearGradient>
+
+              <linearGradient id="ivoryTusk" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FFFDF8" />
+                <stop offset="65%" stop-color="#F3E5C8" />
+                <stop offset="100%" stop-color="#D2B68A" />
+              </linearGradient>
+
+              <linearGradient id="savannaGround" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#E4C68E" />
+                <stop offset="100%" stop-color="#C2965B" />
+              </linearGradient>
+
+              <filter id="dropShadow" x="-15%" y="-15%" width="130%" height="130%">
+                <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#362619" flood-opacity="0.25" />
+              </filter>
+            </defs>
+
+            <!-- 晴空與暖陽 -->
+            <rect x="0" y="0" width="448" height="418" fill="url(#savannaSky)" />
+            <rect x="0" y="0" width="448" height="418" fill="url(#sunGlow)" />
+
+            <!-- 雲朵 -->
+            <g opacity="0.9">
+              <path d="M22 124 C22 106 48 98 68 108 C82 88 120 90 132 110 C152 106 168 118 166 134 L18 134 Z" fill="#FFFFFF" />
+              <path d="M268 140 C268 122 292 114 312 124 C326 106 362 108 374 126 C394 122 410 134 408 148 L264 148 Z" fill="#FFFFFF" />
+            </g>
+
+            <!-- 遠景草原與金合歡樹 -->
+            <path d="M0 264 Q110 248 225 262 T448 254 L448 418 L0 418 Z" fill="#B8CC9A" />
+            <g fill="#6D8F5D" opacity="0.72">
+              <rect x="54" y="226" width="4.5" height="34" />
+              <ellipse cx="56" cy="224" rx="28" ry="7" />
+              <rect x="386" y="232" width="4" height="28" />
+              <ellipse cx="388" cy="230" rx="22" ry="6" />
+            </g>
+            <path d="M0 288 Q145 274 295 290 T448 282 L448 418 L0 418 Z" fill="#89A86F" />
+            <path d="M0 308 Q160 298 320 312 T448 304 L448 418 L0 418 Z" fill="url(#savannaGround)" />
+
+            <!-- ===== 主角：酷酷又可愛的成年公疣豬（朝右站立，展示兩對疣、大獠牙、背脊鬃毛與豎起毛球尾） ===== -->
+            <g id="hero-warthog" filter="url(#dropShadow)">
+              <!-- 1. 豎起來的長尾巴＋末端毛球（疣豬奔跑與警戒時的招牌姿勢！） -->
+              <path d="M114 218 Q94 190 98 156" fill="none" stroke="#48362B" stroke-width="4.5" stroke-linecap="round" />
+              <path d="M114 218 Q94 190 98 156" fill="none" stroke="#8A6E5B" stroke-width="2.6" stroke-linecap="round" />
+              <!-- 尾巴末端一撮可愛小毛球 -->
+              <path d="M98 156 C91 148 93 136 99 132 C105 136 106 148 98 156 Z" fill="#3B2B22" stroke="#232323" stroke-width="1" />
+              <path d="M96 149 L91 141 M101 149 L106 141" stroke="#3B2B22" stroke-width="1.5" stroke-linecap="round" />
+
+              <!-- 2. 遠側前後腿 -->
+              <path d="M138 272 L134 316 L146 316 L152 272 Z" fill="#544135" stroke="#362619" stroke-width="1.2" />
+              <rect x="132" y="313" width="15" height="6" fill="#2A1F1A" />
+              <path d="M226 274 L228 318 L240 318 L242 274 Z" fill="#544135" stroke="#362619" stroke-width="1.2" />
+              <rect x="226" y="315" width="15" height="6" fill="#2A1F1A" />
+
+              <!-- 3. 龐克風帥氣長鬃毛（從頭頂延伸到背脊中間） -->
+              <path d="M136 196
+                       L142 178 L150 192
+                       L157 172 L165 189
+                       L173 168 L182 187
+                       L191 165 L200 185
+                       L209 162 L218 183
+                       L227 160 L236 181
+                       L244 162 L252 183
+                       L259 166 L266 188 Z"
+                    fill="#3D2D23" stroke="#232323" stroke-width="1.1" stroke-linejoin="round" />
+              <!-- 鬃毛亮部挑染線條 -->
+              <path d="M160 185 L158 175 M176 183 L174 172 M194 181 L192 169 M212 179 L210 166 M230 178 L228 164 M246 179 L244 166" stroke="#8C7362" stroke-width="1.3" stroke-linecap="round" />
+
+              <!-- 4. 疣豬厚實身軀（頭約占身體三分之一比例） -->
+              <path d="M116 218
+                       C114 194 142 184 188 184
+                       C224 184 248 192 260 206
+                       L254 274
+                       C220 282 162 282 124 272
+                       C112 262 112 238 116 218 Z"
+                    fill="url(#warthogBody)" stroke="#362619" stroke-width="1.3" />
+              <!-- 腹部暖色微光與稀疏體毛細節 -->
+              <path d="M142 268 Q188 276 238 268" fill="none" stroke="#B89B84" stroke-width="2.5" stroke-linecap="round" opacity="0.55" />
+              <path d="M156 226 L163 228 M178 236 L185 237 M198 222 L205 224 M168 250 L175 251" stroke="#3E2E24" stroke-width="1.2" stroke-linecap="round" opacity="0.6" />
+
+              <!-- 5. 近側前後腿（帶有招牌「膝蓋厚繭墊」！） -->
+              <path d="M122 256 L118 322 L132 322 L138 264 Z" fill="#7D6453" stroke="#362619" stroke-width="1.3" />
+              <rect x="116" y="319" width="17" height="7" fill="#261C17" />
+
+              <path d="M214 256 L214 324 L228 324 L232 264 Z" fill="#8C715E" stroke="#362619" stroke-width="1.3" />
+              <!-- 跪地挖土用膝蓋厚墊 -->
+              <ellipse cx="222" cy="296" rx="7.5" ry="6" fill="#594538" stroke="#362619" stroke-width="1.1" />
+              <rect x="212" y="321" width="17" height="7" fill="#261C17" />
+
+              <!-- 6. 比例超有份量的立體大頭（頭約占全身三分之一！） -->
+              <!-- 遠側耳朵 -->
+              <path d="M276 184 L288 164 L296 186 Z" fill="#594538" stroke="#362619" stroke-width="1.2" />
+
+              <!-- 頭部輪廓（扁寬額頭＋長長鼻吻部） -->
+              <path d="M234 196
+                       C242 178 268 176 292 188
+                       L324 206
+                       C334 212 338 224 332 236
+                       C324 248 304 254 278 252
+                       C254 250 236 238 232 218 Z"
+                    fill="url(#warthogHead)" stroke="#362619" stroke-width="1.3" stroke-linejoin="round" />
+
+              <!-- 頭頂小簇鬃毛 -->
+              <path d="M250 180 L255 166 L263 179 L269 167 L275 181" fill="#3D2D23" stroke="#232323" stroke-width="1.1" />
+
+              <!-- 兩頰招牌淺色長鬚毛 -->
+              <path d="M254 238 L244 248 L258 244 L251 255 L266 247 L263 257 L274 248" fill="#E8DCC8" stroke="#594538" stroke-width="1" stroke-linejoin="round" />
+
+              <!-- 近側耳朵 -->
+              <path d="M242 192 L248 168 L262 188 Z" fill="#8C715E" stroke="#362619" stroke-width="1.3" />
+              <path d="M247 188 L250 175 L257 187 Z" fill="#C9A892" />
+
+              <!-- 機靈有神的眼睛（位置高，方便低頭吃草時警戒四周） -->
+              <circle cx="276" cy="197" r="7.5" fill="#FFFDF8" stroke="#362619" stroke-width="1.2" />
+              <circle cx="277.5" cy="197" r="4.3" fill="#5A3318" />
+              <circle cx="278" cy="197" r="2.1" fill="#1A0E07" />
+              <circle cx="276" cy="195" r="1.7" fill="#FFFFFF" />
+              <!-- 帥氣微挑濃眉 -->
+              <path d="M267 188 Q276 184 285 189" fill="none" stroke="#2E2119" stroke-width="2" stroke-linecap="round" />
+
+              <!-- ===== 兩對自帶防撞小肉疣（公疣豬特徵！） ===== -->
+              <!-- 第一對：眼睛下方較大的防撞肉疣 -->
+              <ellipse cx="274" cy="213" rx="9" ry="6.5" transform="rotate(-12 274 213)" fill="#B58E76" stroke="#362619" stroke-width="1.3" />
+              <ellipse cx="273" cy="211.5" rx="4.5" ry="2.5" transform="rotate(-12 273 211.5)" fill="#D9B7A0" opacity="0.7" />
+
+              <!-- 第二對：靠近嘴巴獠牙旁的第二對肉疣（只有公疣豬才有！） -->
+              <ellipse cx="298" cy="224" rx="7" ry="5.5" transform="rotate(-10 298 224)" fill="#B58E76" stroke="#362619" stroke-width="1.3" />
+              <ellipse cx="297" cy="222.5" rx="3.5" ry="2" transform="rotate(-10 297 222.5)" fill="#D9B7A0" opacity="0.7" />
+
+              <!-- ===== 兩對彎彎磨刀大獠牙 ===== -->
+              <!-- 遠側上獠牙 -->
+              <path d="M322 222 Q342 214 344 194 Q336 208 320 216 Z" fill="url(#ivoryTusk)" stroke="#362619" stroke-width="1.1" />
+              <!-- 近側上獠牙（粗壯向上彎曲，最長可達25.5cm！） -->
+              <path d="M304 235 Q332 232 338 198 Q339 191 334 191 Q326 218 302 225 Z" fill="url(#ivoryTusk)" stroke="#362619" stroke-width="1.3" />
+              <!-- 近側下獠牙（較短且鋒利，張閉口時與上獠牙互相摩擦！） -->
+              <path d="M308 242 Q324 240 327 226 Q321 234 307 236 Z" fill="#FFFDF8" stroke="#362619" stroke-width="1.2" />
+
+              <!-- 圓盤狀強壯豬鼻子（挖塊莖植物超好用！） -->
+              <ellipse cx="332" cy="223" rx="6.5" ry="10.5" transform="rotate(14 332 223)" fill="#C8937E" stroke="#362619" stroke-width="1.3" />
+              <circle cx="330.5" cy="219" r="1.9" fill="#362619" />
+              <circle cx="333.5" cy="226" r="1.9" fill="#362619" />
+              <!-- 微笑嘴角 -->
+              <path d="M294 243 Q308 247 320 242" fill="none" stroke="#362619" stroke-width="1.4" stroke-linecap="round" />
+            </g>
+
+            <!-- ===== 可愛小疣豬寶寶（跟在爸爸/媽媽身邊，沒有大獠牙、身上有可愛條紋感） ===== -->
+            <g id="baby-warthog" transform="translate(36, 266) scale(0.75)" filter="url(#dropShadow)">
+              <!-- 小尾巴 -->
+              <path d="M18 34 Q8 20 12 8" fill="none" stroke="#48362B" stroke-width="3.5" stroke-linecap="round" />
+              <circle cx="12" cy="7" r="3.5" fill="#3D2D23" />
+              <!-- 小短腿 -->
+              <rect x="24" y="54" width="8" height="22" fill="#7D6453" stroke="#362619" stroke-width="1.3" />
+              <rect x="54" y="54" width="8" height="22" fill="#8C715E" stroke="#362619" stroke-width="1.3" />
+              <!-- 小身軀 -->
+              <ellipse cx="44" cy="40" rx="26" ry="18" fill="#9E806C" stroke="#362619" stroke-width="1.3" />
+              <!-- 小小背毛 -->
+              <path d="M30 22 L34 15 L39 22 L44 15 L49 22 L54 16 L58 23" fill="#3D2D23" />
+              <!-- 寶寶圓頭 -->
+              <ellipse cx="72" cy="36" rx="18" ry="14" fill="#A88974" stroke="#362619" stroke-width="1.3" />
+              <path d="M62 24 L65 13 L72 23 Z" fill="#8C715E" stroke="#362619" stroke-width="1.2" />
+              <circle cx="75" cy="33" r="4.5" fill="#FFFDF8" stroke="#362619" stroke-width="1.1" />
+              <circle cx="76" cy="33" r="2.4" fill="#232323" />
+              <circle cx="75" cy="32" r="1" fill="#FFFFFF" />
+              <ellipse cx="89" cy="39" rx="4" ry="6.5" fill="#D49B85" stroke="#362619" stroke-width="1.2" />
+              <circle cx="88.5" cy="37" r="1.2" fill="#362619" />
+              <circle cx="90" cy="41" r="1.2" fill="#362619" />
+              <ellipse cx="76" cy="42" rx="4.5" ry="2.5" fill="#F28C6A" opacity="0.45" />
+            </g>
+
+            <!-- 四角標註指引線 -->
+            <g stroke="#232323" stroke-width="1.2" fill="none" opacity="0.9">
+              <!-- 1. 龐克風帥氣鬃毛 -->
+              <polyline points="145,58 192,164" />
+              <rect x="189" y="161" width="6" height="6" transform="rotate(45 192 164)" fill="#E3EEDC" stroke="#232323" stroke-width="1" />
+
+              <!-- 2. 彎彎磨刀大獠牙 -->
+              <polyline points="338,62 338,192" />
+              <rect x="335" y="189" width="6" height="6" transform="rotate(45 338 192)" fill="#F6D66D" stroke="#232323" stroke-width="1" />
+
+              <!-- 3. 自帶防撞小肉疣 -->
+              <polyline points="154,348 271,218" />
+              <rect x="268" y="215" width="6" height="6" transform="rotate(45 271 218)" fill="#F28C6A" stroke="#232323" stroke-width="1" />
+
+              <!-- 4. 男女比一比（第二對疣） -->
+              <polyline points="325,348 299,230" />
+              <rect x="296" y="227" width="6" height="6" transform="rotate(45 299 230)" fill="#7EB8DA" stroke="#232323" stroke-width="1" />
+            </g>
+          </svg>
+
+          <!-- 四個角落圖鑑標註卡 -->
+          <div class="callout c-mane">
+            <span class="callout-title">1. 龐克風帥氣鬃毛</span>
+            <p class="callout-desc">體毛稀疏無皮下脂肪，但背脊長滿長鬃毛，長尾巴末端還有一撮毛球！</p>
+          </div>
+
+          <div class="callout c-tusks">
+            <span class="callout-title">2. 彎彎磨刀大獠牙</span>
+            <p class="callout-desc">上獠牙可長達 25.5 公分！張閉口時與下獠牙互相摩擦，越磨越鋒利。</p>
+          </div>
+
+          <div class="callout c-warts">
+            <span class="callout-title">3. 自帶防撞小肉疣</span>
+            <p class="callout-desc">臉頰肉疣是厚實護墊，低頭挖土覓食時能保護眼睛不被樹枝或泥土傷到！</p>
+          </div>
+
+          <div class="callout c-gender">
+            <span class="callout-title">4. 男生女生比一比</span>
+            <p class="callout-desc">公疣豬體型較大且有<strong>兩對疣</strong>；母疣豬少了嘴邊那一對，臉上只有<strong>一對疣</strong>！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：疣豬小檔案 -->
+      <article class="panel">
+        <div class="panel-header ph-sky">
+          <span>疣豬小檔案</span>
+          <span class="panel-en">DATA FILE</span>
+        </div>
+
+        <div class="profile-body">
+          <div class="fact-item">
+            <span class="fact-badge">分類</span>
+            <p class="fact-text"><strong>偶蹄目・豬科・疣豬屬</strong><br />跟野豬、家豬都是正港的豬豬家族親戚成員喔！</p>
+          </div>
+
+          <div class="fact-item fi-lemon">
+            <span class="fact-badge b-lemon">老家</span>
+            <p class="fact-text"><strong>非洲撒哈拉以南草原＆稀樹林</strong><br />除了熱帶雨林與北非沙漠外都能見到，少水高溫環境也難不倒牠！</p>
+          </div>
+
+          <div class="fact-item fi-peach">
+            <span class="fact-badge b-peach">體型</span>
+            <p class="fact-text"><strong>頭體長 90～150 cm｜肩高 63.5～85 cm</strong><br />體重約 <strong>45～150 公斤</strong>（公豬較重），大大的頭就佔了全身三分之一！</p>
+          </div>
+
+          <div class="fact-item fi-sky">
+            <span class="fact-badge b-sky">作息</span>
+            <p class="fact-text"><strong>白天逛街覓食的「晝行性」寶寶</strong><br />習慣在白天活動覓食，平均壽命約 <strong>15 年</strong>。</p>
+          </div>
+
+          <div class="scale-strip">
+            <svg width="42" height="40" viewBox="0 0 44 42" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="3" y="14" width="13" height="16" fill="#F28C6A" stroke="#362E27" stroke-width="1.2" />
+              <rect x="16" y="14" width="25" height="16" fill="#E3EEDC" stroke="#362E27" stroke-width="1.2" />
+              <text x="9.5" y="25" text-anchor="middle" font-size="8.5" font-weight="900" fill="#232323">1/3</text>
+              <text x="28.5" y="25" text-anchor="middle" font-size="8" font-weight="700" fill="#232323">身體</text>
+              <text x="22" y="10" text-anchor="middle" font-size="7.5" font-weight="700" fill="#A6754B">頭身比例</text>
+            </svg>
+            <p>大頭比例超有存在感——光是一顆頭就佔了<strong>整個身體長度的三分之一</strong>！</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 3. 下半部：雙欄圖鑑模組 -->
+    <section class="row-bottom">
+      <!-- 左：愛乾淨又重感情的草原生活 -->
+      <article class="panel">
+        <div class="panel-header ph-caramel">
+          <span>愛乾淨又重感情的草原生活</span>
+          <span class="panel-en">LIFESTYLE &amp; FAMILY</span>
+        </div>
+
+        <div class="module-content">
+          <div class="scene-box">
+            <svg viewBox="0 0 340 112" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="mudSky" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#89C0E0" />
+                  <stop offset="100%" stop-color="#FAF4E4" />
+                </linearGradient>
+              </defs>
+              <rect x="0" y="0" width="340" height="58" fill="url(#mudSky)" />
+              <rect x="0" y="58" width="340" height="54" fill="#D9BA82" />
+              <line x1="0" y1="58" x2="340" y2="58" stroke="#362E27" stroke-width="1.2" />
+
+              <!-- 左側：泥巴池與滾泥巴 SPA 的疣豬 -->
+              <ellipse cx="95" cy="84" rx="74" ry="18" fill="#7B583B" stroke="#362E27" stroke-width="1.3" />
+              <ellipse cx="95" cy="84" rx="60" ry="11" fill="#63452D" />
+              <!-- 泡在泥巴裡超享受的疣豬 -->
+              <g transform="translate(52, 46)">
+                <ellipse cx="38" cy="28" rx="26" ry="14" fill="#6E523D" stroke="#362E27" stroke-width="1.2" />
+                <!-- 泥巴塗層 -->
+                <path d="M16 26 Q38 18 60 26 Q56 36 38 37 Q20 36 16 26 Z" fill="#523927" />
+                <ellipse cx="64" cy="24" rx="14" ry="11" fill="#7B5E48" stroke="#362E27" stroke-width="1.2" />
+                <!-- 眯眯眼超舒服表情 -->
+                <path d="M61 21 Q64 18 67 21" fill="none" stroke="#232323" stroke-width="1.5" stroke-linecap="round" />
+                <path d="M74 26 Q81 24 82 17" fill="none" stroke="#FFFDF8" stroke-width="2.2" stroke-linecap="round" />
+                <ellipse cx="78" cy="24" rx="3" ry="5" fill="#B88370" stroke="#362E27" stroke-width="1" />
+                <!-- 飛濺泥巴水花 -->
+                <circle cx="14" cy="14" r="2.2" fill="#7B583B" />
+                <circle cx="8" cy="20" r="1.8" fill="#7B583B" />
+                <circle cx="84" cy="12" r="2" fill="#7B583B" />
+              </g>
+              <rect x="12" y="8" width="118" height="22" fill="rgba(255,253,248,0.95)" stroke="#362E27" stroke-width="1.1" />
+              <text x="71" y="22" text-anchor="middle" font-size="9.2" font-weight="900" fill="#5D3F27">泥巴 SPA 降溫又防蟲！</text>
+
+              <!-- 右側：母疣豬帶著小豬排隊散步 -->
+              <g transform="translate(194, 42)">
+                <!-- 母疣豬（只有一對疣） -->
+                <path d="M16 28 Q10 18 12 10" fill="none" stroke="#362E27" stroke-width="2.2" stroke-linecap="round" />
+                <rect x="20" y="36" width="5" height="14" fill="#6E5646" />
+                <rect x="44" y="36" width="5" height="14" fill="#6E5646" />
+                <ellipse cx="34" cy="28" rx="18" ry="11" fill="#826755" stroke="#362E27" stroke-width="1.2" />
+                <ellipse cx="54" cy="26" rx="11" ry="8" fill="#8E725F" stroke="#362E27" stroke-width="1.2" />
+                <circle cx="56" cy="24" r="1.8" fill="#232323" />
+                <ellipse cx="53" cy="28" rx="2.8" ry="2" fill="#B58E76" />
+                <path d="M62 28 Q67 26 68 21" fill="none" stroke="#FFFDF8" stroke-width="1.8" stroke-linecap="round" />
+
+                <!-- 兩隻跟班小豬 -->
+                <g transform="translate(74, 14)">
+                  <path d="M4 18 Q1 12 2 7" fill="none" stroke="#362E27" stroke-width="1.6" stroke-linecap="round" />
+                  <ellipse cx="14" cy="20" rx="10" ry="6.5" fill="#9E806C" stroke="#362E27" stroke-width="1.1" />
+                  <circle cx="25" cy="19" r="5.5" fill="#A88974" stroke="#362E27" stroke-width="1.1" />
+                  <rect x="8" y="25" width="3.5" height="9" fill="#6E5646" />
+                  <rect x="18" y="25" width="3.5" height="9" fill="#6E5646" />
+                </g>
+                <g transform="translate(106, 16)">
+                  <path d="M4 16 Q1 11 2 6" fill="none" stroke="#362E27" stroke-width="1.5" stroke-linecap="round" />
+                  <ellipse cx="12" cy="18" rx="9" ry="6" fill="#9E806C" stroke="#362E27" stroke-width="1.1" />
+                  <circle cx="22" cy="17" r="5" fill="#A88974" stroke="#362E27" stroke-width="1.1" />
+                  <rect x="7" y="23" width="3" height="8" fill="#6E5646" />
+                  <rect x="16" y="23" width="3" height="8" fill="#6E5646" />
+                </g>
+              </g>
+              <rect x="206" y="8" width="122" height="22" fill="#E3EEDC" stroke="#362E27" stroke-width="1.1" />
+              <text x="267" y="22" text-anchor="middle" font-size="9.2" font-weight="900" fill="#232323">母子組成溫馨小團隊</text>
+            </svg>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>天然泥巴 SPA</div>
+              <p>皮膚沒什麼脂肪、怕曬又怕蟲咬，疣豬超愛像犀牛一樣滾泥巴澡，把全身塗滿泥巴來降溫防曬、順便趕走寄生蟲！</p>
+            </div>
+
+            <div class="info-card c-caramel">
+              <div class="info-card-title"><span class="diamond-bullet"></span>母子溫馨小家庭</div>
+              <p>母疣豬會和小疣豬組成群居小團隊生活；懷孕準備生寶寶時，母豬會先讓身邊的小豬離開，找安靜角落待產（懷孕期約 175 天）。</p>
+            </div>
+
+            <div class="info-card c-sky">
+              <div class="info-card-title"><span class="diamond-bullet"></span>獨行俠公疣豬</div>
+              <p>成年公疣豬平常喜歡自己到處晃晃，只有繁殖季節才會加入群體，遇上情敵還會用大獠牙和頭頂正面交鋒！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- 右：草原素食王 ＆ 隱藏小秘密 -->
+      <article class="panel">
+        <div class="panel-header ph-peach">
+          <span>草原素食王 ＆ 隱藏小秘密</span>
+          <span class="panel-en">DIET &amp; TRIVIA</span>
+        </div>
+
+        <div class="module-content">
+          <div class="diet-strip">
+            <!-- 左小圖：主食青草與地底塊莖 -->
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag">主食菜單</span>
+              <svg viewBox="0 0 136 90" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="58" fill="#FAFDF6" />
+                <rect x="0" y="58" width="136" height="32" fill="#D5B285" />
+                <line x1="0" y1="58" x2="136" y2="58" stroke="#362E27" stroke-width="1.2" />
+                <!-- 青草叢 -->
+                <path d="M24 58 Q18 38 14 28 Q26 38 30 58 Z" fill="#5D8A58" stroke="#362E27" stroke-width="1.1" />
+                <path d="M32 58 Q32 34 38 22 Q42 38 40 58 Z" fill="#78A672" stroke="#362E27" stroke-width="1.1" />
+                <path d="M40 58 Q48 40 54 32 Q48 46 46 58 Z" fill="#5D8A58" stroke="#362E27" stroke-width="1.1" />
+                <!-- 地底塊莖植物 -->
+                <ellipse cx="94" cy="54" rx="16" ry="11" fill="#C97E4B" stroke="#362E27" stroke-width="1.2" />
+                <path d="M88 44 Q82 32 76 30 M94 43 Q96 30 102 27 M99 45 Q108 35 114 34" fill="none" stroke="#5D8A58" stroke-width="2" stroke-linecap="round" />
+                <path d="M84 62 L80 68 M94 64 L94 70 M103 62 L107 68" stroke="#7A4B2A" stroke-width="1.2" stroke-linecap="round" />
+                <text x="68" y="83" text-anchor="middle" font-size="9.2" font-weight="700" fill="#232323">青草・苔草・塊莖植物</text>
+              </svg>
+            </div>
+
+            <!-- 右小圖：強壯鼻子與獠牙拱土 -->
+            <div class="diet-mini-panel">
+              <span class="diet-mini-tag dig">挖土神技</span>
+              <svg viewBox="0 0 136 90" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0" y="0" width="136" height="58" fill="#FFFDF6" />
+                <rect x="0" y="58" width="136" height="32" fill="#C89B68" />
+                <line x1="0" y1="58" x2="136" y2="58" stroke="#362E27" stroke-width="1.2" />
+                <!-- 跪著前腿拱土的疣豬頭部特寫 -->
+                <path d="M18 32 Q42 22 68 36 L86 48 Q88 56 78 58 L32 56 Z" fill="#826755" stroke="#362E27" stroke-width="1.2" />
+                <circle cx="56" cy="38" r="3" fill="#FFFDF8" stroke="#362E27" stroke-width="1" />
+                <circle cx="56.5" cy="38" r="1.5" fill="#232323" />
+                <ellipse cx="62" cy="46" rx="5" ry="3.5" fill="#B58E76" stroke="#362E27" stroke-width="1" />
+                <!-- 彎獠牙拱出泥土塊 -->
+                <path d="M74 52 Q92 50 96 36" fill="none" stroke="#FFFDF8" stroke-width="3" stroke-linecap="round" />
+                <ellipse cx="86" cy="52" rx="4.5" ry="6.5" fill="#C8937E" stroke="#362E27" stroke-width="1.1" />
+                <!-- 飛起的泥土塊 -->
+                <polygon points="98,46 105,42 108,49" fill="#8C603B" stroke="#362E27" stroke-width="0.9" />
+                <polygon points="106,34 112,32 111,38" fill="#8C603B" stroke="#362E27" stroke-width="0.9" />
+                <circle cx="116" cy="44" r="2.2" fill="#8C603B" />
+                <text x="68" y="83" text-anchor="middle" font-size="9.2" font-weight="700" fill="#232323">強壯鼻子與獠牙拱美食</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-card-title"><span class="diamond-bullet"></span>不挑食的挖土高手</div>
+              <p>最愛吃新鮮青草、苔草，也會用強壯的鼻子和獠牙把地底營養的塊莖植物拱出來大快朵頤，偶爾才會吃一點腐肉補充營養。</p>
+            </div>
+
+            <div class="info-card c-peach">
+              <div class="info-card-title"><span class="diamond-bullet"></span>旱季生存小妙招</div>
+              <p>面對乾燥高溫的非洲草原，疣豬多汁的地下塊莖大餐還能同時幫牠們補充水分，在少水環境下依然活力滿滿！</p>
+            </div>
+
+            <div class="pumbaa-note">
+              <span class="pumbaa-badge">大明星彭彭</span>
+              <p>迪士尼《獅子王》裡和狐獴「丁滿」天天唱著〈Hakuna Matata〉的最佳拍檔「<strong>彭彭</strong>」，原型就是超有魅力的疣豬喔！</p>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- 4. 固定底部收尾欄 -->
+    <footer class="footer-secret">
+      <span class="secret-pill">觀察小秘密</span>
+      <p class="secret-text">下次看到疣豬時，別忘了數數牠臉上有幾對小肉疣——有兩對的是帥氣大男生，只有一對的是溫柔大女生，而且牠們還是《獅子王》裡「丁滿」的最強好搭檔呢！</p>
+    </footer>
+
+  </main>
+</body>
+</html>
